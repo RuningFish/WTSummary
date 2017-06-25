@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		840F942D1EFFD25B0028AC24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942C1EFFD25B0028AC24 /* main.m */; };
+		840F94301EFFD25B0028AC24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942F1EFFD25B0028AC24 /* AppDelegate.m */; };
+		840F94331EFFD25B0028AC24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94321EFFD25B0028AC24 /* ViewController.m */; };
+		840F94361EFFD25B0028AC24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840F94341EFFD25B0028AC24 /* Main.storyboard */; };
+		840F94381EFFD25B0028AC24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840F94371EFFD25B0028AC24 /* Assets.xcassets */; };
+		840F943B1EFFD25B0028AC24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840F94391EFFD25B0028AC24 /* LaunchScreen.storyboard */; };
+		840F94461EFFD25B0028AC24 /* WTSummaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94451EFFD25B0028AC24 /* WTSummaryTests.m */; };
+		840F94511EFFD25B0028AC24 /* WTSummaryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94501EFFD25B0028AC24 /* WTSummaryUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		840F94421EFFD25B0028AC24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840F94201EFFD25B0028AC24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 840F94271EFFD25B0028AC24;
+			remoteInfo = WTSummary;
+		};
+		840F944D1EFFD25B0028AC24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840F94201EFFD25B0028AC24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 840F94271EFFD25B0028AC24;
+			remoteInfo = WTSummary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		840F94281EFFD25B0028AC24 /* WTSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		840F942C1EFFD25B0028AC24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		840F942E1EFFD25B0028AC24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		840F942F1EFFD25B0028AC24 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		840F94311EFFD25B0028AC24 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		840F94321EFFD25B0028AC24 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		840F94351EFFD25B0028AC24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		840F94371EFFD25B0028AC24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		840F943A1EFFD25B0028AC24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		840F943C1EFFD25B0028AC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840F94411EFFD25B0028AC24 /* WTSummaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTSummaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		840F94451EFFD25B0028AC24 /* WTSummaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTSummaryTests.m; sourceTree = "<group>"; };
+		840F94471EFFD25B0028AC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840F944C1EFFD25B0028AC24 /* WTSummaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTSummaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		840F94501EFFD25B0028AC24 /* WTSummaryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTSummaryUITests.m; sourceTree = "<group>"; };
+		840F94521EFFD25B0028AC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		840F94251EFFD25B0028AC24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840F943E1EFFD25B0028AC24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840F94491EFFD25B0028AC24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		840F941F1EFFD25B0028AC24 = {
+			isa = PBXGroup;
+			children = (
+				840F942A1EFFD25B0028AC24 /* WTSummary */,
+				840F94441EFFD25B0028AC24 /* WTSummaryTests */,
+				840F944F1EFFD25B0028AC24 /* WTSummaryUITests */,
+				840F94291EFFD25B0028AC24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		840F94291EFFD25B0028AC24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840F94281EFFD25B0028AC24 /* WTSummary.app */,
+				840F94411EFFD25B0028AC24 /* WTSummaryTests.xctest */,
+				840F944C1EFFD25B0028AC24 /* WTSummaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		840F942A1EFFD25B0028AC24 /* WTSummary */ = {
+			isa = PBXGroup;
+			children = (
+				840F942E1EFFD25B0028AC24 /* AppDelegate.h */,
+				840F942F1EFFD25B0028AC24 /* AppDelegate.m */,
+				840F94311EFFD25B0028AC24 /* ViewController.h */,
+				840F94321EFFD25B0028AC24 /* ViewController.m */,
+				840F94341EFFD25B0028AC24 /* Main.storyboard */,
+				840F94371EFFD25B0028AC24 /* Assets.xcassets */,
+				840F94391EFFD25B0028AC24 /* LaunchScreen.storyboard */,
+				840F943C1EFFD25B0028AC24 /* Info.plist */,
+				840F942B1EFFD25B0028AC24 /* Supporting Files */,
+			);
+			path = WTSummary;
+			sourceTree = "<group>";
+		};
+		840F942B1EFFD25B0028AC24 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				840F942C1EFFD25B0028AC24 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		840F94441EFFD25B0028AC24 /* WTSummaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				840F94451EFFD25B0028AC24 /* WTSummaryTests.m */,
+				840F94471EFFD25B0028AC24 /* Info.plist */,
+			);
+			path = WTSummaryTests;
+			sourceTree = "<group>";
+		};
+		840F944F1EFFD25B0028AC24 /* WTSummaryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				840F94501EFFD25B0028AC24 /* WTSummaryUITests.m */,
+				840F94521EFFD25B0028AC24 /* Info.plist */,
+			);
+			path = WTSummaryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		840F94271EFFD25B0028AC24 /* WTSummary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 840F94551EFFD25B0028AC24 /* Build configuration list for PBXNativeTarget "WTSummary" */;
+			buildPhases = (
+				840F94241EFFD25B0028AC24 /* Sources */,
+				840F94251EFFD25B0028AC24 /* Frameworks */,
+				840F94261EFFD25B0028AC24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WTSummary;
+			productName = WTSummary;
+			productReference = 840F94281EFFD25B0028AC24 /* WTSummary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		840F94401EFFD25B0028AC24 /* WTSummaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 840F94581EFFD25B0028AC24 /* Build configuration list for PBXNativeTarget "WTSummaryTests" */;
+			buildPhases = (
+				840F943D1EFFD25B0028AC24 /* Sources */,
+				840F943E1EFFD25B0028AC24 /* Frameworks */,
+				840F943F1EFFD25B0028AC24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				840F94431EFFD25B0028AC24 /* PBXTargetDependency */,
+			);
+			name = WTSummaryTests;
+			productName = WTSummaryTests;
+			productReference = 840F94411EFFD25B0028AC24 /* WTSummaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		840F944B1EFFD25B0028AC24 /* WTSummaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 840F945B1EFFD25B0028AC24 /* Build configuration list for PBXNativeTarget "WTSummaryUITests" */;
+			buildPhases = (
+				840F94481EFFD25B0028AC24 /* Sources */,
+				840F94491EFFD25B0028AC24 /* Frameworks */,
+				840F944A1EFFD25B0028AC24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				840F944E1EFFD25B0028AC24 /* PBXTargetDependency */,
+			);
+			name = WTSummaryUITests;
+			productName = WTSummaryUITests;
+			productReference = 840F944C1EFFD25B0028AC24 /* WTSummaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		840F94201EFFD25B0028AC24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "飞奔的小鲨鱼";
+				TargetAttributes = {
+					840F94271EFFD25B0028AC24 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					840F94401EFFD25B0028AC24 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 840F94271EFFD25B0028AC24;
+					};
+					840F944B1EFFD25B0028AC24 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 840F94271EFFD25B0028AC24;
+					};
+				};
+			};
+			buildConfigurationList = 840F94231EFFD25B0028AC24 /* Build configuration list for PBXProject "WTSummary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 840F941F1EFFD25B0028AC24;
+			productRefGroup = 840F94291EFFD25B0028AC24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				840F94271EFFD25B0028AC24 /* WTSummary */,
+				840F94401EFFD25B0028AC24 /* WTSummaryTests */,
+				840F944B1EFFD25B0028AC24 /* WTSummaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		840F94261EFFD25B0028AC24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840F943B1EFFD25B0028AC24 /* LaunchScreen.storyboard in Resources */,
+				840F94381EFFD25B0028AC24 /* Assets.xcassets in Resources */,
+				840F94361EFFD25B0028AC24 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840F943F1EFFD25B0028AC24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840F944A1EFFD25B0028AC24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		840F94241EFFD25B0028AC24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840F94331EFFD25B0028AC24 /* ViewController.m in Sources */,
+				840F94301EFFD25B0028AC24 /* AppDelegate.m in Sources */,
+				840F942D1EFFD25B0028AC24 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840F943D1EFFD25B0028AC24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840F94461EFFD25B0028AC24 /* WTSummaryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840F94481EFFD25B0028AC24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840F94511EFFD25B0028AC24 /* WTSummaryUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		840F94431EFFD25B0028AC24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 840F94271EFFD25B0028AC24 /* WTSummary */;
+			targetProxy = 840F94421EFFD25B0028AC24 /* PBXContainerItemProxy */;
+		};
+		840F944E1EFFD25B0028AC24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 840F94271EFFD25B0028AC24 /* WTSummary */;
+			targetProxy = 840F944D1EFFD25B0028AC24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		840F94341EFFD25B0028AC24 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				840F94351EFFD25B0028AC24 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		840F94391EFFD25B0028AC24 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				840F943A1EFFD25B0028AC24 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		840F94531EFFD25B0028AC24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		840F94541EFFD25B0028AC24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		840F94561EFFD25B0028AC24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WTSummary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		840F94571EFFD25B0028AC24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WTSummary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		840F94591EFFD25B0028AC24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WTSummaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WTSummary.app/WTSummary";
+			};
+			name = Debug;
+		};
+		840F945A1EFFD25B0028AC24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WTSummaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WTSummary.app/WTSummary";
+			};
+			name = Release;
+		};
+		840F945C1EFFD25B0028AC24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WTSummaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WTSummary;
+			};
+			name = Debug;
+		};
+		840F945D1EFFD25B0028AC24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WTSummaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WTSummary;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		840F94231EFFD25B0028AC24 /* Build configuration list for PBXProject "WTSummary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840F94531EFFD25B0028AC24 /* Debug */,
+				840F94541EFFD25B0028AC24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		840F94551EFFD25B0028AC24 /* Build configuration list for PBXNativeTarget "WTSummary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840F94561EFFD25B0028AC24 /* Debug */,
+				840F94571EFFD25B0028AC24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		840F94581EFFD25B0028AC24 /* Build configuration list for PBXNativeTarget "WTSummaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840F94591EFFD25B0028AC24 /* Debug */,
+				840F945A1EFFD25B0028AC24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		840F945B1EFFD25B0028AC24 /* Build configuration list for PBXNativeTarget "WTSummaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				840F945C1EFFD25B0028AC24 /* Debug */,
+				840F945D1EFFD25B0028AC24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 840F94201EFFD25B0028AC24 /* Project object */;
+}
