@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "TestViewController.h"
+#import "WTNavigationController.h"
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +18,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+   
+    TestViewController * test = [[TestViewController alloc] init];
+    ViewController * viewController = [[ViewController alloc] init];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    WTNavigationController * nav = [[WTNavigationController alloc] initWithRootViewController:viewController];
+//    nav.navigationBarHidden = YES;
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+ 
     return YES;
 }
 

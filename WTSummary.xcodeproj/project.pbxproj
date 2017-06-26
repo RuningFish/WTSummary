@@ -15,6 +15,12 @@
 		840F943B1EFFD25B0028AC24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840F94391EFFD25B0028AC24 /* LaunchScreen.storyboard */; };
 		840F94461EFFD25B0028AC24 /* WTSummaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94451EFFD25B0028AC24 /* WTSummaryTests.m */; };
 		840F94511EFFD25B0028AC24 /* WTSummaryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94501EFFD25B0028AC24 /* WTSummaryUITests.m */; };
+		840F94611EFFD3610028AC24 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94601EFFD3610028AC24 /* TestViewController.m */; };
+		840F94651EFFD4970028AC24 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94641EFFD4970028AC24 /* UIView+Category.m */; };
+		840F94681EFFD5240028AC24 /* UIColor+HexStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94671EFFD5240028AC24 /* UIColor+HexStr.m */; };
+		840F946D1EFFE8BF0028AC24 /* WTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F946C1EFFE8BF0028AC24 /* WTNavigationController.m */; };
+		840F94701EFFF75B0028AC24 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F946F1EFFF75B0028AC24 /* UIImage+Extension.m */; };
+		840F94741EFFFB3B0028AC24 /* WTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94731EFFFB3B0028AC24 /* WTBaseViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,20 @@
 		840F944C1EFFD25B0028AC24 /* WTSummaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTSummaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840F94501EFFD25B0028AC24 /* WTSummaryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTSummaryUITests.m; sourceTree = "<group>"; };
 		840F94521EFFD25B0028AC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840F945F1EFFD3610028AC24 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = "../../../../Downloads/OC-JS-UIWebView-master/TestViewController.h"; sourceTree = "<group>"; };
+		840F94601EFFD3610028AC24 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = "../../../../Downloads/OC-JS-UIWebView-master/TestViewController.m"; sourceTree = "<group>"; };
+		840F94631EFFD4970028AC24 /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Category.h"; path = "../../../../Downloads/OC-JS-UIWebView-master/OC与JS交互之UIWebView/UIView+Category.h"; sourceTree = "<group>"; };
+		840F94641EFFD4970028AC24 /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Category.m"; path = "../../../../Downloads/OC-JS-UIWebView-master/OC与JS交互之UIWebView/UIView+Category.m"; sourceTree = "<group>"; };
+		840F94661EFFD5240028AC24 /* UIColor+HexStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexStr.h"; path = "../../../../Downloads/PiyingkeApp_IOS-branch_v2.14-cf73b4f4c15787761f18075dd91c78956ca78f8b/PiyingkeLibrary/PiyingkeLibrary/main/MainComment/UIColor+HexStr.h"; sourceTree = "<group>"; };
+		840F94671EFFD5240028AC24 /* UIColor+HexStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexStr.m"; path = "../../../../Downloads/PiyingkeApp_IOS-branch_v2.14-cf73b4f4c15787761f18075dd91c78956ca78f8b/PiyingkeLibrary/PiyingkeLibrary/main/MainComment/UIColor+HexStr.m"; sourceTree = "<group>"; };
+		840F94691EFFD5D50028AC24 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		840F946B1EFFE8BF0028AC24 /* WTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTNavigationController.h; path = "二维码扫描/WTNavigationController.h"; sourceTree = "<group>"; };
+		840F946C1EFFE8BF0028AC24 /* WTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTNavigationController.m; path = "二维码扫描/WTNavigationController.m"; sourceTree = "<group>"; };
+		840F946E1EFFF75B0028AC24 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		840F946F1EFFF75B0028AC24 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		840F94721EFFFB3B0028AC24 /* WTBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBaseViewController.h; sourceTree = "<group>"; };
+		840F94731EFFFB3B0028AC24 /* WTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTBaseViewController.m; sourceTree = "<group>"; };
+		841FBF951F0016CB00AE4659 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +121,14 @@
 		840F942A1EFFD25B0028AC24 /* WTSummary */ = {
 			isa = PBXGroup;
 			children = (
-				840F942E1EFFD25B0028AC24 /* AppDelegate.h */,
-				840F942F1EFFD25B0028AC24 /* AppDelegate.m */,
+				840F94711EFFFAFF0028AC24 /* Component */,
+				840F946A1EFFE61D0028AC24 /* 二维码扫描 */,
+				840F94621EFFD45E0028AC24 /* Category */,
+				840F945E1EFFD28D0028AC24 /* OC与JS相互调用 */,
 				840F94311EFFD25B0028AC24 /* ViewController.h */,
 				840F94321EFFD25B0028AC24 /* ViewController.m */,
-				840F94341EFFD25B0028AC24 /* Main.storyboard */,
-				840F94371EFFD25B0028AC24 /* Assets.xcassets */,
-				840F94391EFFD25B0028AC24 /* LaunchScreen.storyboard */,
-				840F943C1EFFD25B0028AC24 /* Info.plist */,
+				840F946B1EFFE8BF0028AC24 /* WTNavigationController.h */,
+				840F946C1EFFE8BF0028AC24 /* WTNavigationController.m */,
 				840F942B1EFFD25B0028AC24 /* Supporting Files */,
 			);
 			path = WTSummary;
@@ -117,6 +137,14 @@
 		840F942B1EFFD25B0028AC24 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				841FBF951F0016CB00AE4659 /* PrefixHeader.pch */,
+				840F94691EFFD5D50028AC24 /* Header.h */,
+				840F94341EFFD25B0028AC24 /* Main.storyboard */,
+				840F94371EFFD25B0028AC24 /* Assets.xcassets */,
+				840F94391EFFD25B0028AC24 /* LaunchScreen.storyboard */,
+				840F943C1EFFD25B0028AC24 /* Info.plist */,
+				840F942E1EFFD25B0028AC24 /* AppDelegate.h */,
+				840F942F1EFFD25B0028AC24 /* AppDelegate.m */,
 				840F942C1EFFD25B0028AC24 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +166,44 @@
 				840F94521EFFD25B0028AC24 /* Info.plist */,
 			);
 			path = WTSummaryUITests;
+			sourceTree = "<group>";
+		};
+		840F945E1EFFD28D0028AC24 /* OC与JS相互调用 */ = {
+			isa = PBXGroup;
+			children = (
+				840F945F1EFFD3610028AC24 /* TestViewController.h */,
+				840F94601EFFD3610028AC24 /* TestViewController.m */,
+			);
+			path = "OC与JS相互调用";
+			sourceTree = "<group>";
+		};
+		840F94621EFFD45E0028AC24 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				840F94661EFFD5240028AC24 /* UIColor+HexStr.h */,
+				840F94671EFFD5240028AC24 /* UIColor+HexStr.m */,
+				840F94631EFFD4970028AC24 /* UIView+Category.h */,
+				840F94641EFFD4970028AC24 /* UIView+Category.m */,
+				840F946E1EFFF75B0028AC24 /* UIImage+Extension.h */,
+				840F946F1EFFF75B0028AC24 /* UIImage+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		840F946A1EFFE61D0028AC24 /* 二维码扫描 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "二维码扫描";
+			sourceTree = "<group>";
+		};
+		840F94711EFFFAFF0028AC24 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				840F94721EFFFB3B0028AC24 /* WTBaseViewController.h */,
+				840F94731EFFFB3B0028AC24 /* WTBaseViewController.m */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +273,7 @@
 				TargetAttributes = {
 					840F94271EFFD25B0028AC24 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 7SY57U9SGN;
 						ProvisioningStyle = Automatic;
 					};
 					840F94401EFFD25B0028AC24 = {
@@ -275,7 +342,13 @@
 			files = (
 				840F94331EFFD25B0028AC24 /* ViewController.m in Sources */,
 				840F94301EFFD25B0028AC24 /* AppDelegate.m in Sources */,
+				840F94611EFFD3610028AC24 /* TestViewController.m in Sources */,
+				840F94651EFFD4970028AC24 /* UIView+Category.m in Sources */,
+				840F94741EFFFB3B0028AC24 /* WTBaseViewController.m in Sources */,
+				840F946D1EFFE8BF0028AC24 /* WTNavigationController.m in Sources */,
 				840F942D1EFFD25B0028AC24 /* main.m in Sources */,
+				840F94681EFFD5240028AC24 /* UIColor+HexStr.m in Sources */,
+				840F94701EFFF75B0028AC24 /* UIImage+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +495,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7SY57U9SGN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WTSummary/PrefixHeader.pch";
 				INFOPLIST_FILE = WTSummary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummary;
@@ -433,6 +509,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7SY57U9SGN;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WTSummary/PrefixHeader.pch";
 				INFOPLIST_FILE = WTSummary/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummary;
@@ -505,6 +584,7 @@
 				840F94571EFFD25B0028AC24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		840F94581EFFD25B0028AC24 /* Build configuration list for PBXNativeTarget "WTSummaryTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +593,7 @@
 				840F945A1EFFD25B0028AC24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		840F945B1EFFD25B0028AC24 /* Build configuration list for PBXNativeTarget "WTSummaryUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +602,7 @@
 				840F945D1EFFD25B0028AC24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
