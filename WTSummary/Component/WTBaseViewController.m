@@ -34,16 +34,16 @@
     
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     
-    //step1:需要获取系统自带滑动手势的target对象
-    id target = self.navigationController.interactivePopGestureRecognizer.delegate;
-    //step2:创建全屏滑动手势~调用系统自带滑动手势的target的action方法
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
-    //step3:设置手势代理~拦截手势触9
-    pan.delegate = self;
-    //step4:别忘了~给导航控制器的view添加全屏滑动手势
-    [self.view addGestureRecognizer:pan];
-    //step5:将系统自带的滑动手势禁用
-    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+//    //step1:需要获取系统自带滑动手势的target对象
+//    id target = self.navigationController.interactivePopGestureRecognizer.delegate;
+//    //step2:创建全屏滑动手势~调用系统自带滑动手势的target的action方法
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
+//    //step3:设置手势代理~拦截手势触9
+//    pan.delegate = self;
+//    //step4:别忘了~给导航控制器的view添加全屏滑动手势
+//    [self.view addGestureRecognizer:pan];
+//    //step5:将系统自带的滑动手势禁用
+//    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     //step6:还记得刚刚设置的代理吗？下面方法什么时候调用？在每次触发手势之前都会询问下代理，是否触发。
 //    这个方法就是拦截手势触发的方法.
 //    - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{}
@@ -51,15 +51,4 @@
 //    return YES;则需要触发滑动手势
 }
 
-// 点击事件处理
-- (void)onTap {
-    NSLog(@"点击了导航栏左侧按钮");
-}
-
-
-//- (BOOL)handleNavigationTransition:(UIPanGestureRecognizer *)pan{
-//    
-//    NSLog(@"555");
-//    return NO;
-//}
 @end
