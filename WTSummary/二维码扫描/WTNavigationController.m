@@ -8,7 +8,7 @@
 
 #import "WTNavigationController.h"
 #import <objc/runtime.h>
-@interface WTNavigationController ()
+@interface WTNavigationController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -24,6 +24,7 @@
     
     // 2.创建全屏的滑动手势
     UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:action];
+    pan.delegate = self;
     [self.view addGestureRecognizer:pan];
     
     NSMutableArray * navArray = [self class_copyIvarList:[UINavigationBar class]];
@@ -91,6 +92,18 @@
     [[UIToolbar appearance] setBarTintColor:[UIColor whiteColor]];
     
 }
+
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer {
+    //解决与左滑手势冲突
+    CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
+    
+   // NSLog(@"xx - %@",NSStringFromCGPoint(translation));
+    if (translation.x <= 0) {
+        return NO;
+    }
+    return self.childViewControllers.count == 1 ? NO : YES;
+}
+
 - (NSMutableArray *)class_copyIvarList:(id)class {
     unsigned int count = 0;
     Ivar * ivars = class_copyIvarList(class, &count);

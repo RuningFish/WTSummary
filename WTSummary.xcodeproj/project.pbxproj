@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1464CF761F04914B0079112E /* UIColor+HexStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF731F04914B0079112E /* UIColor+HexStr.m */; };
+		1464CF771F04914B0079112E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF751F04914B0079112E /* UIView+Category.m */; };
+		1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */; };
+		1464CF7E1F04AD930079112E /* WTCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF7D1F04AD930079112E /* WTCustomTextField.m */; };
 		840F942D1EFFD25B0028AC24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942C1EFFD25B0028AC24 /* main.m */; };
 		840F94301EFFD25B0028AC24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942F1EFFD25B0028AC24 /* AppDelegate.m */; };
 		840F94331EFFD25B0028AC24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94321EFFD25B0028AC24 /* ViewController.m */; };
@@ -15,8 +19,6 @@
 		840F943B1EFFD25B0028AC24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840F94391EFFD25B0028AC24 /* LaunchScreen.storyboard */; };
 		840F94461EFFD25B0028AC24 /* WTSummaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94451EFFD25B0028AC24 /* WTSummaryTests.m */; };
 		840F94511EFFD25B0028AC24 /* WTSummaryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94501EFFD25B0028AC24 /* WTSummaryUITests.m */; };
-		840F94651EFFD4970028AC24 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94641EFFD4970028AC24 /* UIView+Category.m */; };
-		840F94681EFFD5240028AC24 /* UIColor+HexStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94671EFFD5240028AC24 /* UIColor+HexStr.m */; };
 		840F946D1EFFE8BF0028AC24 /* WTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F946C1EFFE8BF0028AC24 /* WTNavigationController.m */; };
 		840F94701EFFF75B0028AC24 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F946F1EFFF75B0028AC24 /* UIImage+Extension.m */; };
 		840F94741EFFFB3B0028AC24 /* WTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94731EFFFB3B0028AC24 /* WTBaseViewController.m */; };
@@ -43,6 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1464CF721F04914B0079112E /* UIColor+HexStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexStr.h"; sourceTree = "<group>"; };
+		1464CF731F04914B0079112E /* UIColor+HexStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexStr.m"; sourceTree = "<group>"; };
+		1464CF741F04914B0079112E /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
+		1464CF751F04914B0079112E /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
+		1464CF781F0495260079112E /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		1464CF7C1F04AD930079112E /* WTCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCustomTextField.h; sourceTree = "<group>"; };
+		1464CF7D1F04AD930079112E /* WTCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCustomTextField.m; sourceTree = "<group>"; };
 		840F94281EFFD25B0028AC24 /* WTSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840F942C1EFFD25B0028AC24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		840F942E1EFFD25B0028AC24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,10 +69,6 @@
 		840F944C1EFFD25B0028AC24 /* WTSummaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTSummaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840F94501EFFD25B0028AC24 /* WTSummaryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTSummaryUITests.m; sourceTree = "<group>"; };
 		840F94521EFFD25B0028AC24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		840F94631EFFD4970028AC24 /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Category.h"; path = "../../../../Downloads/OC-JS-UIWebView-master/OC与JS交互之UIWebView/UIView+Category.h"; sourceTree = "<group>"; };
-		840F94641EFFD4970028AC24 /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Category.m"; path = "../../../../Downloads/OC-JS-UIWebView-master/OC与JS交互之UIWebView/UIView+Category.m"; sourceTree = "<group>"; };
-		840F94661EFFD5240028AC24 /* UIColor+HexStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+HexStr.h"; path = "../../../../Downloads/PiyingkeApp_IOS-branch_v2.14-cf73b4f4c15787761f18075dd91c78956ca78f8b/PiyingkeLibrary/PiyingkeLibrary/main/MainComment/UIColor+HexStr.h"; sourceTree = "<group>"; };
-		840F94671EFFD5240028AC24 /* UIColor+HexStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+HexStr.m"; path = "../../../../Downloads/PiyingkeApp_IOS-branch_v2.14-cf73b4f4c15787761f18075dd91c78956ca78f8b/PiyingkeLibrary/PiyingkeLibrary/main/MainComment/UIColor+HexStr.m"; sourceTree = "<group>"; };
 		840F94691EFFD5D50028AC24 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		840F946B1EFFE8BF0028AC24 /* WTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTNavigationController.h; path = "../二维码扫描/WTNavigationController.h"; sourceTree = "<group>"; };
 		840F946C1EFFE8BF0028AC24 /* WTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTNavigationController.m; path = "../二维码扫描/WTNavigationController.m"; sourceTree = "<group>"; };
@@ -104,6 +110,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1464CF7B1F0495410079112E /* 未命名文件夹 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "未命名文件夹";
+			sourceTree = "<group>";
+		};
 		840F941F1EFFD25B0028AC24 = {
 			isa = PBXGroup;
 			children = (
@@ -184,10 +197,14 @@
 		840F94621EFFD45E0028AC24 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				840F94661EFFD5240028AC24 /* UIColor+HexStr.h */,
-				840F94671EFFD5240028AC24 /* UIColor+HexStr.m */,
-				840F94631EFFD4970028AC24 /* UIView+Category.h */,
-				840F94641EFFD4970028AC24 /* UIView+Category.m */,
+				1464CF7C1F04AD930079112E /* WTCustomTextField.h */,
+				1464CF7D1F04AD930079112E /* WTCustomTextField.m */,
+				1464CF781F0495260079112E /* UIBarButtonItem+Extension.h */,
+				1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */,
+				1464CF721F04914B0079112E /* UIColor+HexStr.h */,
+				1464CF731F04914B0079112E /* UIColor+HexStr.m */,
+				1464CF741F04914B0079112E /* UIView+Category.h */,
+				1464CF751F04914B0079112E /* UIView+Category.m */,
 				840F946E1EFFF75B0028AC24 /* UIImage+Extension.h */,
 				840F946F1EFFF75B0028AC24 /* UIImage+Extension.m */,
 			);
@@ -204,6 +221,7 @@
 		840F94711EFFFAFF0028AC24 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				1464CF7B1F0495410079112E /* 未命名文件夹 */,
 				841501501F03DBAC002C3759 /* WTAlertViewController */,
 				840F94721EFFFB3B0028AC24 /* WTBaseViewController.h */,
 				840F94731EFFFB3B0028AC24 /* WTBaseViewController.m */,
@@ -358,15 +376,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */,
 				840F94331EFFD25B0028AC24 /* ViewController.m in Sources */,
+				1464CF7E1F04AD930079112E /* WTCustomTextField.m in Sources */,
+				1464CF761F04914B0079112E /* UIColor+HexStr.m in Sources */,
 				840F94301EFFD25B0028AC24 /* AppDelegate.m in Sources */,
+				1464CF771F04914B0079112E /* UIView+Category.m in Sources */,
 				841501531F03DC1D002C3759 /* WTAlertController.m in Sources */,
-				840F94651EFFD4970028AC24 /* UIView+Category.m in Sources */,
 				840F94741EFFFB3B0028AC24 /* WTBaseViewController.m in Sources */,
 				840F946D1EFFE8BF0028AC24 /* WTNavigationController.m in Sources */,
 				840F942D1EFFD25B0028AC24 /* main.m in Sources */,
 				841501561F03DD1B002C3759 /* TestViewController.m in Sources */,
-				840F94681EFFD5240028AC24 /* UIColor+HexStr.m in Sources */,
 				840F94701EFFF75B0028AC24 /* UIImage+Extension.m in Sources */,
 				841399721F0147B500F8F8A6 /* UINavigationBar+Extension.m in Sources */,
 			);
@@ -522,6 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -536,6 +557,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = www.WTSummary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

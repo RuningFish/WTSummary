@@ -84,8 +84,14 @@
         
     }
     
+    
+    UIBarButtonItem * backItem = [UIBarButtonItem itemWithTitle:@"< 返回" highTitle:nil Image:nil highImage:nil target:self action:@selector(back)];
+    self.navigationItem.leftBarButtonItem = backItem;
 }
 
+- (void)back{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)buttonClick:(UIButton *)button{
     
     switch (button.tag) {
