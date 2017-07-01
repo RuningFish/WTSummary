@@ -85,8 +85,8 @@
     }
     
     
-    UIBarButtonItem * backItem = [UIBarButtonItem itemWithTitle:@"< 返回" highTitle:nil Image:nil highImage:nil target:self action:@selector(back)];
-    self.navigationItem.leftBarButtonItem = backItem;
+//    UIBarButtonItem * backItem = [UIBarButtonItem itemWithTitle:@"< 返回" highTitle:nil Image:nil highImage:nil target:self action:@selector(back)];
+//    self.navigationItem.leftBarButtonItem = backItem;
 }
 
 - (void)back{

@@ -11,3 +11,4 @@
 #import "UIImage+Extension.h"
 #import "WTAlertController.h"
 #import "UIBarButtonItem+Extension.h"
+#import "WTAuthorityManager.h"

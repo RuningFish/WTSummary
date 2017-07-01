@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Header.h"
 #import "TestViewController.h"
+#import "WTQRCodeController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
 /** <#desc#> */
@@ -20,26 +21,54 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    UIBarButtonItem * leftItem = [UIBarButtonItem itemWithType:UIBarButtonItemTypeLeft Image:@"discover_tv_icon_code" highImage:nil target:self action:@selector(iconCodeClick)];
+    self.navigationItem.leftBarButtonItem = leftItem;
+    
     self.view.backgroundColor = [UIColor whiteColor];
-    
     [self.view addSubview:self.tableView];
-    return;
-    UIView * v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
-    v.center = self.view.center;
-    [self.view addSubview:v];
-    //v.backgroundColor = [UIColor colorWithHexString:@"#95704f"];
+//    return;
+//    UIView * v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
+//    v.center = self.view.center;
+//    [self.view addSubview:v];
+//    //v.backgroundColor = [UIColor colorWithHexString:@"#95704f"];
+//    
+//    [v addDottedLineColor:[UIColor redColor] lineWidth:1.0 lineHeight:20 margin:10];
+//    
+//    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, 100, 100)];
+//    [self.view addSubview:imageView];
+//    imageView.image = [UIImage createImageWithColor:[UIColor colorWithHexString:@"#FF4F52"]];
+//    imageView.userInteractionEnabled = YES;
+//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture)];
+//    [imageView addGestureRecognizer:tap];
     
-    [v addDottedLineColor:[UIColor redColor] lineWidth:1.0 lineHeight:20 margin:10];
-    
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, 100, 100)];
-    [self.view addSubview:imageView];
-    imageView.image = [UIImage createImageWithColor:[UIColor colorWithHexString:@"#FF4F52"]];
-    imageView.userInteractionEnabled = YES;
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture)];
-    [imageView addGestureRecognizer:tap];
-    
-    
+}
 
+- (void)iconCodeClick{
+    
+    // 0.判断相机的权限
+    WTAuthorityManager * manager = [WTAuthorityManager authorityManager];
+    BOOL authority = [manager hasCameraAuthority];
+    if (authority) {
+        // 1.打开二维码界面
+        WTQRCodeController * codeVC = [[WTQRCodeController alloc] init];
+        [self.navigationController pushViewController:codeVC animated:YES];
+    }else{
+        
+        [manager getCameraAuthorityWithHandle:^{
+            // 1.打开二维码界面
+            WTQRCodeController * codeVC = [[WTQRCodeController alloc] init];
+            [self.navigationController pushViewController:codeVC animated:YES];
+        }];
+        return;
+        WTAlertController * alert = [WTAlertController alertControllerWithTitle:@"请在设置中允许访问相册" message:nil preferredStyle:WTAlertControllerStyleAlert];
+        WTAlertAction * cancel = [WTAlertAction actionWithTitle:@"取消" style:WTAlertActionStyleDefault handler:^(WTAlertAction *action) {
+            
+        }];
+        [alert addAction:cancel];
+        [alert show];
+    }
+    
 }
 
 - (void)tapGesture{
@@ -95,6 +124,8 @@
     }else if (indexPath.row == 2){
         TestViewController * jsTest = [[TestViewController alloc] init];
         [self.navigationController pushViewController:jsTest animated:YES];
+    }else if (indexPath.row == 3){
+        
     }
 }
 
