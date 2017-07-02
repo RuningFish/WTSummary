@@ -11,9 +11,7 @@
 		1464CF771F04914B0079112E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF751F04914B0079112E /* UIView+Category.m */; };
 		1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */; };
 		1464CF7E1F04AD930079112E /* WTCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF7D1F04AD930079112E /* WTCustomTextField.m */; };
-		1464CF951F0777510079112E /* WTQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF931F0777510079112E /* WTQRCodeView.m */; };
 		1464CF991F0777A80079112E /* WTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF981F0777A80079112E /* WTNavigationController.m */; };
-		1464CF9C1F0779170079112E /* WTQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF9B1F0779170079112E /* WTQRCodeController.m */; };
 		1464CFA21F077E250079112E /* WTAuthorityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CFA11F077E250079112E /* WTAuthorityManager.m */; };
 		1464CFA61F0798380079112E /* home_share_code_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464CFA51F0798380079112E /* home_share_code_line@2x.png */; };
 		840F942D1EFFD25B0028AC24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942C1EFFD25B0028AC24 /* main.m */; };
@@ -29,6 +27,8 @@
 		841399721F0147B500F8F8A6 /* UINavigationBar+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841399711F0147B500F8F8A6 /* UINavigationBar+Extension.m */; };
 		841501531F03DC1D002C3759 /* WTAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841501521F03DC1D002C3759 /* WTAlertController.m */; };
 		841501561F03DD1B002C3759 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841501551F03DD1B002C3759 /* TestViewController.m */; };
+		845C562A1F08ACE200906099 /* WTQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C56281F08ACE200906099 /* WTQRCodeView.m */; };
+		845C562F1F08AD5A00906099 /* WTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C562E1F08AD5A00906099 /* WTLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +57,8 @@
 		1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		1464CF7C1F04AD930079112E /* WTCustomTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTCustomTextField.h; sourceTree = "<group>"; };
 		1464CF7D1F04AD930079112E /* WTCustomTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCustomTextField.m; sourceTree = "<group>"; };
-		1464CF921F0777510079112E /* WTQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTQRCodeView.h; sourceTree = "<group>"; };
-		1464CF931F0777510079112E /* WTQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTQRCodeView.m; sourceTree = "<group>"; };
 		1464CF971F0777A80079112E /* WTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNavigationController.h; sourceTree = "<group>"; };
 		1464CF981F0777A80079112E /* WTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNavigationController.m; sourceTree = "<group>"; };
-		1464CF9A1F0779170079112E /* WTQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTQRCodeController.h; sourceTree = "<group>"; };
-		1464CF9B1F0779170079112E /* WTQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTQRCodeController.m; sourceTree = "<group>"; };
 		1464CFA01F077E250079112E /* WTAuthorityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTAuthorityManager.h; sourceTree = "<group>"; };
 		1464CFA11F077E250079112E /* WTAuthorityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTAuthorityManager.m; sourceTree = "<group>"; };
 		1464CFA51F0798380079112E /* home_share_code_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_share_code_line@2x.png"; path = "Assets.xcassets/home_share_code_line.imageset/home_share_code_line@2x.png"; sourceTree = "<group>"; };
@@ -94,6 +90,10 @@
 		841501541F03DD1B002C3759 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		841501551F03DD1B002C3759 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		841FBF951F0016CB00AE4659 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		845C56271F08ACE200906099 /* WTQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTQRCodeView.h; sourceTree = "<group>"; };
+		845C56281F08ACE200906099 /* WTQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTQRCodeView.m; sourceTree = "<group>"; };
+		845C562D1F08AD5A00906099 /* WTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLabel.h; sourceTree = "<group>"; };
+		845C562E1F08AD5A00906099 /* WTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,17 +126,6 @@
 			children = (
 			);
 			path = "未命名文件夹";
-			sourceTree = "<group>";
-		};
-		1464CF8F1F0777510079112E /* 二维码 */ = {
-			isa = PBXGroup;
-			children = (
-				1464CF921F0777510079112E /* WTQRCodeView.h */,
-				1464CF931F0777510079112E /* WTQRCodeView.m */,
-				1464CF9A1F0779170079112E /* WTQRCodeController.h */,
-				1464CF9B1F0779170079112E /* WTQRCodeController.m */,
-			);
-			path = "二维码";
 			sourceTree = "<group>";
 		};
 		1464CF961F0777A80079112E /* NavigationController */ = {
@@ -181,6 +170,7 @@
 		840F942A1EFFD25B0028AC24 /* WTSummary */ = {
 			isa = PBXGroup;
 			children = (
+				845C56231F08ACE100906099 /* Function */,
 				1464CF9F1F077D530079112E /* 权限请求 */,
 				840F94711EFFFAFF0028AC24 /* Component */,
 				840F94621EFFD45E0028AC24 /* Category */,
@@ -256,8 +246,8 @@
 		840F94711EFFFAFF0028AC24 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				845C562C1F08AD5A00906099 /* WTLabel */,
 				1464CF961F0777A80079112E /* NavigationController */,
-				1464CF8F1F0777510079112E /* 二维码 */,
 				1464CF7B1F0495410079112E /* 未命名文件夹 */,
 				841501501F03DBAC002C3759 /* WTAlertViewController */,
 				840F94721EFFFB3B0028AC24 /* WTBaseViewController.h */,
@@ -275,6 +265,32 @@
 				841501521F03DC1D002C3759 /* WTAlertController.m */,
 			);
 			path = WTAlertViewController;
+			sourceTree = "<group>";
+		};
+		845C56231F08ACE100906099 /* Function */ = {
+			isa = PBXGroup;
+			children = (
+				845C56241F08ACE200906099 /* 二维码 */,
+			);
+			path = Function;
+			sourceTree = "<group>";
+		};
+		845C56241F08ACE200906099 /* 二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				845C56271F08ACE200906099 /* WTQRCodeView.h */,
+				845C56281F08ACE200906099 /* WTQRCodeView.m */,
+			);
+			path = "二维码";
+			sourceTree = "<group>";
+		};
+		845C562C1F08AD5A00906099 /* WTLabel */ = {
+			isa = PBXGroup;
+			children = (
+				845C562D1F08AD5A00906099 /* WTLabel.h */,
+				845C562E1F08AD5A00906099 /* WTLabel.m */,
+			);
+			path = WTLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,18 +430,18 @@
 			files = (
 				1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */,
 				1464CF991F0777A80079112E /* WTNavigationController.m in Sources */,
+				845C562F1F08AD5A00906099 /* WTLabel.m in Sources */,
 				840F94331EFFD25B0028AC24 /* ViewController.m in Sources */,
 				1464CF7E1F04AD930079112E /* WTCustomTextField.m in Sources */,
 				1464CF761F04914B0079112E /* UIColor+HexStr.m in Sources */,
 				840F94301EFFD25B0028AC24 /* AppDelegate.m in Sources */,
 				1464CF771F04914B0079112E /* UIView+Category.m in Sources */,
 				841501531F03DC1D002C3759 /* WTAlertController.m in Sources */,
-				1464CF9C1F0779170079112E /* WTQRCodeController.m in Sources */,
 				840F94741EFFFB3B0028AC24 /* WTBaseViewController.m in Sources */,
 				840F942D1EFFD25B0028AC24 /* main.m in Sources */,
 				841501561F03DD1B002C3759 /* TestViewController.m in Sources */,
-				1464CF951F0777510079112E /* WTQRCodeView.m in Sources */,
 				840F94701EFFF75B0028AC24 /* UIImage+Extension.m in Sources */,
+				845C562A1F08ACE200906099 /* WTQRCodeView.m in Sources */,
 				1464CFA21F077E250079112E /* WTAuthorityManager.m in Sources */,
 				841399721F0147B500F8F8A6 /* UINavigationBar+Extension.m in Sources */,
 			);
