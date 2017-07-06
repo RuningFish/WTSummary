@@ -10,6 +10,7 @@
 #import "Header.h"
 #import "TestViewController.h"
 #import "WTQRCodeController.h"
+#import "WTImageTextViewController.h"// 图文
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
 /** <#desc#> */
@@ -93,7 +94,7 @@
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"WTAlertController - ActionSheet",@"WTAlertController - Alert",@"JS and OC"];
+        _dataArray = @[@"WTAlertController - ActionSheet",@"WTAlertController - Alert",@"JS and OC",@"图文帖"];
     }
     return _dataArray;
 }
@@ -125,7 +126,9 @@
         TestViewController * jsTest = [[TestViewController alloc] init];
         [self.navigationController pushViewController:jsTest animated:YES];
     }else if (indexPath.row == 3){
-        
+        // 图文帖
+        WTImageTextViewController * imageText = [[WTImageTextViewController alloc] init];
+        [self.navigationController pushViewController:imageText animated:YES];
     }
 }
 
