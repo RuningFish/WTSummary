@@ -15,3 +15,4 @@
 #import "YYText.h"
 #import "YYImage.h"
 #import "const.h"
+#import "TZImagePickerController.h"

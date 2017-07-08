@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WTToolbar : UIView
+@class WTToolbar;
+typedef enum {
+    WTToolbarButtonTypeImage = 0, // 选择图片
+    WTToolbarButtonTypeAt         // @好友
+}WTToolbarButtonType;
 
+@protocol WTToolbarDelegate <NSObject>
+
+- (void)toolbar:(WTToolbar *)discussToolbar didClickWithType:(WTToolbarButtonType)type;
+
+@end
+
+@interface WTToolbar : UIView
+/** delegate */
+@property (nonatomic , weak) id<WTToolbarDelegate> delegate;
 @end

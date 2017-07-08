@@ -27,6 +27,8 @@
     self.navigationItem.leftBarButtonItem = leftItem;
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIImage * image = [UIImage getImageFormVideoUrl:[NSURL URLWithString:@"https://o79mx21qy.qnssl.com/FumidvCTADJcIw2_r1D0RZ2_jiqO"] atIndex:6];
     [self.view addSubview:self.tableView];
 //    return;
 //    UIView * v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
