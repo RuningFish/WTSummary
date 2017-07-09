@@ -29,6 +29,7 @@
 		841501561F03DD1B002C3759 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841501551F03DD1B002C3759 /* TestViewController.m */; };
 		845C562A1F08ACE200906099 /* WTQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C56281F08ACE200906099 /* WTQRCodeView.m */; };
 		845C562F1F08AD5A00906099 /* WTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C562E1F08AD5A00906099 /* WTLabel.m */; };
+		845C56321F08AF8F00906099 /* WTQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845C56311F08AF8F00906099 /* WTQRCodeController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		845C56281F08ACE200906099 /* WTQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTQRCodeView.m; sourceTree = "<group>"; };
 		845C562D1F08AD5A00906099 /* WTLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTLabel.h; sourceTree = "<group>"; };
 		845C562E1F08AD5A00906099 /* WTLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTLabel.m; sourceTree = "<group>"; };
+		845C56301F08AF8F00906099 /* WTQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTQRCodeController.h; sourceTree = "<group>"; };
+		845C56311F08AF8F00906099 /* WTQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTQRCodeController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +281,8 @@
 		845C56241F08ACE200906099 /* 二维码 */ = {
 			isa = PBXGroup;
 			children = (
+				845C56301F08AF8F00906099 /* WTQRCodeController.h */,
+				845C56311F08AF8F00906099 /* WTQRCodeController.m */,
 				845C56271F08ACE200906099 /* WTQRCodeView.h */,
 				845C56281F08ACE200906099 /* WTQRCodeView.m */,
 			);
@@ -443,6 +448,7 @@
 				840F94701EFFF75B0028AC24 /* UIImage+Extension.m in Sources */,
 				845C562A1F08ACE200906099 /* WTQRCodeView.m in Sources */,
 				1464CFA21F077E250079112E /* WTAuthorityManager.m in Sources */,
+				845C56321F08AF8F00906099 /* WTQRCodeController.m in Sources */,
 				841399721F0147B500F8F8A6 /* UINavigationBar+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
