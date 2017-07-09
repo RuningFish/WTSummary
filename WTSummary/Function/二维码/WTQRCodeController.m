@@ -23,7 +23,6 @@
 @property (nonatomic, strong) WTQRCodeView * codeView;
 
 @end
-
 @implementation WTQRCodeController
 
 - (void)viewDidLoad {
@@ -158,14 +157,12 @@
 
 #pragma mark - 未识别到有效二维码的提示
 - (void)showAlertMessageWithBlock:(void (^)())block{
-//    [PYKAlertviewController showAlertViewWithTitle:nil message:alertMessage dismissCallBack:^{
-//        if (block) {
-//            block();
-//        }
-//    }];
 }
 - (void)dealloc{
-    
-    //[[NSNotificationCenter defaultCenter] removeObserver:self name:PYKQRCodeInformationFromScanning object:nil];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 @end

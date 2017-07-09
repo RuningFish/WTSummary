@@ -10,6 +10,7 @@
 #import "Header.h"
 #import "TestViewController.h"
 #import "WTQRCodeController.h"
+#import "WTImageTextViewController.h"// 图文
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
 /** <#desc#> */
@@ -26,6 +27,8 @@
     self.navigationItem.leftBarButtonItem = leftItem;
     
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    UIImage * image = [UIImage getImageFormVideoUrl:[NSURL URLWithString:@"https://o79mx21qy.qnssl.com/FumidvCTADJcIw2_r1D0RZ2_jiqO"] atIndex:6];
     [self.view addSubview:self.tableView];
 //    return;
 //    UIView * v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
@@ -93,7 +96,7 @@
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"WTAlertController - ActionSheet",@"WTAlertController - Alert",@"JS and OC"];
+        _dataArray = @[@"WTAlertController - ActionSheet",@"WTAlertController - Alert",@"JS and OC",@"图文帖"];
     }
     return _dataArray;
 }
@@ -125,7 +128,9 @@
         TestViewController * jsTest = [[TestViewController alloc] init];
         [self.navigationController pushViewController:jsTest animated:YES];
     }else if (indexPath.row == 3){
-        
+        // 图文帖
+        WTImageTextViewController * imageText = [[WTImageTextViewController alloc] init];
+        [self.navigationController pushViewController:imageText animated:YES];
     }
 }
 

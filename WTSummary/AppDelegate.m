@@ -10,6 +10,7 @@
 #import "TestViewController.h"
 #import "WTNavigationController.h"
 #import "ViewController.h"
+#import "TestTwoViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,7 +22,9 @@
    
     TestViewController * test = [[TestViewController alloc] init];
     ViewController * viewController = [[ViewController alloc] init];
+    TestTwoViewController * testTwo = [[TestTwoViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
     WTNavigationController * nav = [[WTNavigationController alloc] initWithRootViewController:viewController];
 //    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;

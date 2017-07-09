@@ -11,4 +11,21 @@
 @interface UIImage (Extension)
 /** 生成一张纯色的图片 */
 + (UIImage *)createImageWithColor:(UIColor *)color;
+
+
+/****************************** 旋转相关 *************************************/
+/** 将图片旋转弧度radians */
+- (UIImage *)imageRotatedByRadians:(CGFloat)radians;
+/** 纠正图片的方向 */
+- (UIImage *)fixOrientation;
+/** 按给定的方向旋转图片 */
+- (UIImage*)rotate:(UIImageOrientation)orient;
+/** 垂直翻转 */
+- (UIImage *)flipVertical;
+/** 水平翻转 */
+- (UIImage *)flipHorizontal;
+
+
+/****************************** 视频截图相关 *************************************/
++ (UIImage *)getImageFormVideoUrl:(NSURL *)videoUrl atIndex:(CFTimeInterval)index;
 @end

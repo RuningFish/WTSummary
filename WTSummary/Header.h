@@ -12,3 +12,8 @@
 #import "WTAlertController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "WTAuthorityManager.h"
+#import "YYText.h"
+#import "YYImage.h"
+#import "const.h"
+#import "TZImagePickerController.h"
+#import "WTCustomTextView.h"
