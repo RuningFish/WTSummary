@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TestThreeViewController : UIViewController
+@interface TestThreeViewController : UIViewController<UINavigationControllerDelegate>
 
 @property (nonatomic, assign) CGRect cellFrame;
 
 @property (nonatomic, strong) UIColor * color;
+
+@property (nonatomic ,strong) UIImageView * imageView;
+
 @end

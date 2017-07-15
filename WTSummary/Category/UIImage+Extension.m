@@ -284,4 +284,14 @@ static CGRect swapWidthAndHeight(CGRect rect)
     
 }
 
+#pragma mark - 截取所给view的图片
++ (UIImage *)captureImageWithView:(UIView *)view{
+
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return img;
+}
+
 @end

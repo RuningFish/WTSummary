@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class WTTableViewCell;
 @interface TestTwoViewController : UIViewController
+/** <#desc#>*/
+@property (nonatomic,strong)  WTTableViewCell * cell;
+@end
 
+
+@interface WTTableViewCell : UITableViewCell
+/** u */
+@property (nonatomic , weak) UIImageView * imageview;
+
++ (instancetype)cellWithTableView:(UITableView *)tableView;
 @end

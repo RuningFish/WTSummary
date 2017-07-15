@@ -58,6 +58,8 @@
 		1464CF7E1F04AD930079112E /* WTCustomTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF7D1F04AD930079112E /* WTCustomTextField.m */; };
 		1464CF991F0777A80079112E /* WTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF981F0777A80079112E /* WTNavigationController.m */; };
 		1464CFA61F0798380079112E /* home_share_code_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464CFA51F0798380079112E /* home_share_code_line@2x.png */; };
+		14EF07121F1A05B500D07DB5 /* WTNavigationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF07111F1A05B500D07DB5 /* WTNavigationTransition.m */; };
+		14EF07151F1A11D600D07DB5 /* XWInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF07141F1A11D600D07DB5 /* XWInteractiveTransition.m */; };
 		840F942D1EFFD25B0028AC24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942C1EFFD25B0028AC24 /* main.m */; };
 		840F94301EFFD25B0028AC24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942F1EFFD25B0028AC24 /* AppDelegate.m */; };
 		840F94331EFFD25B0028AC24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94321EFFD25B0028AC24 /* ViewController.m */; };
@@ -203,6 +205,10 @@
 		1464CF971F0777A80079112E /* WTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNavigationController.h; sourceTree = "<group>"; };
 		1464CF981F0777A80079112E /* WTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNavigationController.m; sourceTree = "<group>"; };
 		1464CFA51F0798380079112E /* home_share_code_line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_share_code_line@2x.png"; path = "Assets.xcassets/home_share_code_line.imageset/home_share_code_line@2x.png"; sourceTree = "<group>"; };
+		14EF07101F1A05B500D07DB5 /* WTNavigationTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNavigationTransition.h; sourceTree = "<group>"; };
+		14EF07111F1A05B500D07DB5 /* WTNavigationTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNavigationTransition.m; sourceTree = "<group>"; };
+		14EF07131F1A11D600D07DB5 /* XWInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XWInteractiveTransition.h; path = "../../../../Downloads/XWTrasitionPractice-master/XWTrasitionPractice/PresentOneController/XWInteractiveTransition.h"; sourceTree = "<group>"; };
+		14EF07141F1A11D600D07DB5 /* XWInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XWInteractiveTransition.m; path = "../../../../Downloads/XWTrasitionPractice-master/XWTrasitionPractice/PresentOneController/XWInteractiveTransition.m"; sourceTree = "<group>"; };
 		840F94281EFFD25B0028AC24 /* WTSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840F942C1EFFD25B0028AC24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		840F942E1EFFD25B0028AC24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -509,6 +515,10 @@
 				840F942B1EFFD25B0028AC24 /* Supporting Files */,
 				1433739D1F0F646700511695 /* TestThreeViewController.h */,
 				1433739E1F0F646700511695 /* TestThreeViewController.m */,
+				14EF07131F1A11D600D07DB5 /* XWInteractiveTransition.h */,
+				14EF07141F1A11D600D07DB5 /* XWInteractiveTransition.m */,
+				14EF07101F1A05B500D07DB5 /* WTNavigationTransition.h */,
+				14EF07111F1A05B500D07DB5 /* WTNavigationTransition.m */,
 			);
 			path = WTSummary;
 			sourceTree = "<group>";
@@ -848,6 +858,7 @@
 				1429D1EA1F0DD83C008DAD0D /* README.md in Sources */,
 				846651181F12596400AAA5FA /* TZAssetCell.m in Sources */,
 				1429D1F61F0DD83C008DAD0D /* YYTextParser.m in Sources */,
+				14EF07151F1A11D600D07DB5 /* XWInteractiveTransition.m in Sources */,
 				1433739F1F0F646700511695 /* TestThreeViewController.m in Sources */,
 				1429D2381F0DEA08008DAD0D /* YYImage.m in Sources */,
 				1429D1FB1F0DD83C008DAD0D /* UIPasteboard+YYText.m in Sources */,
@@ -861,6 +872,7 @@
 				840F94701EFFF75B0028AC24 /* UIImage+Extension.m in Sources */,
 				1429D1ED1F0DD83C008DAD0D /* YYTextEffectWindow.m in Sources */,
 				1429D23A1F0DEA08008DAD0D /* YYSpriteSheetImage.m in Sources */,
+				14EF07121F1A05B500D07DB5 /* WTNavigationTransition.m in Sources */,
 				1429D1F31F0DD83C008DAD0D /* YYTextSelectionView.m in Sources */,
 				845C562A1F08ACE200906099 /* WTQRCodeView.m in Sources */,
 				1429D1FE1F0DD83C008DAD0D /* YYTextTransaction.m in Sources */,

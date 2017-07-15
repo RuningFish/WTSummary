@@ -26,6 +26,7 @@
 - (UIImage *)flipHorizontal;
 
 
++ (UIImage *)captureImageWithView:(UIView *)view;
 /****************************** 视频截图相关 *************************************/
 + (UIImage *)getImageFormVideoUrl:(NSURL *)videoUrl atIndex:(CFTimeInterval)index;
 @end

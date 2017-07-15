@@ -25,12 +25,26 @@
     TestTwoViewController * testTwo = [[TestTwoViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    WTNavigationController * nav = [[WTNavigationController alloc] initWithRootViewController:viewController];
+    WTNavigationController * nav = [[WTNavigationController alloc] initWithRootViewController:testTwo];
 //    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
  
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    // 设置webview 的UserAgent
+    UIWebView *webView = [[UIWebView alloc] initWithFrame:CGRectZero];
+    NSString *oldAgent = [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    NSLog(@"old agent :%@", oldAgent);
+    
+    //add my info to the new agent
+    NSString * newAgent = @"piyingke/iOS";//[oldAgent stringByAppendingString:@" Jiecao/2.4.7 ch_appstore"];
+    NSLog(@"new agent :%@", newAgent);
+    
+    //regist the new agent
+    NSDictionary *dictionnary = [[NSDictionary alloc] initWithObjectsAndKeys:newAgent, @"UserAgent", nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:dictionnary];
+    
     return YES;
 }
 
