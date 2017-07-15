@@ -68,14 +68,23 @@
     [containerView addSubview:toVC.view];
     [containerView addSubview:tempView];
     //开始做动画
-    [UIView animateWithDuration: 0.5/**[self transitionDuration:transitionContext]*/ delay:0.0 usingSpringWithDamping:0.0 initialSpringVelocity:0.0 options:0 animations:^{
+//    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.0 initialSpringVelocity:0.0 options:0 animations:^{
+//        tempView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);// [toVC.imageView convertRect:toVC.imageView.bounds toView:containerView];//
+//        toVC.view.alpha = 1;
+//        NSLog(@"88888");
+//    } completion:^(BOOL finished) {
+////        tempView.hidden = YES;
+////        toVC.imageView.hidden = NO;
+//        //如果动画过渡取消了就标记不完成，否则才完成，这里可以直接写YES，如果有手势过渡才需要判断，必须标记，否则系统不会中动画完成的部署，会出现无法交互之类的bug
+//        [transitionContext completeTransition:YES];
+//    }];
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         tempView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);// [toVC.imageView convertRect:toVC.imageView.bounds toView:containerView];//
         toVC.view.alpha = 1;
         NSLog(@"88888");
     } completion:^(BOOL finished) {
-//        tempView.hidden = YES;
-//        toVC.imageView.hidden = NO;
-        //如果动画过渡取消了就标记不完成，否则才完成，这里可以直接写YES，如果有手势过渡才需要判断，必须标记，否则系统不会中动画完成的部署，会出现无法交互之类的bug
+         NSLog(@"完成");
         [transitionContext completeTransition:YES];
     }];
 }
@@ -96,6 +105,7 @@
     fromVC.imageView.hidden = YES;
     tempView.hidden = NO;
     [containerView insertSubview:toVC.view atIndex:0];
+    //
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.55 initialSpringVelocity:1 / 0.55 options:0 animations:^{
         tempView.frame = [cell.imageView convertRect:cell.imageView.bounds toView:containerView];
         fromVC.view.alpha = 0;

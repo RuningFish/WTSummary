@@ -38,6 +38,7 @@
     //给当前控制器的视图添加手势
 //    [_interactiveTransition addPanGestureForViewController:self];
     
+//    UIButton * button = [UIButton ];
     return;
 //    UIWebView * webview = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 300)];
 //    webview.backgroundColor = [UIColor redColor];
@@ -49,6 +50,10 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
