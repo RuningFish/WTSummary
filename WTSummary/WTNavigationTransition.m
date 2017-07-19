@@ -55,73 +55,67 @@
     
     //拿到当前点击的cell的imageView
     WTTableViewCell * cell = fromVC.cell;
-//    XWMagicMoveCell * cell = (XWMagicMoveCell *)[fromVC.collectionView cellForItemAtIndexPath:fromVC.currentIndexPath];
     UIView * containerView = [transitionContext containerView];
     //snapshotViewAfterScreenUpdates 对cell的imageView截图保存成另一个视图用于过渡，并将视图转换到当前控制器的坐标
     UIView * tempView = [cell.imageview snapshotViewAfterScreenUpdates:NO];
-    tempView.frame = [cell.imageview convertRect:cell.imageview.bounds toView: containerView];
+    tempView.frame = [cell.imageview convertRect:cell.imageview.bounds toView:containerView];
     //设置动画前的各个控件的状态
-    cell.imageView.hidden = YES;
+    cell.imageview.hidden = YES;
     toVC.view.alpha = 0;
     toVC.imageView.hidden = YES;
     //tempView 添加到containerView中，要保证在最前方，所以后添加
     [containerView addSubview:toVC.view];
     [containerView addSubview:tempView];
     //开始做动画
-//    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.0 initialSpringVelocity:0.0 options:0 animations:^{
-//        tempView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);// [toVC.imageView convertRect:toVC.imageView.bounds toView:containerView];//
-//        toVC.view.alpha = 1;
-//        NSLog(@"88888");
-//    } completion:^(BOOL finished) {
-////        tempView.hidden = YES;
-////        toVC.imageView.hidden = NO;
-//        //如果动画过渡取消了就标记不完成，否则才完成，这里可以直接写YES，如果有手势过渡才需要判断，必须标记，否则系统不会中动画完成的部署，会出现无法交互之类的bug
-//        [transitionContext completeTransition:YES];
-//    }];
-    
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-        tempView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);// [toVC.imageView convertRect:toVC.imageView.bounds toView:containerView];//
+
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        tempView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);
         toVC.view.alpha = 1;
         NSLog(@"88888");
     } completion:^(BOOL finished) {
-         NSLog(@"完成");
+        NSLog(@"完成");
+        cell.imageview.hidden = YES;
+        toVC.imageViewColor = cell.imageview.backgroundColor;
+        [tempView removeFromSuperview];
         [transitionContext completeTransition:YES];
     }];
+    
 }
+
 /**
  *  执行pop过渡动画
  */
 - (void)doPopAnimation:(id<UIViewControllerContextTransitioning>)transitionContext{
     
+    TestThreeViewController * fromVC = (TestThreeViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     TestTwoViewController * toVC = (TestTwoViewController *)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    TestThreeViewController * fromVC = (TestThreeViewController *)[transitionContext viewControllerForKey:UITransitionContextFromViewKey];
+    UIView * containerView = [transitionContext containerView];
     
-    WTTableViewCell * cell = toVC.cell;//(XWMagicMoveCell *)[toVC.collectionView cellForItemAtIndexPath:toVC.currentIndexPath];
-    UIView *containerView = [transitionContext containerView];
-    //这里的lastView就是push时候初始化的那个tempView
-    UIView *tempView = containerView.subviews.lastObject;
-    //设置初始状态
-    cell.imageView.hidden = YES;
+    UIView * snapView = [fromVC.imageView snapshotViewAfterScreenUpdates:NO];
+    snapView.frame = CGRectMake(0, 0, fromVC.imageView.frame.size.width, fromVC.imageView.frame.size.height);//[containerView convertRect:fromVC.imageView.frame fromView:fromVC.view];
     fromVC.imageView.hidden = YES;
-    tempView.hidden = NO;
-    [containerView insertSubview:toVC.view atIndex:0];
-    //
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 usingSpringWithDamping:0.55 initialSpringVelocity:1 / 0.55 options:0 animations:^{
-        tempView.frame = [cell.imageView convertRect:cell.imageView.bounds toView:containerView];
+    
+    toVC.view.frame = [transitionContext finalFrameForViewController:toVC];
+    toVC.cell.imageview.hidden = YES;
+    
+    [containerView insertSubview:toVC.view belowSubview:fromVC.view];
+    [containerView addSubview:snapView];
+     NSLog(@"pop animations - 1 %@",snapView);
+    
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        CGRect rect = [containerView convertRect:toVC.cell.imageview.frame fromView:toVC.cell];
+        snapView.frame = rect;
         fromVC.view.alpha = 0;
+        [snapView layoutIfNeeded];
+         NSLog(@"pop animations - %@ rect - %@",NSStringFromCGRect(snapView.frame),NSStringFromCGRect(rect));
     } completion:^(BOOL finished) {
-        //由于加入了手势必须判断
+        toVC.cell.imageview.hidden = NO;
+        [snapView removeFromSuperview];
+        fromVC.imageView.hidden = YES;
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
-        if ([transitionContext transitionWasCancelled]) {//手势取消了，原来隐藏的imageView要显示出来
-            //失败了隐藏tempView，显示fromVC.imageView
-            tempView.hidden = YES;
-            fromVC.imageView.hidden = NO;
-        }else{//手势成功，cell的imageView也要显示出来
-            //成功了移除tempView，下一次pop的时候又要创建，然后显示cell的imageView
-            cell.imageView.hidden = NO;
-            [tempView removeFromSuperview];
-        }
+        NSLog(@"finished - %zd",finished);
     }];
+    
 }
 
 @end

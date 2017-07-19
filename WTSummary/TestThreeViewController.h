@@ -16,4 +16,6 @@
 
 @property (nonatomic ,strong) UIImageView * imageView;
 
+/** <#desc#> */
+@property (nonatomic , strong) UIColor * imageViewColor;
 @end

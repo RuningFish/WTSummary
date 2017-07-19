@@ -26,15 +26,16 @@
 //    [self.view addSubview:self.imageView];
 //    [self.view addSubview:self.label];
     
+    self.view.backgroundColor = [UIColor blueColor];
     UIImageView *imageView = [[UIImageView alloc] init];
     self.imageView = imageView;
     [self.view addSubview:imageView];
-//    imageView.backgroundColor = [UIColor blueColor];
-    imageView.center = CGPointMake(self.view.center.x, self.view.center.y - self.view.height / 2 + 210);
-    imageView.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);
+    self.imageView.hidden = YES;
+    
+    imageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180);
     
     //初始化手势过渡的代理
-    self.interactiveTransition = [XWInteractiveTransition interactiveTransitionWithTransitionType:XWInteractiveTransitionTypePop GestureDirection:XWInteractiveTransitionGestureDirectionRight];
+//    self.interactiveTransition = [XWInteractiveTransition interactiveTransitionWithTransitionType:XWInteractiveTransitionTypePop GestureDirection:XWInteractiveTransitionGestureDirectionRight];
     //给当前控制器的视图添加手势
 //    [_interactiveTransition addPanGestureForViewController:self];
     
@@ -52,6 +53,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
+//    [self.imageView removeFromSuperview];
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -59,18 +61,15 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES];
-    
-//    [UIView animateWithDuration:0.5 animations:^{
-//        self.imageView.frame = CGRectMake(0, 0, self.view.frame.size.width, 200);
-//        
-//    } completion:^(BOOL finished) {
-//        NSLog(@"完成");
-//        self.label.frame = CGRectMake(0, CGRectGetMaxY(self.imageView.frame) + 20, self.view.frame.size.width, 30);
-//        self.label.hidden = NO;
-//    }];
+
 }
 
-
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    self.imageView.hidden = NO;
+    self.imageView.backgroundColor = self.imageViewColor;
+}
 //- (UIImageView *)imageView{
 //    if (!_imageView) {
 //        _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, self.view.frame.size.height - self.cellFrame.size.height, self.cellFrame.size.width, self.cellFrame.size.height)];
@@ -96,9 +95,6 @@
     return [WTNavigationTransition transitionWithType:operation == UINavigationControllerOperationPush ? WTNavigationTransitionTypePush : WTNavigationTransitionTypePop];
 }
 
-- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController{
-    //手势开始的时候才需要传入手势过渡代理，如果直接点击pop，应该传入空，否者无法通过点击正常pop
-    return _interactiveTransition.interation ? _interactiveTransition : nil;
-}
+
 
 @end

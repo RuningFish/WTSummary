@@ -112,8 +112,6 @@
         self.imageview = imageview;
         self.imageview.backgroundColor = WTRandomColor;
         self.imageview.userInteractionEnabled = YES;
-//        UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap)];
-//        [self.imageview addGestureRecognizer:tap];
     }
     return self;
 }
@@ -127,16 +125,6 @@
 }
 
 - (void)tap{
-    
-//    UIWindow * window = [UIApplication sharedApplication].keyWindow;
-//    
-//    CGRect rect1 = [self.imageview convertRect:self.imageview.frame fromView:self.contentView];//获取button在contentView的位置
-//    
-//    CGRect rect2 = [self.imageview convertRect:rect1 toView:window];
-//    
-//    NSLog(@"cell - %@ 2 %@",NSStringFromCGRect(rect1),NSStringFromCGRect(rect2));
-    
-  
 }
 @end
 

@@ -27,6 +27,8 @@
 
 
 + (UIImage *)captureImageWithView:(UIView *)view;
+/** 裁成一张圆形图片 */
+- (UIImage *)clipCircleImage;
 /****************************** 视频截图相关 *************************************/
 + (UIImage *)getImageFormVideoUrl:(NSURL *)videoUrl atIndex:(CFTimeInterval)index;
 @end
