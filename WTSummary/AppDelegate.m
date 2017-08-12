@@ -25,7 +25,7 @@
     TestTwoViewController * testTwo = [[TestTwoViewController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    WTNavigationController * nav = [[WTNavigationController alloc] initWithRootViewController:testTwo];
+    WTNavigationController * nav = [[WTNavigationController alloc] initWithRootViewController:viewController];
 //    nav.navigationBarHidden = YES;
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];

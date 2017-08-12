@@ -60,6 +60,8 @@
 		1464CFA61F0798380079112E /* home_share_code_line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1464CFA51F0798380079112E /* home_share_code_line@2x.png */; };
 		14EF07121F1A05B500D07DB5 /* WTNavigationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF07111F1A05B500D07DB5 /* WTNavigationTransition.m */; };
 		14EF07151F1A11D600D07DB5 /* XWInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF07141F1A11D600D07DB5 /* XWInteractiveTransition.m */; };
+		14EF07F41F29937F00D07DB5 /* CYPhotoPreviewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF07F11F29937F00D07DB5 /* CYPhotoPreviewer.m */; };
+		14EF07F51F29937F00D07DB5 /* UIView+CYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF07F31F29937F00D07DB5 /* UIView+CYExtension.m */; };
 		840F942D1EFFD25B0028AC24 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942C1EFFD25B0028AC24 /* main.m */; };
 		840F94301EFFD25B0028AC24 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F942F1EFFD25B0028AC24 /* AppDelegate.m */; };
 		840F94331EFFD25B0028AC24 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 840F94321EFFD25B0028AC24 /* ViewController.m */; };
@@ -209,6 +211,10 @@
 		14EF07111F1A05B500D07DB5 /* WTNavigationTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNavigationTransition.m; sourceTree = "<group>"; };
 		14EF07131F1A11D600D07DB5 /* XWInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XWInteractiveTransition.h; path = "../../../../Downloads/XWTrasitionPractice-master/XWTrasitionPractice/PresentOneController/XWInteractiveTransition.h"; sourceTree = "<group>"; };
 		14EF07141F1A11D600D07DB5 /* XWInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XWInteractiveTransition.m; path = "../../../../Downloads/XWTrasitionPractice-master/XWTrasitionPractice/PresentOneController/XWInteractiveTransition.m"; sourceTree = "<group>"; };
+		14EF07F01F29937F00D07DB5 /* CYPhotoPreviewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPhotoPreviewer.h; sourceTree = "<group>"; };
+		14EF07F11F29937F00D07DB5 /* CYPhotoPreviewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPhotoPreviewer.m; sourceTree = "<group>"; };
+		14EF07F21F29937F00D07DB5 /* UIView+CYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CYExtension.h"; sourceTree = "<group>"; };
+		14EF07F31F29937F00D07DB5 /* UIView+CYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CYExtension.m"; sourceTree = "<group>"; };
 		840F94281EFFD25B0028AC24 /* WTSummary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTSummary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		840F942C1EFFD25B0028AC24 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		840F942E1EFFD25B0028AC24 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -478,6 +484,17 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		14EF07EF1F29937F00D07DB5 /* CYPhotoPreviewer */ = {
+			isa = PBXGroup;
+			children = (
+				14EF07F01F29937F00D07DB5 /* CYPhotoPreviewer.h */,
+				14EF07F11F29937F00D07DB5 /* CYPhotoPreviewer.m */,
+				14EF07F21F29937F00D07DB5 /* UIView+CYExtension.h */,
+				14EF07F31F29937F00D07DB5 /* UIView+CYExtension.m */,
+			);
+			path = CYPhotoPreviewer;
+			sourceTree = "<group>";
+		};
 		840F941F1EFFD25B0028AC24 = {
 			isa = PBXGroup;
 			children = (
@@ -615,6 +632,7 @@
 		845C56231F08ACE100906099 /* Function */ = {
 			isa = PBXGroup;
 			children = (
+				14EF07EF1F29937F00D07DB5 /* CYPhotoPreviewer */,
 				1429D2061F0DDA83008DAD0D /* 图文帖 */,
 				845C56241F08ACE200906099 /* 二维码 */,
 			);
@@ -852,6 +870,7 @@
 				841501531F03DC1D002C3759 /* WTAlertController.m in Sources */,
 				846651201F12596400AAA5FA /* TZVideoPlayerController.m in Sources */,
 				1429D1F21F0DD83C008DAD0D /* YYTextMagnifier.m in Sources */,
+				14EF07F41F29937F00D07DB5 /* CYPhotoPreviewer.m in Sources */,
 				840F94741EFFFB3B0028AC24 /* WTBaseViewController.m in Sources */,
 				1429D1F51F0DD83C008DAD0D /* YYTextAttribute.m in Sources */,
 				840F942D1EFFD25B0028AC24 /* main.m in Sources */,
@@ -881,6 +900,7 @@
 				1429D1FA1F0DD83C008DAD0D /* NSParagraphStyle+YYText.m in Sources */,
 				1429D1F11F0DD83C008DAD0D /* YYTextLine.m in Sources */,
 				1429D2091F0DE2E5008DAD0D /* WTImageTextViewController.m in Sources */,
+				14EF07F51F29937F00D07DB5 /* UIView+CYExtension.m in Sources */,
 				1429D2011F0DD83C008DAD0D /* YYLabel.m in Sources */,
 				841399721F0147B500F8F8A6 /* UINavigationBar+Extension.m in Sources */,
 			);
