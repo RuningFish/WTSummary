@@ -7,3 +7,7 @@
 //
 
 #import "Header.h"
+
+// 视频相关
+#import "WTPlaybackManager.h"
+#define WTPlaybackBundle(file) [@"WTPlayback.bundle" stringByAppendingPathComponent:file]

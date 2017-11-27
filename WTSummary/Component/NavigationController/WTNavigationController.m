@@ -30,7 +30,7 @@
     NSMutableArray * navArray = [self class_copyIvarList:[UINavigationBar class]];
     //NSLog(@"navArray - %@",navArray);
     
-    UIView * barBackgroundView = [self.navigationBar valueForKey:@"_barBackgroundView"];
+//    UIView * barBackgroundView = [self.navigationBar valueForKey:@"_barBackgroundView"];
     
 //    for (UIView * view in barBackgroundView.subviews) {
 //        //NSLog(@"view - %@",view);

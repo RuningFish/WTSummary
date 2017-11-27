@@ -11,11 +11,17 @@
 #import "TestViewController.h"
 #import "WTQRCodeController.h"
 #import "WTImageTextViewController.h"// 图文
+#import "WTPlaybackViewController.h"
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
 /** <#desc#> */
 @property (nonatomic, strong) NSArray  * dataArray;
 @end
+static NSString * const WTAlertController_ActionSheet = @"WTAlertController - ActionSheet";
+static NSString * const WTAlertController_Alert = @"WTAlertController - Alert";
+static NSString * const JSAndOC = @"JS and OC";
+static NSString * const ImageAndTitle = @"图文帖";
+static NSString * const WTPlayback = @"WTPlayback";
 
 @implementation ViewController
 
@@ -96,7 +102,7 @@
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"WTAlertController - ActionSheet",@"WTAlertController - Alert",@"JS and OC",@"图文帖"];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback];
     }
     return _dataArray;
 }
@@ -118,19 +124,29 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     WTAlertControllerStyle style;
-    if (indexPath.row == 0) {
+    if (indexPath.row > self.dataArray.count - 1) return;
+    
+    NSString * title = self.dataArray[indexPath.row];
+    
+    if ([title isEqualToString:WTAlertController_ActionSheet]) {
         style = WTAlertControllerStyleActionSheet;
         [self alertVontrollerWithType:style];
-    }else if (indexPath.row == 1){
+    }else if ([title isEqualToString:WTAlertController_Alert]){
         style = WTAlertControllerStyleAlert;
         [self alertVontrollerWithType:style];
-    }else if (indexPath.row == 2){
+    }else if ([title isEqualToString:JSAndOC]){
+        // JSAndOC
         TestViewController * jsTest = [[TestViewController alloc] init];
         [self.navigationController pushViewController:jsTest animated:YES];
-    }else if (indexPath.row == 3){
+    }else if ([title isEqualToString:ImageAndTitle]){
         // 图文帖
         WTImageTextViewController * imageText = [[WTImageTextViewController alloc] init];
         [self.navigationController pushViewController:imageText animated:YES];
+    }
+    else if ([title isEqualToString:WTPlayback]){
+        // WTPlayback
+        WTPlaybackViewController * playbackController = [[WTPlaybackViewController alloc] init];
+        [self.navigationController pushViewController:playbackController animated:YES];
     }
 }
 
