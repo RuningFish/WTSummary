@@ -59,37 +59,37 @@
 + (void)initialize{
     
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-    
+
     [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
-    
+
     [UINavigationBar appearance].backIndicatorImage =
     [UINavigationBar appearance].backIndicatorTransitionMaskImage =
     [UIImage imageNamed:@"nav_bar_back_icon_white"];
-    
+
     [[UINavigationBar appearance] setBarTintColor:[UIColor greenColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     // hide title of back button
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
     
-    NSShadow *clearShadow = [[NSShadow alloc] init];
-    clearShadow.shadowColor = [UIColor clearColor];
-    clearShadow.shadowOffset = CGSizeMake(0, 0);
-    
-    UIColor *normalTitleColor = [UIColor whiteColor];
-    UIColor *highlightedTitleColor = [UIColor whiteColor];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
-                                                           NSForegroundColorAttributeName : normalTitleColor,
-                                                           NSShadowAttributeName : clearShadow
-                                                           } forState:UIControlStateNormal];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
-                                                           NSForegroundColorAttributeName : highlightedTitleColor,
-                                                           NSShadowAttributeName : clearShadow
-                                                           } forState:UIControlStateHighlighted];
-    
-    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
-    
-    [[UIToolbar appearance] setBarTintColor:[UIColor whiteColor]];
+//    NSShadow *clearShadow = [[NSShadow alloc] init];
+//    clearShadow.shadowColor = [UIColor clearColor];
+//    clearShadow.shadowOffset = CGSizeMake(0, 0);
+//
+//    UIColor *normalTitleColor = [UIColor whiteColor];
+//    UIColor *highlightedTitleColor = [UIColor whiteColor];
+//    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
+//                                                           NSForegroundColorAttributeName : normalTitleColor,
+//                                                           NSShadowAttributeName : clearShadow
+//                                                           } forState:UIControlStateNormal];
+//    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
+//                                                           NSForegroundColorAttributeName : highlightedTitleColor,
+//                                                           NSShadowAttributeName : clearShadow
+//                                                           } forState:UIControlStateHighlighted];
+//
+//    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+//
+//    [[UIToolbar appearance] setBarTintColor:[UIColor whiteColor]];
     
 }
 
@@ -97,7 +97,7 @@
     //解决与左滑手势冲突
     CGPoint translation = [gestureRecognizer translationInView:gestureRecognizer.view];
     
-    NSLog(@"xx - %@",NSStringFromCGPoint(translation));
+//    NSLog(@"xx - %@",NSStringFromCGPoint(translation));
     if (translation.x <= 0) {
         return NO;
     }
@@ -117,7 +117,10 @@
     return property;
 }
 
-
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    [super pushViewController:viewController animated:animated];
+}
 
 //- (void)viewDidLoad {
 //    [super viewDidLoad];

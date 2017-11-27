@@ -12,6 +12,8 @@
 #import "WTQRCodeController.h"
 #import "WTImageTextViewController.h"// 图文
 #import "WTPlaybackViewController.h"
+#import "WTPersonalViewController.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
 /** <#desc#> */
@@ -22,6 +24,7 @@ static NSString * const WTAlertController_Alert = @"WTAlertController - Alert";
 static NSString * const JSAndOC = @"JS and OC";
 static NSString * const ImageAndTitle = @"图文帖";
 static NSString * const WTPlayback = @"WTPlayback";
+static NSString * const WTPersonal = @"WTPersonalViewController";
 
 @implementation ViewController
 
@@ -102,7 +105,7 @@ static NSString * const WTPlayback = @"WTPlayback";
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal];
     }
     return _dataArray;
 }
@@ -147,6 +150,11 @@ static NSString * const WTPlayback = @"WTPlayback";
         // WTPlayback
         WTPlaybackViewController * playbackController = [[WTPlaybackViewController alloc] init];
         [self.navigationController pushViewController:playbackController animated:YES];
+    }
+    else if ([title isEqualToString:WTPersonal]){
+        // WTPersonalViewController
+        WTPersonalViewController * personal = [[WTPersonalViewController alloc] init];
+        [self.navigationController pushViewController:personal animated:YES];
     }
 }
 

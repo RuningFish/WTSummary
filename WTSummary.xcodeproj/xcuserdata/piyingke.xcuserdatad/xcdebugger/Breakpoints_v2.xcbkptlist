@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/ViewController.m"
-            timestampString = "533445988.003433"
+            timestampString = "533462902.833953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-iconCodeClick"
             landmarkType = "7">
          </BreakpointContent>
@@ -27,22 +27,6 @@
             continueAfterRunningActions = "No"
             scope = "0"
             stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WTSummary/ViewController.m"
-            timestampString = "533445988.003433"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -292,12 +276,12 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/WTNavigationTransition.m"
-                  timestampString = "533447622.098739"
+                  timestampString = "533459275.124418"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
                   endingLineNumber = "105"
-                  offsetFromSymbolStart = "1016">
+                  offsetFromSymbolStart = "1012">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -307,7 +291,7 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/WTNavigationTransition.m"
-                  timestampString = "533447622.111371"
+                  timestampString = "533459275.135438"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"

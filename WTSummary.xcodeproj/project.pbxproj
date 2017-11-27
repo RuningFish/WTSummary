@@ -113,6 +113,14 @@
 		1430D9F81FCBBFB700A3A417 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9E21FCBBFB700A3A417 /* UIImageView+WebCache.m */; };
 		1430D9F91FCBBFB700A3A417 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9E41FCBBFB700A3A417 /* UIView+WebCache.m */; };
 		1430D9FA1FCBBFB700A3A417 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9E61FCBBFB700A3A417 /* UIView+WebCacheOperation.m */; };
+		1430D9FF1FCBED4100A3A417 /* WTPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9FE1FCBED4100A3A417 /* WTPageControl.m */; };
+		1430DA031FCBED9800A3A417 /* UIButton+Style.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA021FCBED9800A3A417 /* UIButton+Style.m */; };
+		1430DA061FCBEE0600A3A417 /* WTPersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA051FCBEE0600A3A417 /* WTPersonalViewController.m */; };
+		1430DA111FCBEED100A3A417 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA081FCBEED100A3A417 /* BaseViewController.m */; };
+		1430DA121FCBEED100A3A417 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA0A1FCBEED100A3A417 /* FirstViewController.m */; };
+		1430DA131FCBEED100A3A417 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA0C1FCBEED100A3A417 /* FourViewController.m */; };
+		1430DA141FCBEED100A3A417 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA0E1FCBEED100A3A417 /* SecondViewController.m */; };
+		1430DA151FCBEED100A3A417 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA101FCBEED100A3A417 /* ThirdViewController.m */; };
 		143373991F0F369200511695 /* WTEditImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 143373981F0F369200511695 /* WTEditImageView.m */; };
 		1433739C1F0F5F6200511695 /* TestTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433739B1F0F5F6200511695 /* TestTwoViewController.m */; };
 		1433739F1F0F646700511695 /* TestThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433739E1F0F646700511695 /* TestThreeViewController.m */; };
@@ -387,6 +395,22 @@
 		1430D9E41FCBBFB700A3A417 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		1430D9E51FCBBFB700A3A417 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		1430D9E61FCBBFB700A3A417 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		1430D9FD1FCBED4100A3A417 /* WTPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPageControl.h; sourceTree = "<group>"; };
+		1430D9FE1FCBED4100A3A417 /* WTPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPageControl.m; sourceTree = "<group>"; };
+		1430DA011FCBED9800A3A417 /* UIButton+Style.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Style.h"; sourceTree = "<group>"; };
+		1430DA021FCBED9800A3A417 /* UIButton+Style.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Style.m"; sourceTree = "<group>"; };
+		1430DA041FCBEE0600A3A417 /* WTPersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPersonalViewController.h; sourceTree = "<group>"; };
+		1430DA051FCBEE0600A3A417 /* WTPersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPersonalViewController.m; sourceTree = "<group>"; };
+		1430DA071FCBEED100A3A417 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		1430DA081FCBEED100A3A417 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		1430DA091FCBEED100A3A417 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		1430DA0A1FCBEED100A3A417 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		1430DA0B1FCBEED100A3A417 /* FourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		1430DA0C1FCBEED100A3A417 /* FourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
+		1430DA0D1FCBEED100A3A417 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		1430DA0E1FCBEED100A3A417 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		1430DA0F1FCBEED100A3A417 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		1430DA101FCBEED100A3A417 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		143373971F0F369200511695 /* WTEditImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTEditImageView.h; sourceTree = "<group>"; };
 		143373981F0F369200511695 /* WTEditImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTEditImageView.m; sourceTree = "<group>"; };
 		1433739A1F0F5F6200511695 /* TestTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTwoViewController.h; sourceTree = "<group>"; };
@@ -854,6 +878,43 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		1430D9FB1FCBECAE00A3A417 /* 个人详情页面 */ = {
+			isa = PBXGroup;
+			children = (
+				1430DA041FCBEE0600A3A417 /* WTPersonalViewController.h */,
+				1430DA051FCBEE0600A3A417 /* WTPersonalViewController.m */,
+				1430DA071FCBEED100A3A417 /* BaseViewController.h */,
+				1430DA081FCBEED100A3A417 /* BaseViewController.m */,
+				1430DA091FCBEED100A3A417 /* FirstViewController.h */,
+				1430DA0A1FCBEED100A3A417 /* FirstViewController.m */,
+				1430DA0B1FCBEED100A3A417 /* FourViewController.h */,
+				1430DA0C1FCBEED100A3A417 /* FourViewController.m */,
+				1430DA0D1FCBEED100A3A417 /* SecondViewController.h */,
+				1430DA0E1FCBEED100A3A417 /* SecondViewController.m */,
+				1430DA0F1FCBEED100A3A417 /* ThirdViewController.h */,
+				1430DA101FCBEED100A3A417 /* ThirdViewController.m */,
+			);
+			path = "个人详情页面";
+			sourceTree = "<group>";
+		};
+		1430D9FC1FCBED4100A3A417 /* WTPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				1430D9FD1FCBED4100A3A417 /* WTPageControl.h */,
+				1430D9FE1FCBED4100A3A417 /* WTPageControl.m */,
+			);
+			path = WTPageControl;
+			sourceTree = "<group>";
+		};
+		1430DA001FCBED9800A3A417 /* WTButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				1430DA011FCBED9800A3A417 /* UIButton+Style.h */,
+				1430DA021FCBED9800A3A417 /* UIButton+Style.m */,
+			);
+			path = WTButtonStyle;
+			sourceTree = "<group>";
+		};
 		143373A01F0F778000511695 /* Authority */ = {
 			isa = PBXGroup;
 			children = (
@@ -925,6 +986,7 @@
 				14EF07141F1A11D600D07DB5 /* XWInteractiveTransition.m */,
 				14EF07101F1A05B500D07DB5 /* WTNavigationTransition.h */,
 				1430D9731FCBB94400A3A417 /* WTNavigationTransition.m */,
+				1430D9FB1FCBECAE00A3A417 /* 个人详情页面 */,
 			);
 			path = WTSummary;
 			sourceTree = "<group>";
@@ -993,6 +1055,8 @@
 		840F94711EFFFAFF0028AC24 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				1430DA001FCBED9800A3A417 /* WTButtonStyle */,
+				1430D9FC1FCBED4100A3A417 /* WTPageControl */,
 				1430D9681FCBB54A00A3A417 /* WTCustomSlider */,
 				1430D9471FCBB48B00A3A417 /* playback */,
 				1430D9221FCBB43E00A3A417 /* WTPlayer */,
@@ -1233,6 +1297,7 @@
 				1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */,
 				1430D9A31FCBBEE700A3A417 /* VideoListTableViewCell.m in Sources */,
 				1430D9661FCBB48B00A3A417 /* WTPlaybackManager.m in Sources */,
+				1430DA151FCBEED100A3A417 /* ThirdViewController.m in Sources */,
 				1429D1F41F0DD83C008DAD0D /* YYTextArchiver.m in Sources */,
 				1430D9F31FCBBFB700A3A417 /* UIButton+WebCache.m in Sources */,
 				1429D2051F0DD9A5008DAD0D /* WTQRCodeController.m in Sources */,
@@ -1242,6 +1307,7 @@
 				1429D2001F0DD83C008DAD0D /* YYTextWeakProxy.m in Sources */,
 				1430D9431FCBB43E00A3A417 /* WTPlaybackIdleTimer.m in Sources */,
 				1430D9A01FCBB9B000A3A417 /* ViewController+MASAdditions.m in Sources */,
+				1430DA061FCBEE0600A3A417 /* WTPersonalViewController.m in Sources */,
 				1429D2371F0DEA08008DAD0D /* YYFrameImage.m in Sources */,
 				1430D93F1FCBB43E00A3A417 /* WTKVOEntry.m in Sources */,
 				1430D9F21FCBBFB700A3A417 /* SDWebImagePrefetcher.m in Sources */,
@@ -1267,6 +1333,8 @@
 				1430D9F11FCBBFB700A3A417 /* SDWebImageManager.m in Sources */,
 				1429D1F01F0DD83C008DAD0D /* YYTextLayout.m in Sources */,
 				1430D9421FCBB43E00A3A417 /* WTPlaybackDownLoader.m in Sources */,
+				1430DA111FCBEED100A3A417 /* BaseViewController.m in Sources */,
+				1430DA131FCBEED100A3A417 /* FourViewController.m in Sources */,
 				1430D9F71FCBBFB700A3A417 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1430D96E1FCBB5BA00A3A417 /* WTSliderControl.m in Sources */,
 				1429D2021F0DD83C008DAD0D /* YYTextView.m in Sources */,
@@ -1297,6 +1365,7 @@
 				846651201F12596400AAA5FA /* TZVideoPlayerController.m in Sources */,
 				1429D1F21F0DD83C008DAD0D /* YYTextMagnifier.m in Sources */,
 				14EF07F41F29937F00D07DB5 /* CYPhotoPreviewer.m in Sources */,
+				1430DA121FCBEED100A3A417 /* FirstViewController.m in Sources */,
 				840F94741EFFFB3B0028AC24 /* WTBaseViewController.m in Sources */,
 				1429D1F51F0DD83C008DAD0D /* YYTextAttribute.m in Sources */,
 				840F942D1EFFD25B0028AC24 /* main.m in Sources */,
@@ -1316,6 +1385,7 @@
 				1429D2381F0DEA08008DAD0D /* YYImage.m in Sources */,
 				1430D9601FCBB48B00A3A417 /* WTControlTopView.m in Sources */,
 				1429D1FB1F0DD83C008DAD0D /* UIPasteboard+YYText.m in Sources */,
+				1430DA141FCBEED100A3A417 /* SecondViewController.m in Sources */,
 				1429D1FF1F0DD83C008DAD0D /* YYTextUtilities.m in Sources */,
 				1430D96B1FCBB56D00A3A417 /* WTCustomSlider.m in Sources */,
 				8466512B1F12596400AAA5FA /* WTCustomTextView.m in Sources */,
@@ -1336,6 +1406,7 @@
 				1429D1ED1F0DD83C008DAD0D /* YYTextEffectWindow.m in Sources */,
 				1430D9671FCBB48B00A3A417 /* WTPlaybackSeekingView.m in Sources */,
 				1429D23A1F0DEA08008DAD0D /* YYSpriteSheetImage.m in Sources */,
+				1430DA031FCBED9800A3A417 /* UIButton+Style.m in Sources */,
 				1430D9ED1FCBBFB700A3A417 /* SDWebImageCompat.m in Sources */,
 				1430D93D1FCBB43E00A3A417 /* UIViewController+WTPlaybackRotation.m in Sources */,
 				1430D9F91FCBBFB700A3A417 /* UIView+WebCache.m in Sources */,
@@ -1353,6 +1424,7 @@
 				1429D1F11F0DD83C008DAD0D /* YYTextLine.m in Sources */,
 				1430D9411FCBB43E00A3A417 /* WTNotificationManager.m in Sources */,
 				1430D9EB1FCBBFB700A3A417 /* SDImageCache.m in Sources */,
+				1430D9FF1FCBED4100A3A417 /* WTPageControl.m in Sources */,
 				1429D2091F0DE2E5008DAD0D /* WTImageTextViewController.m in Sources */,
 				14EF07F51F29937F00D07DB5 /* UIView+CYExtension.m in Sources */,
 				1429D2011F0DD83C008DAD0D /* YYLabel.m in Sources */,

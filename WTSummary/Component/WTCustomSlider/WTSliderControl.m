@@ -43,7 +43,7 @@ static CGFloat trackHeight = 2.0;
     self.progressView.backgroundColor = [UIColor redColor];
     [self.progressView setProgress:0.7 animated:NO];
     
-    self.slider.minimumTrackTintColor = [UIColor greenColor];
+//    self.slider.minimumTrackTintColor = [UIColor greenColor];
     [self.slider setValue:0.5 animated:NO];
     
     [slider addTarget:self action:@selector(sliderControlBeginMove) forControlEvents:UIControlEventTouchDown];
