@@ -71,18 +71,18 @@ static NSString * const WTTransition = @"WTTransition";
         [self.navigationController pushViewController:codeVC animated:YES];
     }else{
         
-        [manager getCameraAuthorityWithHandle:^{
-            // 1.打开二维码界面
-            WTQRCodeController * codeVC = [[WTQRCodeController alloc] init];
-            [self.navigationController pushViewController:codeVC animated:YES];
-        }];
-        
-//        WTAlertController * alert = [WTAlertController alertControllerWithTitle:@"请在设置中允许访问相册" message:nil preferredStyle:WTAlertControllerStyleAlert];
-//        WTAlertAction * cancel = [WTAlertAction actionWithTitle:@"取消" style:WTAlertActionStyleDefault handler:^(WTAlertAction *action) {
-//
+//        [manager getCameraAuthorityWithHandle:^{
+//            // 1.打开二维码界面
+//            WTQRCodeController * codeVC = [[WTQRCodeController alloc] init];
+//            [self.navigationController pushViewController:codeVC animated:YES];
 //        }];
-//        [alert addAction:cancel];
-//        [alert show];
+        
+        WTAlertController * alert = [WTAlertController alertControllerWithTitle:@"请在设置中允许访问相册" message:nil preferredStyle:WTAlertControllerStyleAlert];
+        WTAlertAction * cancel = [WTAlertAction actionWithTitle:@"取消" style:WTAlertActionStyleDefault handler:^(WTAlertAction *action) {
+
+        }];
+        [alert addAction:cancel];
+        [alert show];
     }
     
 }
