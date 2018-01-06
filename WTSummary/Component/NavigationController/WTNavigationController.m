@@ -28,7 +28,7 @@
     [self.view addGestureRecognizer:pan];
     
     NSMutableArray * navArray = [self class_copyIvarList:[UINavigationBar class]];
-    //NSLog(@"navArray - %@",navArray);
+    NSLog(@"navArray - %@",navArray);
     
 //    UIView * barBackgroundView = [self.navigationBar valueForKey:@"_barBackgroundView"];
     

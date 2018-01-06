@@ -22,15 +22,15 @@ typedef enum {
 
 @interface WTAlertController : UIView
 
-+ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(WTAlertControllerStyle)alertStyle;
++ (instancetype _Nullable )alertControllerWithTitle:(NSString *_Nullable)title message:(NSString *_Nullable)message preferredStyle:(WTAlertControllerStyle)alertStyle;
 
-- (void)addAction:(WTAlertAction *)action;
+- (void)addAction:(WTAlertAction *_Nullable)action;
 
 - (void)show;
 @end
 
 @interface WTAlertAction : NSObject
-+ (instancetype)actionWithTitle:(NSString *)title style:(WTAlertActionStyle)style handler:(void (^)(WTAlertAction * action))handler;
++ (instancetype _Nullable )actionWithTitle:(NSString *_Nullable)title style:(WTAlertActionStyle)style handler:(void (^_Nullable)(WTAlertAction * _Nullable action))handler;
 @property (nullable, nonatomic, readonly) NSString * title;
 @property (nonatomic, readonly) WTAlertActionStyle style;
 @end

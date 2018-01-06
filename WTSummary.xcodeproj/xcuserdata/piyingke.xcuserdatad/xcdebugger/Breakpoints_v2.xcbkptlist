@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/ViewController.m"
-            timestampString = "533462902.833953"
+            timestampString = "535431113.516911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "-iconCodeClick"
             landmarkType = "7">
          </BreakpointContent>
@@ -276,7 +276,7 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/WTNavigationTransition.m"
-                  timestampString = "533459275.124418"
+                  timestampString = "536912345.388178"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "105"
@@ -291,7 +291,7 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/WTNavigationTransition.m"
-                  timestampString = "533459275.135438"
+                  timestampString = "536912345.391149"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "106"
@@ -394,6 +394,38 @@
             startingLineNumber = "78"
             endingLineNumber = "78"
             landmarkName = "-doPushAnimation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Function/CardView/WTCardView.m"
+            timestampString = "533703380.203802"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-cardViewCellAtIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Function/CardView/WTCardView.m"
+            timestampString = "533703380.204127"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "-reloadData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

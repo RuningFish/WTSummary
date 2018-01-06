@@ -13,18 +13,21 @@
 #import "WTImageTextViewController.h"// 图文
 #import "WTPlaybackViewController.h"
 #import "WTPersonalViewController.h"
+#import "WTCardViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
 /** <#desc#> */
 @property (nonatomic, strong) NSArray  * dataArray;
 @end
+
 static NSString * const WTAlertController_ActionSheet = @"WTAlertController - ActionSheet";
 static NSString * const WTAlertController_Alert = @"WTAlertController - Alert";
 static NSString * const JSAndOC = @"JS and OC";
 static NSString * const ImageAndTitle = @"图文帖";
 static NSString * const WTPlayback = @"WTPlayback";
 static NSString * const WTPersonal = @"WTPersonalViewController";
+static NSString * const WTCardView = @"WTCardViewController";
 
 @implementation ViewController
 
@@ -105,7 +108,7 @@ static NSString * const WTPersonal = @"WTPersonalViewController";
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView];
     }
     return _dataArray;
 }
@@ -126,6 +129,7 @@ static NSString * const WTPersonal = @"WTPersonalViewController";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    [tableView  deselectRowAtIndexPath:indexPath animated:NO];
     WTAlertControllerStyle style;
     if (indexPath.row > self.dataArray.count - 1) return;
     
@@ -155,6 +159,10 @@ static NSString * const WTPersonal = @"WTPersonalViewController";
         // WTPersonalViewController
         WTPersonalViewController * personal = [[WTPersonalViewController alloc] init];
         [self.navigationController pushViewController:personal animated:YES];
+    }
+    else if ([title isEqualToString:WTCardView]){
+        WTCardViewController * cardViewController = [[WTCardViewController alloc] init];
+        [self.navigationController pushViewController:cardViewController animated:YES];
     }
 }
 
