@@ -31,7 +31,7 @@
 
 #pragma mark - 动画时长
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
-    return 0.75;
+    return 0.5;
 }
 
 #pragma mark -  如何执行过渡动画
@@ -110,6 +110,7 @@
          NSLog(@"pop animations - %@ rect - %@",NSStringFromCGRect(snapView.frame),NSStringFromCGRect(rect));
     } completion:^(BOOL finished) {
         toVC.cell.imageview.hidden = NO;
+        toVC.cell.imageview.alpha = 1.0;
         [snapView removeFromSuperview];
         fromVC.imageView.hidden = YES;
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];

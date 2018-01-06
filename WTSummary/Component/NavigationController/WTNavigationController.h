@@ -11,3 +11,10 @@
 @interface WTNavigationController : UINavigationController
 
 @end
+
+/** 开始侧滑 */
+extern NSString * const KHandleNavigationStateBegin;
+/** 正在侧滑 */
+extern NSString * const KHandleNavigationStateChange;
+/** 侧滑结束 */
+extern NSString * const KHandleNavigationStateEnd;

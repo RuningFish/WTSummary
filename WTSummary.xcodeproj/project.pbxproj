@@ -69,7 +69,6 @@
 		1430D9671FCBB48B00A3A417 /* WTPlaybackSeekingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D95C1FCBB48B00A3A417 /* WTPlaybackSeekingView.m */; };
 		1430D96B1FCBB56D00A3A417 /* WTCustomSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D96A1FCBB56D00A3A417 /* WTCustomSlider.m */; };
 		1430D96E1FCBB5BA00A3A417 /* WTSliderControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D96D1FCBB5BA00A3A417 /* WTSliderControl.m */; };
-		1430D9741FCBB94400A3A417 /* WTNavigationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9731FCBB94400A3A417 /* WTNavigationTransition.m */; };
 		1430D9771FCBB95300A3A417 /* WTPlaybackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9761FCBB95300A3A417 /* WTPlaybackViewController.m */; };
 		1430D97A1FCBB97300A3A417 /* VideoInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9791FCBB97300A3A417 /* VideoInfo.m */; };
 		1430D9961FCBB9B000A3A417 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1430D97C1FCBB9B000A3A417 /* Info.plist */; };
@@ -118,11 +117,12 @@
 		1430DA131FCBEED100A3A417 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA0C1FCBEED100A3A417 /* FourViewController.m */; };
 		1430DA141FCBEED100A3A417 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA0E1FCBEED100A3A417 /* SecondViewController.m */; };
 		1430DA151FCBEED100A3A417 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430DA101FCBEED100A3A417 /* ThirdViewController.m */; };
-		1433739C1F0F5F6200511695 /* TestTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433739B1F0F5F6200511695 /* TestTwoViewController.m */; };
-		1433739F1F0F646700511695 /* TestThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1433739E1F0F646700511695 /* TestThreeViewController.m */; };
 		143373A31F0F778000511695 /* WTAuthorityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 143373A21F0F778000511695 /* WTAuthorityManager.m */; };
 		143373A61F10B21000511695 /* WTDragCellTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 143373A51F10B21000511695 /* WTDragCellTableView.m */; };
 		1450B56A2000A4AF00E8C406 /* XWInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B5682000A4AE00E8C406 /* XWInteractiveTransition.m */; };
+		1450B5732000CBEC00E8C406 /* TestTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B5702000CAD000E8C406 /* TestTwoViewController.m */; };
+		1450B5742000CC0600E8C406 /* TestThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B56E2000CAD000E8C406 /* TestThreeViewController.m */; };
+		1450B5762000CC5A00E8C406 /* WTNavigationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B5722000CAD000E8C406 /* WTNavigationTransition.m */; };
 		1464CF761F04914B0079112E /* UIColor+HexStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF731F04914B0079112E /* UIColor+HexStr.m */; };
 		1464CF771F04914B0079112E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF751F04914B0079112E /* UIView+Category.m */; };
 		1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */; };
@@ -307,7 +307,6 @@
 		1430D96A1FCBB56D00A3A417 /* WTCustomSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTCustomSlider.m; sourceTree = "<group>"; };
 		1430D96C1FCBB5BA00A3A417 /* WTSliderControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSliderControl.h; sourceTree = "<group>"; };
 		1430D96D1FCBB5BA00A3A417 /* WTSliderControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSliderControl.m; sourceTree = "<group>"; };
-		1430D9731FCBB94400A3A417 /* WTNavigationTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNavigationTransition.m; sourceTree = "<group>"; };
 		1430D9751FCBB95300A3A417 /* WTPlaybackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPlaybackViewController.h; sourceTree = "<group>"; };
 		1430D9761FCBB95300A3A417 /* WTPlaybackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPlaybackViewController.m; sourceTree = "<group>"; };
 		1430D9781FCBB97300A3A417 /* VideoInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoInfo.h; sourceTree = "<group>"; };
@@ -410,16 +409,18 @@
 		1430DA0E1FCBEED100A3A417 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		1430DA0F1FCBEED100A3A417 /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
 		1430DA101FCBEED100A3A417 /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
-		1433739A1F0F5F6200511695 /* TestTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTwoViewController.h; sourceTree = "<group>"; };
-		1433739B1F0F5F6200511695 /* TestTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTwoViewController.m; sourceTree = "<group>"; };
-		1433739D1F0F646700511695 /* TestThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestThreeViewController.h; sourceTree = "<group>"; };
-		1433739E1F0F646700511695 /* TestThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestThreeViewController.m; sourceTree = "<group>"; };
 		143373A11F0F778000511695 /* WTAuthorityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTAuthorityManager.h; sourceTree = "<group>"; };
 		143373A21F0F778000511695 /* WTAuthorityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTAuthorityManager.m; sourceTree = "<group>"; };
 		143373A41F10B21000511695 /* WTDragCellTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTDragCellTableView.h; sourceTree = "<group>"; };
 		143373A51F10B21000511695 /* WTDragCellTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTDragCellTableView.m; sourceTree = "<group>"; };
 		1450B5682000A4AE00E8C406 /* XWInteractiveTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWInteractiveTransition.m; sourceTree = "<group>"; };
 		1450B5692000A4AF00E8C406 /* XWInteractiveTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWInteractiveTransition.h; sourceTree = "<group>"; };
+		1450B56D2000CAD000E8C406 /* TestThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestThreeViewController.h; sourceTree = "<group>"; };
+		1450B56E2000CAD000E8C406 /* TestThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestThreeViewController.m; sourceTree = "<group>"; };
+		1450B56F2000CAD000E8C406 /* TestTwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestTwoViewController.h; sourceTree = "<group>"; };
+		1450B5702000CAD000E8C406 /* TestTwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestTwoViewController.m; sourceTree = "<group>"; };
+		1450B5712000CAD000E8C406 /* WTNavigationTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTNavigationTransition.h; sourceTree = "<group>"; };
+		1450B5722000CAD000E8C406 /* WTNavigationTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTNavigationTransition.m; sourceTree = "<group>"; };
 		1464CF721F04914B0079112E /* UIColor+HexStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexStr.h"; sourceTree = "<group>"; };
 		1464CF731F04914B0079112E /* UIColor+HexStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexStr.m"; sourceTree = "<group>"; };
 		1464CF741F04914B0079112E /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
@@ -451,7 +452,6 @@
 		14C83AF21FCD4A2A00D88757 /* WTCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTCardView.m; sourceTree = "<group>"; };
 		14C83AF41FCD4A6300D88757 /* WTCardViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTCardViewCell.h; sourceTree = "<group>"; };
 		14C83AF51FCD4A6300D88757 /* WTCardViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTCardViewCell.m; sourceTree = "<group>"; };
-		14EF07101F1A05B500D07DB5 /* WTNavigationTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNavigationTransition.h; sourceTree = "<group>"; };
 		14EF07F01F29937F00D07DB5 /* CYPhotoPreviewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYPhotoPreviewer.h; sourceTree = "<group>"; };
 		14EF07F11F29937F00D07DB5 /* CYPhotoPreviewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYPhotoPreviewer.m; sourceTree = "<group>"; };
 		14EF07F21F29937F00D07DB5 /* UIView+CYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CYExtension.h"; sourceTree = "<group>"; };
@@ -923,6 +923,19 @@
 			path = Authority;
 			sourceTree = "<group>";
 		};
+		1450B56C2000CAD000E8C406 /* WTTransition */ = {
+			isa = PBXGroup;
+			children = (
+				1450B56D2000CAD000E8C406 /* TestThreeViewController.h */,
+				1450B56E2000CAD000E8C406 /* TestThreeViewController.m */,
+				1450B56F2000CAD000E8C406 /* TestTwoViewController.h */,
+				1450B5702000CAD000E8C406 /* TestTwoViewController.m */,
+				1450B5712000CAD000E8C406 /* WTNavigationTransition.h */,
+				1450B5722000CAD000E8C406 /* WTNavigationTransition.m */,
+			);
+			path = WTTransition;
+			sourceTree = "<group>";
+		};
 		1464CF961F0777A80079112E /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1016,14 +1029,8 @@
 				840F945E1EFFD28D0028AC24 /* OC与JS相互调用 */,
 				840F94311EFFD25B0028AC24 /* ViewController.h */,
 				840F94321EFFD25B0028AC24 /* ViewController.m */,
-				1433739A1F0F5F6200511695 /* TestTwoViewController.h */,
-				1433739B1F0F5F6200511695 /* TestTwoViewController.m */,
 				1430D9721FCBB8E500A3A417 /* WTPlayer */,
 				840F942B1EFFD25B0028AC24 /* Supporting Files */,
-				1433739D1F0F646700511695 /* TestThreeViewController.h */,
-				1433739E1F0F646700511695 /* TestThreeViewController.m */,
-				14EF07101F1A05B500D07DB5 /* WTNavigationTransition.h */,
-				1430D9731FCBB94400A3A417 /* WTNavigationTransition.m */,
 				1450B5692000A4AF00E8C406 /* XWInteractiveTransition.h */,
 				1450B5682000A4AE00E8C406 /* XWInteractiveTransition.m */,
 				1430D9FB1FCBECAE00A3A417 /* 个人详情页面 */,
@@ -1095,6 +1102,7 @@
 		840F94711EFFFAFF0028AC24 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				1450B56C2000CAD000E8C406 /* WTTransition */,
 				1430DA001FCBED9800A3A417 /* WTButtonStyle */,
 				1430D9FC1FCBED4100A3A417 /* WTPageControl */,
 				1430D9681FCBB54A00A3A417 /* WTCustomSlider */,
@@ -1321,6 +1329,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1450B5762000CC5A00E8C406 /* WTNavigationTransition.m in Sources */,
+				1450B5742000CC0600E8C406 /* TestThreeViewController.m in Sources */,
+				1450B5732000CBEC00E8C406 /* TestTwoViewController.m in Sources */,
 				147834781FCD69620006DA2A /* Reachability.m in Sources */,
 				147834711FCD4E3F0006DA2A /* WTQRCodeView.m in Sources */,
 				1478346E1FCD4E250006DA2A /* WTAlertTextView.m in Sources */,
@@ -1353,7 +1364,6 @@
 				1430D93E1FCBB43E00A3A417 /* WTAudioSession.m in Sources */,
 				1430D9F01FCBBFB700A3A417 /* SDWebImageDownloaderOperation.m in Sources */,
 				1430D9FA1FCBBFB700A3A417 /* UIView+WebCacheOperation.m in Sources */,
-				1433739C1F0F5F6200511695 /* TestTwoViewController.m in Sources */,
 				846651191F12596400AAA5FA /* TZAssetModel.m in Sources */,
 				1429D1EF1F0DD83C008DAD0D /* YYTextKeyboardManager.m in Sources */,
 				845C562F1F08AD5A00906099 /* WTLabel.m in Sources */,
@@ -1409,7 +1419,6 @@
 				846651181F12596400AAA5FA /* TZAssetCell.m in Sources */,
 				1429D1F61F0DD83C008DAD0D /* YYTextParser.m in Sources */,
 				1430D99F1FCBB9B000A3A417 /* View+MASAdditions.m in Sources */,
-				1433739F1F0F646700511695 /* TestThreeViewController.m in Sources */,
 				1430D9451FCBB43E00A3A417 /* WTPlaybackResouceLoader.m in Sources */,
 				1430D9771FCBB95300A3A417 /* WTPlaybackViewController.m in Sources */,
 				1430D9F41FCBBFB700A3A417 /* UIImage+GIF.m in Sources */,
@@ -1433,7 +1442,6 @@
 				1429D1EE1F0DD83C008DAD0D /* YYTextInput.m in Sources */,
 				841501561F03DD1B002C3759 /* TestViewController.m in Sources */,
 				840F94701EFFF75B0028AC24 /* UIImage+Extension.m in Sources */,
-				1430D9741FCBB94400A3A417 /* WTNavigationTransition.m in Sources */,
 				1430D9991FCBB9B000A3A417 /* MASConstraintMaker.m in Sources */,
 				1430D9B81FCBBF8E00A3A417 /* AFSecurityPolicy.m in Sources */,
 				1430D99D1FCBB9B000A3A417 /* NSArray+MASAdditions.m in Sources */,

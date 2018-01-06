@@ -8,6 +8,7 @@
 
 #import "TestTwoViewController.h"
 #import "TestThreeViewController.h"
+
 @interface TestTwoViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView * tableView;
 @end
@@ -18,18 +19,22 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
-//    UIImageView * imageView = [[UIImageView alloc] init];
-//    [self.view addSubview:imageView];
-//    imageView.backgroundColor = [UIColor redColor];
-//    imageView.frame = CGRectMake(0, 100, self.view.frame.size.width, 300);
-//    
-//    UIImage * image = [UIImage captureImageWithView:imageView];
-    
-    
     [self.view addSubview:self.tableView];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.cell.imageview.hidden = NO;
+    self.cell.imageview.alpha = 1.0;
+    NSLog(@"TestTwoViewController -> viewDidAppear");
+    
+}
 - (UITableView *)tableView{
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
@@ -49,13 +54,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    WTTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//    }
-//
-//    [cell.contentView addSubview:imageView];
     WTTableViewCell * cell = [WTTableViewCell cellWithTableView:tableView];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -84,6 +82,7 @@
 //      NSLog(@"cell - %@ 2 %@",NSStringFromCGRect(cell.frame),NSStringFromCGRect(rectInSuperView));
     TestThreeViewController * testThree = [[TestThreeViewController alloc] init];
 //    testThree.cellFrame = cell.frame;
+    testThree.cell = cell;
     self.navigationController.delegate = testThree;
     [self.navigationController pushViewController:testThree animated:YES];
 }

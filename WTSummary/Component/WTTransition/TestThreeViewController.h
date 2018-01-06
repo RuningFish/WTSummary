@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class WTTableViewCell;
 @interface TestThreeViewController : UIViewController<UINavigationControllerDelegate>
 
 @property (nonatomic, assign) CGRect cellFrame;
@@ -18,4 +18,6 @@
 
 /** <#desc#> */
 @property (nonatomic , strong) UIColor * imageViewColor;
+
+@property (nonatomic , strong) WTTableViewCell * cell;
 @end

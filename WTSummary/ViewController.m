@@ -14,6 +14,7 @@
 #import "WTPlaybackViewController.h"
 #import "WTPersonalViewController.h"
 #import "WTCardViewController.h"
+#import "TestTwoViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
@@ -28,6 +29,7 @@ static NSString * const ImageAndTitle = @"图文帖";
 static NSString * const WTPlayback = @"WTPlayback";
 static NSString * const WTPersonal = @"WTPersonalViewController";
 static NSString * const WTCardView = @"WTCardViewController";
+static NSString * const WTTransition = @"WTTransition";
 
 @implementation ViewController
 
@@ -40,7 +42,6 @@ static NSString * const WTCardView = @"WTCardViewController";
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIImage * image = [UIImage getImageFormVideoUrl:[NSURL URLWithString:@"https://o79mx21qy.qnssl.com/FumidvCTADJcIw2_r1D0RZ2_jiqO"] atIndex:6];
     [self.view addSubview:self.tableView];
 //    return;
 //    UIView * v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
@@ -75,13 +76,13 @@ static NSString * const WTCardView = @"WTCardViewController";
             WTQRCodeController * codeVC = [[WTQRCodeController alloc] init];
             [self.navigationController pushViewController:codeVC animated:YES];
         }];
-        return;
-        WTAlertController * alert = [WTAlertController alertControllerWithTitle:@"请在设置中允许访问相册" message:nil preferredStyle:WTAlertControllerStyleAlert];
-        WTAlertAction * cancel = [WTAlertAction actionWithTitle:@"取消" style:WTAlertActionStyleDefault handler:^(WTAlertAction *action) {
-            
-        }];
-        [alert addAction:cancel];
-        [alert show];
+        
+//        WTAlertController * alert = [WTAlertController alertControllerWithTitle:@"请在设置中允许访问相册" message:nil preferredStyle:WTAlertControllerStyleAlert];
+//        WTAlertAction * cancel = [WTAlertAction actionWithTitle:@"取消" style:WTAlertActionStyleDefault handler:^(WTAlertAction *action) {
+//
+//        }];
+//        [alert addAction:cancel];
+//        [alert show];
     }
     
 }
@@ -108,7 +109,7 @@ static NSString * const WTCardView = @"WTCardViewController";
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition];
     }
     return _dataArray;
 }
@@ -163,6 +164,10 @@ static NSString * const WTCardView = @"WTCardViewController";
     else if ([title isEqualToString:WTCardView]){
         WTCardViewController * cardViewController = [[WTCardViewController alloc] init];
         [self.navigationController pushViewController:cardViewController animated:YES];
+    }
+    else if ([title isEqualToString:WTTransition]){
+        TestTwoViewController * two = [[TestTwoViewController alloc] init];
+        [self.navigationController pushViewController:two animated:YES];
     }
 }
 

@@ -6,8 +6,13 @@
 //  Copyright © 2017年 飞奔的小鲨鱼. All rights reserved.
 //
 
+NSString * const KHandleNavigationStateBegin = @"KHandleNavigationStateBegin";
+NSString * const KHandleNavigationStateChange = @"KHandleNavigationStateChange";
+NSString * const KHandleNavigationStateEnd = @"KHandleNavigationStateEnd";
+
 #import "WTNavigationController.h"
 #import <objc/runtime.h>
+
 @interface WTNavigationController ()<UIGestureRecognizerDelegate>
 
 @end
@@ -17,43 +22,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // 添加全屏返回的第一种方式
     // 1.获取系统的target 和 action
-    NSArray * targets = [self.interactivePopGestureRecognizer valueForKey:@"_targets"];
-    id target = [targets.firstObject valueForKey:@"target"];
-    SEL action = NSSelectorFromString(@"handleNavigationTransition:");
     
-    // 2.创建全屏的滑动手势
-    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:action];
-    pan.delegate = self;
-    [self.view addGestureRecognizer:pan];
+//    NSArray * targets = [self.interactivePopGestureRecognizer valueForKey:@"_targets"];
+//    id target = [targets.firstObject valueForKey:@"target"];
+//    SEL action = NSSelectorFromString(@"handleNavigationTransition:");
+//
+//    // 2.创建全屏的滑动手势
+//    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:action];
+//    pan.delegate = self;
+//    [self.view addGestureRecognizer:pan];
     
-    NSMutableArray * navArray = [self class_copyIvarList:[UINavigationBar class]];
-    NSLog(@"navArray - %@",navArray);
+    // 添加全屏返回的第二种方式
+    //自定义滑动手势
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
+    //将自定义手势添加到NavigationController的view上
+    [self.view addGestureRecognizer:panGestureRecognizer];
+    //设置自定义手势的代理，用于拦截自定义手势的触发
+    panGestureRecognizer.delegate = self;
+    //关闭系统的边缘手势
+    self.interactivePopGestureRecognizer.enabled = NO;
     
-//    UIView * barBackgroundView = [self.navigationBar valueForKey:@"_barBackgroundView"];
-    
-//    for (UIView * view in barBackgroundView.subviews) {
-//        //NSLog(@"view - %@",view);
-//        if ([view isKindOfClass:[UIImageView class]]) {
-//            view.hidden = YES;
-//        }
-//    }
-    
-//    //UIView * leftViews = [self.navigationBar valueForKey:@"_leftViews"];
-//    
-//    for (NSString * string in navArray) {
-//        
-//        id view = [self.navigationBar valueForKey:string];
-//        if ([view isKindOfClass:[UIView class]]) {
-//            UIView * v = (UIView *)view;
-//            for (UIView * subview in v.subviews) {
-//                NSLog(@"view - %@ ,父控件 %@",subview,string);
-//            }
-//        }else{
-//            
-//        }
-//    }
+}
 
+- (void)handleNavigationTransition:(UIPanGestureRecognizer *)gestureRecognizer{
+  
+    //调用系统手势绑定的方法
+    [self.interactivePopGestureRecognizer.delegate performSelector:@selector(handleNavigationTransition:) withObject:gestureRecognizer];
+    
+    CGPoint velocity = [gestureRecognizer velocityInView:self.view];
+    CGPoint point = [gestureRecognizer translationInView:self.view];
+//    NSLog(@"滑动的速度 === %lf",velocity.x);
+    if (velocity.x > 500) return;
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:KHandleNavigationStateBegin object:@(point)];
+    }
+    else if (gestureRecognizer.state == UIGestureRecognizerStateChanged){
+        [[NSNotificationCenter defaultCenter] postNotificationName:KHandleNavigationStateChange object:@(point)];
+    }
+    else if (gestureRecognizer.state == UIGestureRecognizerStateEnded){
+        [[NSNotificationCenter defaultCenter] postNotificationName:KHandleNavigationStateEnd object:@(point)];
+    }
 }
 
 + (void)initialize{

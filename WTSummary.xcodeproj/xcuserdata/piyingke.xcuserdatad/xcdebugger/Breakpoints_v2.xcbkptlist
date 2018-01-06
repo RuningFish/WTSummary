@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/ViewController.m"
-            timestampString = "535431113.516911"
+            timestampString = "536923772.25937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-iconCodeClick"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "521802986.172053"
+            timestampString = "536922453.7203031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -51,24 +51,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WTSummary/TestThreeViewController.m"
-            timestampString = "522151669.096809"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "-navigationController:animationControllerForOperation:fromViewController:toViewController:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151495.029204"
+            timestampString = "536922453.721321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -84,7 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151495.029204"
+            timestampString = "536922453.722032"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -100,7 +84,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.722717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -116,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.723392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
@@ -132,23 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "-doPopAnimation:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.724104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -164,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.724808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
@@ -180,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.725486"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
@@ -196,7 +164,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.726135"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "98"
@@ -212,7 +180,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.726774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -228,7 +196,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.727439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "101"
@@ -244,7 +212,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.72809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
@@ -260,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.728842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
@@ -276,11 +244,11 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/WTNavigationTransition.m"
-                  timestampString = "536912345.388178"
+                  timestampString = "536915426.091102"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
                   offsetFromSymbolStart = "1012">
                </Location>
                <Location
@@ -291,11 +259,11 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/WTNavigationTransition.m"
-                  timestampString = "536912345.391149"
+                  timestampString = "536915426.093527"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
                   offsetFromSymbolStart = "24">
                </Location>
             </Locations>
@@ -304,11 +272,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522053089.106139"
+            timestampString = "536922453.72996"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -324,23 +292,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522053090.130218"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-animateTransition:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.730997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -356,7 +308,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.731873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -372,7 +324,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522151992.307068"
+            timestampString = "536922453.732577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "109"
@@ -388,7 +340,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/WTNavigationTransition.m"
-            timestampString = "522152034.104057"
+            timestampString = "536922453.73324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
@@ -426,6 +378,22 @@
             startingLineNumber = "57"
             endingLineNumber = "57"
             landmarkName = "-reloadData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/TestThreeViewController.m"
+            timestampString = "536922453.734055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "-navigationController:animationControllerForOperation:fromViewController:toViewController:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
