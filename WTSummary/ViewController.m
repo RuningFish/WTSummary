@@ -15,6 +15,7 @@
 #import "WTPersonalViewController.h"
 #import "WTCardViewController.h"
 #import "TestTwoViewController.h"
+#import "WTDisplayViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
@@ -30,7 +31,7 @@ static NSString * const WTPlayback = @"WTPlayback";
 static NSString * const WTPersonal = @"WTPersonalViewController";
 static NSString * const WTCardView = @"WTCardViewController";
 static NSString * const WTTransition = @"WTTransition";
-
+static NSString * const WTDisplayView = @"WTDisplayView";
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -98,7 +99,7 @@ static NSString * const WTTransition = @"WTTransition";
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.size.height - 64) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.size.height ) style:UITableViewStylePlain];
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.rowHeight = 50;
         _tableView.delegate = self;
@@ -109,7 +110,7 @@ static NSString * const WTTransition = @"WTTransition";
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView];
     }
     return _dataArray;
 }
@@ -168,6 +169,10 @@ static NSString * const WTTransition = @"WTTransition";
     else if ([title isEqualToString:WTTransition]){
         TestTwoViewController * two = [[TestTwoViewController alloc] init];
         [self.navigationController pushViewController:two animated:YES];
+    }
+    else if ([title isEqualToString:WTDisplayView]){
+        WTDisplayViewController * displayVC = [[WTDisplayViewController alloc] init];
+        [self.navigationController pushViewController:displayVC animated:YES];
     }
 }
 

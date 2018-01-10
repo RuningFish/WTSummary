@@ -18,3 +18,4 @@
 #import "TZImagePickerController.h"
 #import "WTCustomTextView.h"
 #import "Masonry.h"
+#import "UIImageView+WebCache.h"

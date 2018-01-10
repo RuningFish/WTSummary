@@ -124,6 +124,8 @@
 		1450B5742000CC0600E8C406 /* TestThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B56E2000CAD000E8C406 /* TestThreeViewController.m */; };
 		1450B5762000CC5A00E8C406 /* WTNavigationTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B5722000CAD000E8C406 /* WTNavigationTransition.m */; };
 		1450B5792000D0E500E8C406 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B5782000D0E500E8C406 /* Reachability.m */; };
+		1450B57E2003130000E8C406 /* WTDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B57D2003130000E8C406 /* WTDisplayView.m */; };
+		1450B581200314F500E8C406 /* WTDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B580200314F500E8C406 /* WTDisplayViewController.m */; };
 		1464CF761F04914B0079112E /* UIColor+HexStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF731F04914B0079112E /* UIColor+HexStr.m */; };
 		1464CF771F04914B0079112E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF751F04914B0079112E /* UIView+Category.m */; };
 		1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */; };
@@ -423,6 +425,19 @@
 		1450B5722000CAD000E8C406 /* WTNavigationTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTNavigationTransition.m; sourceTree = "<group>"; };
 		1450B5772000D0E500E8C406 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		1450B5782000D0E500E8C406 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		1450B57C2003130000E8C406 /* WTDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTDisplayView.h; sourceTree = "<group>"; };
+		1450B57D2003130000E8C406 /* WTDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTDisplayView.m; sourceTree = "<group>"; };
+		1450B57F200314F500E8C406 /* WTDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTDisplayViewController.h; sourceTree = "<group>"; };
+		1450B580200314F500E8C406 /* WTDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTDisplayViewController.m; sourceTree = "<group>"; };
+		1450B58420031F7200E8C406 /* image_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_1.jpg; sourceTree = "<group>"; };
+		1450B58520031F7200E8C406 /* image_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_2.jpg; sourceTree = "<group>"; };
+		1450B58620031F7200E8C406 /* image_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_3.jpg; sourceTree = "<group>"; };
+		1450B58720031F7200E8C406 /* image_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_4.jpg; sourceTree = "<group>"; };
+		1450B58820031F7200E8C406 /* image_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_5.jpg; sourceTree = "<group>"; };
+		1450B58920031F7200E8C406 /* image_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_6.jpg; sourceTree = "<group>"; };
+		1450B58A20031F7200E8C406 /* image_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_7.jpg; sourceTree = "<group>"; };
+		1450B58B20031F7200E8C406 /* image_8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_8.jpg; sourceTree = "<group>"; };
+		1450B58C20031F7200E8C406 /* image_9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image_9.jpg; sourceTree = "<group>"; };
 		1464CF721F04914B0079112E /* UIColor+HexStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexStr.h"; sourceTree = "<group>"; };
 		1464CF731F04914B0079112E /* UIColor+HexStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexStr.m"; sourceTree = "<group>"; };
 		1464CF741F04914B0079112E /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
@@ -936,6 +951,33 @@
 			path = WTTransition;
 			sourceTree = "<group>";
 		};
+		1450B57B200312C600E8C406 /* WTDisplayView */ = {
+			isa = PBXGroup;
+			children = (
+				1450B57C2003130000E8C406 /* WTDisplayView.h */,
+				1450B57D2003130000E8C406 /* WTDisplayView.m */,
+				1450B57F200314F500E8C406 /* WTDisplayViewController.h */,
+				1450B580200314F500E8C406 /* WTDisplayViewController.m */,
+			);
+			path = WTDisplayView;
+			sourceTree = "<group>";
+		};
+		1450B58320031F7200E8C406 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				1450B58420031F7200E8C406 /* image_1.jpg */,
+				1450B58520031F7200E8C406 /* image_2.jpg */,
+				1450B58620031F7200E8C406 /* image_3.jpg */,
+				1450B58720031F7200E8C406 /* image_4.jpg */,
+				1450B58820031F7200E8C406 /* image_5.jpg */,
+				1450B58920031F7200E8C406 /* image_6.jpg */,
+				1450B58A20031F7200E8C406 /* image_7.jpg */,
+				1450B58B20031F7200E8C406 /* image_8.jpg */,
+				1450B58C20031F7200E8C406 /* image_9.jpg */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
 		1464CF961F0777A80079112E /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1019,6 +1061,7 @@
 		840F942A1EFFD25B0028AC24 /* WTSummary */ = {
 			isa = PBXGroup;
 			children = (
+				1450B58320031F7200E8C406 /* resource */,
 				1450B5772000D0E500E8C406 /* Reachability.h */,
 				1450B5782000D0E500E8C406 /* Reachability.m */,
 				1429D2411F0E16D6008DAD0D /* Const */,
@@ -1102,6 +1145,7 @@
 		840F94711EFFFAFF0028AC24 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				1450B57B200312C600E8C406 /* WTDisplayView */,
 				1450B56C2000CAD000E8C406 /* WTTransition */,
 				1430DA001FCBED9800A3A417 /* WTButtonStyle */,
 				1430D9FC1FCBED4100A3A417 /* WTPageControl */,
@@ -1347,6 +1391,7 @@
 				1430DA151FCBEED100A3A417 /* ThirdViewController.m in Sources */,
 				1429D1F41F0DD83C008DAD0D /* YYTextArchiver.m in Sources */,
 				1430D9F31FCBBFB700A3A417 /* UIButton+WebCache.m in Sources */,
+				1450B57E2003130000E8C406 /* WTDisplayView.m in Sources */,
 				1429D1EB1F0DD83C008DAD0D /* YYTextContainerView.m in Sources */,
 				1430D99A1FCBB9B000A3A417 /* MASLayoutConstraint.m in Sources */,
 				1464CF991F0777A80079112E /* WTNavigationController.m in Sources */,
@@ -1382,6 +1427,7 @@
 				1430DA131FCBEED100A3A417 /* FourViewController.m in Sources */,
 				1430D9F71FCBBFB700A3A417 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1430D96E1FCBB5BA00A3A417 /* WTSliderControl.m in Sources */,
+				1450B581200314F500E8C406 /* WTDisplayViewController.m in Sources */,
 				1429D2021F0DD83C008DAD0D /* YYTextView.m in Sources */,
 				1429D1F81F0DD83C008DAD0D /* YYTextRunDelegate.m in Sources */,
 				1429D1FC1F0DD83C008DAD0D /* UIView+YYText.m in Sources */,
@@ -1619,6 +1665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7SY57U9SGN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WTSummary/PrefixHeader.pch";
@@ -1635,6 +1682,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = 7SY57U9SGN;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WTSummary/PrefixHeader.pch";
