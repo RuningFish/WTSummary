@@ -76,30 +76,12 @@ NSString * const KHandleNavigationStateEnd = @"KHandleNavigationStateEnd";
     [UINavigationBar appearance].backIndicatorTransitionMaskImage =
     [UIImage imageNamed:@"nav_bar_back_icon_white"];
 
-    [[UINavigationBar appearance] setBarTintColor:[UIColor greenColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     // hide title of back button
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
-                                                         forBarMetrics:UIBarMetricsDefault];
     
-//    NSShadow *clearShadow = [[NSShadow alloc] init];
-//    clearShadow.shadowColor = [UIColor clearColor];
-//    clearShadow.shadowOffset = CGSizeMake(0, 0);
-//
-//    UIColor *normalTitleColor = [UIColor whiteColor];
-//    UIColor *highlightedTitleColor = [UIColor whiteColor];
-//    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
-//                                                           NSForegroundColorAttributeName : normalTitleColor,
-//                                                           NSShadowAttributeName : clearShadow
-//                                                           } forState:UIControlStateNormal];
-//    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
-//                                                           NSForegroundColorAttributeName : highlightedTitleColor,
-//                                                           NSShadowAttributeName : clearShadow
-//                                                           } forState:UIControlStateHighlighted];
-//
-//    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
-//
-//    [[UIToolbar appearance] setBarTintColor:[UIColor whiteColor]];
+//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, 0)
+//                                                         forBarMetrics:UIBarMetricsDefault];
     
 }
 
@@ -128,6 +110,25 @@ NSString * const KHandleNavigationStateEnd = @"KHandleNavigationStateEnd";
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    
+    if (self.childViewControllers.count > 0) { // 如果push进来的不是第一个控制器
+        UIButton * backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [backButton setTitle:@"返回" forState:UIControlStateNormal];
+        [backButton setImage:[UIImage imageNamed:@"backwhite"] forState:UIControlStateNormal];
+        backButton.titleLabel.font = [UIFont systemFontOfSize:15];
+        backButton.size = CGSizeMake(70, 30);
+        backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
+        // 让按钮内部的所有内容左对齐
+        backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        // 让按钮的内容往左边偏移10
+        backButton.contentEdgeInsets = UIEdgeInsetsMake(0, -8, 0, 0);
+        [backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [backButton addTarget:self action:@selector(popViewControllerAnimated:) forControlEvents:UIControlEventTouchUpInside];
+        // 修改导航栏左边的item
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+        // 隐藏tabbar
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
     
     [super pushViewController:viewController animated:animated];
 }

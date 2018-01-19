@@ -14,11 +14,7 @@
 //    UINavigationBar * navigationbar = [UINavigationBar appearance];
 //    UIView * barBackgroundView = [navigationbar valueForKey:@"_barBackgroundView"];
 //    
-//    for (UIView * view in barBackgroundView.subviews) {
-//        if ([view isKindOfClass:[UIImageView class]]) {
-//            view.hidden = YES;
-//        }
-//    }
+
     
 //    unsigned int count = 0;
 //    Ivar * ivars = class_copyIvarList([self class], &count);

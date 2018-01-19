@@ -34,7 +34,7 @@
     self.output = [[AVCaptureMetadataOutput alloc] init];
     [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     
-    self.session = [[AVCaptureSession alloc] init];
+    self.session = [[AVCaptureSession alloc] init]; 
     [self.session setSessionPreset:AVCaptureSessionPresetHigh];
     
     if ([_session canAddInput:self.input])  [_session addInput:self.input];

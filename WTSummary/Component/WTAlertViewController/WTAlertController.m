@@ -332,7 +332,7 @@ static CGFloat const cellHeight = 50;
 - (UIView *)tableHeadView {
     
     if (!_tableHeadView) {
-        CGFloat headHeight;
+        CGFloat headHeight = 0.0f;
         CGFloat headWidth = (self.alertStyle == WTAlertControllerStyleActionSheet)? self.frame.size.width - KLeftMargin * 2 : self.alertViewWidth;
         _tableHeadView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, headWidth, headHeight)];
         _tableHeadView.backgroundColor = [UIColor whiteColor];

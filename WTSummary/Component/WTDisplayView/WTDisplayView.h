@@ -41,8 +41,7 @@ typedef enum {
 @property (nonatomic ,weak) id<WTDisplayViewDelegate> delegate;
 @property (nonatomic ,copy) void (^clickItemAtIndexBlock)(NSInteger clickIndex);
 
-+ (instancetype)displayViewWithFrame:(CGRect)frame delegate:(id<WTDisplayViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage;
-
++ (instancetype)displayViewWithFrame:(CGRect)frame delegate:(id<WTDisplayViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 + (instancetype)displayViewWithFrame:(CGRect)frame imageStringArray:(NSArray *)imageString;
 /** 只展示文字的时候不响应手势 */
 - (void)disableScroll;

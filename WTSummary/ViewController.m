@@ -16,6 +16,7 @@
 #import "WTCardViewController.h"
 #import "TestTwoViewController.h"
 #import "WTDisplayViewController.h"
+#import "WTFormSettingController.h" // 表单
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
@@ -32,33 +33,19 @@ static NSString * const WTPersonal = @"WTPersonalViewController";
 static NSString * const WTCardView = @"WTCardViewController";
 static NSString * const WTTransition = @"WTTransition";
 static NSString * const WTDisplayView = @"WTDisplayView";
+static NSString * const WTFormCell = @"WTFormCell";
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.title = @"";
     UIBarButtonItem * leftItem = [UIBarButtonItem itemWithType:UIBarButtonItemTypeLeft Image:@"discover_tv_icon_code" highImage:nil target:self action:@selector(iconCodeClick)];
     self.navigationItem.leftBarButtonItem = leftItem;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.tableView];
-//    return;
-//    UIView * v = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 300, 300)];
-//    v.center = self.view.center;
-//    [self.view addSubview:v];
-//    //v.backgroundColor = [UIColor colorWithHexString:@"#95704f"];
-//    
-//    [v addDottedLineColor:[UIColor redColor] lineWidth:1.0 lineHeight:20 margin:10];
-//    
-//    UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, 100, 100)];
-//    [self.view addSubview:imageView];
-//    imageView.image = [UIImage createImageWithColor:[UIColor colorWithHexString:@"#FF4F52"]];
-//    imageView.userInteractionEnabled = YES;
-//    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGesture)];
-//    [imageView addGestureRecognizer:tap];
-    
 }
 
 - (void)iconCodeClick{
@@ -95,7 +82,7 @@ static NSString * const WTDisplayView = @"WTDisplayView";
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-   }
+}
 
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -110,7 +97,7 @@ static NSString * const WTDisplayView = @"WTDisplayView";
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView,WTFormCell];
     }
     return _dataArray;
 }
@@ -173,6 +160,10 @@ static NSString * const WTDisplayView = @"WTDisplayView";
     else if ([title isEqualToString:WTDisplayView]){
         WTDisplayViewController * displayVC = [[WTDisplayViewController alloc] init];
         [self.navigationController pushViewController:displayVC animated:YES];
+    }
+    else if ([title isEqualToString:WTFormCell]){
+        WTFormSettingController * seetingVC = [[WTFormSettingController alloc] init];
+        [self.navigationController pushViewController:seetingVC animated:YES];
     }
 }
 

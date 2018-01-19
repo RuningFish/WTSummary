@@ -11,6 +11,41 @@
 #import "WTNavigationController.h"
 #import "ViewController.h"
 #import "TestTwoViewController.h"
+
+void UncaughtExceptionHandler(NSException * exception) {
+
+    // 获取异常相关信息
+    NSArray *callStackSymbols = [exception callStackSymbols];
+    NSString *callStackSymbolStr = [callStackSymbols componentsJoinedByString:@"\n"];
+    NSString *reason = [exception reason];
+    NSString *name   = [exception name];
+
+    NSDate * date = [NSDate date];
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy年MM月dd日 HH小时mm分ss秒"];
+    NSString * dateStr = [dateFormatter stringFromDate:date];
+
+    NSLog(@"崩溃时间：%@",dateStr);
+    NSLog(@"异常名称：%@",name);
+    NSLog(@"异常原因：%@",reason);
+    NSLog(@"堆栈标志:\n %@",callStackSymbolStr);
+
+
+//    //系统版本
+//    NSString    * systemVersion    = [[UIDevice currentDevice] systemVersion];
+//    //将crash日志保存到Document目录下的ExceptReport文件夹下
+//    NSString * path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    NSString * exceptReport = [path stringByAppendingPathComponent:@"ExceptReport"];
+//    NSFileManager * fileManager = [NSFileManager defaultManager];
+//    NSString * crashString = [NSString stringWithFormat:@"奔溃时间:%@ \n 系统版本:%@  \n 异常名称:%@ \n 异常原因:%@ \n 堆栈标志:\n %@", dateStr,systemVersion,name, reason, callStackSymbolStr];
+//    // 把错误日志写到文件中,如果存在路径先清理一下
+//    if (![fileManager fileExistsAtPath:exceptReport]) {
+//        [fileManager removeItemAtPath:exceptReport error:nil];
+//        [crashString writeToFile:exceptReport atomically:YES encoding:NSUTF8StringEncoding error:nil];
+//    }
+}
+
+
 @interface AppDelegate ()
 
 @end
@@ -20,6 +55,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
+    NSSetUncaughtExceptionHandler(&UncaughtExceptionHandler);
+    
     TestViewController * test = [[TestViewController alloc] init];
     ViewController * viewController = [[ViewController alloc] init];
     TestTwoViewController * testTwo = [[TestTwoViewController alloc] init];

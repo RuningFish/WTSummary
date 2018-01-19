@@ -62,6 +62,7 @@ static NSString * const identifier = @"displayCell";
 
 + (instancetype)displayViewWithFrame:(CGRect)frame delegate:(id<WTDisplayViewDelegate>)delegate placeholderImage:(UIImage *)placeholderImage{
     WTDisplayView * displayView = [[self alloc] initWithFrame:frame];
+    displayView.delegate = delegate;
     displayView.placeholderImage = placeholderImage;
     return displayView;
 }
