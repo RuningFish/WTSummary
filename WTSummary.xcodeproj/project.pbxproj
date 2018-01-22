@@ -152,6 +152,8 @@
 		149973E720107C5900A1C4D8 /* WTFormTextViewEditItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 149973E620107C5900A1C4D8 /* WTFormTextViewEditItem.m */; };
 		149973EA201087E900A1C4D8 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 149973E9201087E900A1C4D8 /* UITextView+Placeholder.m */; };
 		149973ED20118C3F00A1C4D8 /* WTFormSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 149973EC20118C3F00A1C4D8 /* WTFormSectionItem.m */; };
+		149973F62011D6CA00A1C4D8 /* WTAutoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149973F52011D6CA00A1C4D8 /* WTAutoPlayViewController.m */; };
+		149973FF2011F43D00A1C4D8 /* WTFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 149973FE2011F43D00A1C4D8 /* WTFPSLabel.m */; };
 		14C83AF31FCD4A2A00D88757 /* WTCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C83AF21FCD4A2A00D88757 /* WTCardView.m */; };
 		14C83AF61FCD4A6300D88757 /* WTCardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C83AF51FCD4A6300D88757 /* WTCardViewCell.m */; };
 		14EF07F41F29937F00D07DB5 /* CYPhotoPreviewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF07F11F29937F00D07DB5 /* CYPhotoPreviewer.m */; };
@@ -487,6 +489,10 @@
 		149973E9201087E900A1C4D8 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		149973EB20118C3F00A1C4D8 /* WTFormSectionItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTFormSectionItem.h; sourceTree = "<group>"; };
 		149973EC20118C3F00A1C4D8 /* WTFormSectionItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFormSectionItem.m; sourceTree = "<group>"; };
+		149973F42011D6CA00A1C4D8 /* WTAutoPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAutoPlayViewController.h; sourceTree = "<group>"; };
+		149973F52011D6CA00A1C4D8 /* WTAutoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAutoPlayViewController.m; sourceTree = "<group>"; };
+		149973FD2011F43D00A1C4D8 /* WTFPSLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTFPSLabel.h; sourceTree = "<group>"; };
+		149973FE2011F43D00A1C4D8 /* WTFPSLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFPSLabel.m; sourceTree = "<group>"; };
 		14C83AE31FCD49C600D88757 /* WTAlertTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAlertTextView.h; sourceTree = "<group>"; };
 		14C83AE41FCD49C600D88757 /* WTAlertTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAlertTextView.m; sourceTree = "<group>"; };
 		14C83AE51FCD49C600D88757 /* WTEditImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTEditImageView.h; sourceTree = "<group>"; };
@@ -1068,6 +1074,24 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		149973EE2011D30100A1C4D8 /* AutoPlay */ = {
+			isa = PBXGroup;
+			children = (
+				149973F42011D6CA00A1C4D8 /* WTAutoPlayViewController.h */,
+				149973F52011D6CA00A1C4D8 /* WTAutoPlayViewController.m */,
+			);
+			path = AutoPlay;
+			sourceTree = "<group>";
+		};
+		149973FC2011F42A00A1C4D8 /* WTFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				149973FD2011F43D00A1C4D8 /* WTFPSLabel.h */,
+				149973FE2011F43D00A1C4D8 /* WTFPSLabel.m */,
+			);
+			path = WTFPSLabel;
+			sourceTree = "<group>";
+		};
 		14C83AE21FCD49C600D88757 /* ImageAndTitle */ = {
 			isa = PBXGroup;
 			children = (
@@ -1228,6 +1252,8 @@
 		840F94711EFFFAFF0028AC24 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				149973FC2011F42A00A1C4D8 /* WTFPSLabel */,
+				149973EE2011D30100A1C4D8 /* AutoPlay */,
 				1450B590200F23B800E8C406 /* 表单类型 */,
 				1450B57B200312C600E8C406 /* WTDisplayView */,
 				1450B56C2000CAD000E8C406 /* WTTransition */,
@@ -1496,6 +1522,7 @@
 				1430D9F01FCBBFB700A3A417 /* SDWebImageDownloaderOperation.m in Sources */,
 				1430D9FA1FCBBFB700A3A417 /* UIView+WebCacheOperation.m in Sources */,
 				846651191F12596400AAA5FA /* TZAssetModel.m in Sources */,
+				149973F62011D6CA00A1C4D8 /* WTAutoPlayViewController.m in Sources */,
 				1429D1EF1F0DD83C008DAD0D /* YYTextKeyboardManager.m in Sources */,
 				845C562F1F08AD5A00906099 /* WTLabel.m in Sources */,
 				8466511A1F12596400AAA5FA /* TZImageManager.m in Sources */,
@@ -1602,6 +1629,7 @@
 				1430D9631FCBB48B00A3A417 /* WTPlaybackContainerView.m in Sources */,
 				1450B598200F281100E8C406 /* WTFormBaseItem.m in Sources */,
 				1430D9A71FCBBF4800A3A417 /* WTRequestManager.m in Sources */,
+				149973FF2011F43D00A1C4D8 /* WTFPSLabel.m in Sources */,
 				1429D1EC1F0DD83C008DAD0D /* YYTextDebugOption.m in Sources */,
 				1429D1FA1F0DD83C008DAD0D /* NSParagraphStyle+YYText.m in Sources */,
 				1429D1F11F0DD83C008DAD0D /* YYTextLine.m in Sources */,

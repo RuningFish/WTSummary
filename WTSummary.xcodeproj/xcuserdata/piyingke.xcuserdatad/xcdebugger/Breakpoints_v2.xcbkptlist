@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/ViewController.m"
-            timestampString = "537877902.008696"
+            timestampString = "538280290.272468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "-iconCodeClick"
             landmarkType = "7">
          </BreakpointContent>
@@ -420,7 +420,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538037316.796566"
+            timestampString = "538280290.274761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -436,7 +436,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538037316.797525"
+            timestampString = "538280290.275315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -452,7 +452,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538037316.798068"
+            timestampString = "538280290.275547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -468,11 +468,11 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/Component/%E8%A1%A8%E5%8D%95%E7%B1%BB%E5%9E%8B/WTFormSettingController.m"
-                  timestampString = "538023898.544485"
+                  timestampString = "538047149.304368"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
                   offsetFromSymbolStart = "1812">
                </Location>
                <Location
@@ -483,11 +483,11 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/Component/%E8%A1%A8%E5%8D%95%E7%B1%BB%E5%9E%8B/WTFormSettingController.m"
-                  timestampString = "538023898.54651"
+                  timestampString = "538047149.30639"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
                   offsetFromSymbolStart = "104">
                </Location>
             </Locations>
@@ -500,7 +500,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538037316.79846"
+            timestampString = "538280290.2757241"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "264"
@@ -516,7 +516,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538037316.79884"
+            timestampString = "538280290.275877"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
@@ -532,7 +532,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538037316.79925"
+            timestampString = "538280290.276026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "220"
@@ -548,7 +548,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538037316.799623"
+            timestampString = "538280290.2761689"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "232"
@@ -564,12 +564,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538037316.799984"
+            timestampString = "538280290.276342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "249"
             endingLineNumber = "249"
             landmarkName = "-tableView:viewForFooterInSection:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackView.m"
+            timestampString = "538280290.27649"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackView.m"
+            timestampString = "538280290.276922"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
+            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

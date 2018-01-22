@@ -11,7 +11,7 @@
 #import "WTNavigationController.h"
 #import "ViewController.h"
 #import "TestTwoViewController.h"
-
+#import "WTFPSLabel.h"
 void UncaughtExceptionHandler(NSException * exception) {
 
     // 获取异常相关信息
@@ -67,6 +67,8 @@ void UncaughtExceptionHandler(NSException * exception) {
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
  
+    [self.window addSubview:[[WTFPSLabel alloc] initWithFrame:CGRectMake(20, 70, 0, 0)]];
+    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     // 设置webview 的UserAgent

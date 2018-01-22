@@ -99,6 +99,7 @@ typedef enum {
     self.tableView.rowHeight = size.width / 16 * 9 + 10;
     
     [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    
     self.autoPlay = NO;
     
     self.indexPath = [NSIndexPath indexPathForRow:-1 inSection:0];
@@ -281,9 +282,10 @@ typedef enum {
         [self stop];
     }
     
-    if (self.autoPlay) {
-        [self findBestCellToPlay];
-    }
+//    if (self.autoPlay) {
+//        [self findBestCellToPlay];
+//    }
+
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

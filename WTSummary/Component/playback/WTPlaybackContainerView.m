@@ -55,14 +55,12 @@
             // 全屏
             [bottomView switchFullscreen:YES success:nil];
             [button setImage:[UIImage imageNamed:WTPlaybackBundle(@"Fullscreen_exit")] forState:UIControlStateNormal];
-            button.selected = NO;
             NSLog(@"全屏");
         }
         else{
             // 半屏
             [bottomView switchFullscreen:NO success:nil];
             [button setImage:[UIImage imageNamed:WTPlaybackBundle(@"Fullscreen")] forState:UIControlStateNormal];
-            button.selected = YES;
             NSLog(@"半屏");
         }
     };
@@ -84,7 +82,6 @@
         [self.playbackView stop];
         [weakLoading hiddenReplayAndShare];
         [self play];
-//        [self.playbackView seekToTime:0.0 completionHandler:nil];
         [self refreshMediaControl];
         
     };
@@ -309,7 +306,6 @@
 - (void)sliderEndMove:(WTCustomSlider *)slider{
     
     self.playbackView.currentPlaybackTime = slider.value * self.playbackView.duration;
-    
     [self refreshMediaControl];
     SEL hidden = NSSelectorFromString(@"mediaControlHidden");
     [self.mediaControlView performSelector:hidden withObject:nil afterDelay:5.0];

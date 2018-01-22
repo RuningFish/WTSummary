@@ -133,7 +133,9 @@
 
 - (void)fullScreenButtonClick{
     
-     NSLog(@"fullScreenButtonClick %d ",self.fullScreenBtn.selected);
+    self.fullScreenBtn.selected = !self.fullScreenBtn.selected;
+    NSLog(@"fullScreenButtonClick %d ",self.fullScreenBtn.selected);
+    
     if (self.fullScreenBlock) {
         self.fullScreenBlock(self.fullScreenBtn);
     }

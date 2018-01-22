@@ -17,6 +17,7 @@
 #import "TestTwoViewController.h"
 #import "WTDisplayViewController.h"
 #import "WTFormSettingController.h" // 表单
+#import "WTAutoPlayViewController.h" // 自动播放测试
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
@@ -34,6 +35,7 @@ static NSString * const WTCardView = @"WTCardViewController";
 static NSString * const WTTransition = @"WTTransition";
 static NSString * const WTDisplayView = @"WTDisplayView";
 static NSString * const WTFormCell = @"WTFormCell";
+static NSString * const AutoPlay = @"AutoPlay";
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -97,7 +99,7 @@ static NSString * const WTFormCell = @"WTFormCell";
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView,WTFormCell];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView,WTFormCell,AutoPlay];
     }
     return _dataArray;
 }
@@ -164,6 +166,10 @@ static NSString * const WTFormCell = @"WTFormCell";
     else if ([title isEqualToString:WTFormCell]){
         WTFormSettingController * seetingVC = [[WTFormSettingController alloc] init];
         [self.navigationController pushViewController:seetingVC animated:YES];
+    }
+    else if ([title isEqualToString:AutoPlay]){
+        WTAutoPlayViewController * autoPlayVC = [[WTAutoPlayViewController alloc] init];
+        [self.navigationController pushViewController:autoPlayVC animated:YES];
     }
 }
 

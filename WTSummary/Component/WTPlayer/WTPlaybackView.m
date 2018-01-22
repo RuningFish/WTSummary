@@ -418,6 +418,9 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
 #pragma mark - 加载状态改变
 - (void)loadStateDidChange{
     
+    if (self.playToEnd) {
+        return;
+    }
     [[NSNotificationCenter defaultCenter] postNotificationName:WTPlaybackLoadStateDidChangeNotification object:self];
     
 }

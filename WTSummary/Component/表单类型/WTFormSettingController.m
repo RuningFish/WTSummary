@@ -268,4 +268,5 @@
     WTFormSectionItem * sectionItem = self.data[section];
     return sectionItem.footerTitle?sectionItem.footerTitle:@"";
 }
+
 @end
