@@ -13,6 +13,8 @@
 #import "WTNotificationManager.h"
 #import "WTPlaybackIdleTimer.h"
 #import "WTPlaybackResouceLoader.h"
+#import "WTResourceLoaderManager.h"
+#import "WTResourceCacheManager.h"
 inline static bool isFloatZero(float value)
 {
     return fabsf(value) <= 0.00001f;
@@ -26,7 +28,12 @@ NSString * const WTPlaybackLoadStateDidChangeNotification = @"WTPlaybackLoadStat
 NSString * const WTPlaybackPlayerItemDidPlayToEndTimeNotification = @"WTPlaybacPlayerItemDidPlayToEndTimeNotification";
 /** 播放状态改变 */
 NSString * const WTPlaybackPlayStateDidChangeNotification = @"WTPlaybackPlayStateDidChangeNotification";
-
+/**播放完成的infoKey */
+NSString * const WTPlaybackDidFinishReasonUserInfoKey = @"WTPlaybackDidFinishReasonUserInfoKey";
+/** 正常播放完成 */
+NSString * const WTPlaybackPlayedEnd = @"WTPlaybackPlayedEnd";
+/** 播放出错 */
+NSString * const WTPlaybackPlayedError = @"WTPlaybackPlayedError";
 @interface WTPlaybackView ()
 
 @property (nonatomic, strong) NSURL * playUrl;
@@ -54,9 +61,11 @@ NSString * const WTPlaybackPlayStateDidChangeNotification = @"WTPlaybackPlayStat
 
 @property (nonatomic, strong)     WTNotificationManager * notificationManager;
 @property (nonatomic, strong)     WTPlaybackResouceLoader * resourceLoader;
-
+@property (nonatomic, strong)     WTResourceLoaderManager * resourceLoaderManager;
 /** 是否是本地视频 */
 @property (nonatomic, assign)     BOOL isLocalVideo;
+@property (nonatomic, strong)     WTPlaybackFileManager * fileManager;
+@property (nonatomic, copy)       NSString * cachePath;
 @end
 
 /** playerItem */
@@ -93,12 +102,10 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
 }
 
 - (id)initWithURLString:(NSString *)urlString{
-    
-    NSURL * url = nil;
+    __block NSURL * url = nil;
     if (urlString == nil) {
         urlString = @"";
     }
-    
     if ([urlString rangeOfString:@"/"].location == 0) {
         //本地
         url = [NSURL fileURLWithPath:urlString];
@@ -107,8 +114,17 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
     }
     else {
         url = [NSURL URLWithString:urlString];
-        NSLog(@"网络视频");
-        self.isLocalVideo = NO;
+        [[WTResourceCacheManager manager] cacheFileForURL:url completionHandle:^(BOOL hasCached, NSString *fileUrl) {
+            NSLog(@"是否有缓存 - %zd  路径 - %@",hasCached,fileUrl);
+            if (hasCached) {
+                url = [NSURL fileURLWithPath:fileUrl];;
+                self.isLocalVideo = YES;
+            }
+            else{
+                self.isLocalVideo = NO;
+                NSLog(@"网络视频");
+            }
+        }];
     }
     
     if (self = [self initWithURL:url]) {
@@ -185,7 +201,6 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
 
 #pragma mark - isPlaying
 - (BOOL)isPlaying{
-    
     if (!isFloatZero(self.player.rate)) {
         return YES;
     }
@@ -196,19 +211,29 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
 
 #pragma mark - 准备播放
 - (void)prepareToPlay{
-    
+//     return;
     NSURL * url = self.playUrl;
+    self.resourceLoaderManager = [WTResourceLoaderManager manager];
     if (self.playCache) {
-        // 需要边下边播
-        NSURLComponents * components = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO];
-        components.scheme = @"WTPlayback";
-        url = [components URL];
+        if (!self.isLocalVideo) {
+            // 需要边下边播
+//            NSURLComponents * components = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO];
+//            components.scheme = @"WTPlayback";
+//            url = [components URL];
+            
+            url = [self.resourceLoaderManager resourceLoaderURL:url];
+        }
     }
 
     AVURLAsset * asset = [AVURLAsset URLAssetWithURL:url options:nil];
     self.playAsset = asset;
-    self.resourceLoader = [[WTPlaybackResouceLoader alloc] init];
-    [self.playAsset.resourceLoader setDelegate:self.resourceLoader queue:dispatch_get_main_queue()];
+    if (!self.isLocalVideo) {
+//        self.resourceLoader = [[WTPlaybackResouceLoader alloc] init];
+//        [self.playAsset.resourceLoader setDelegate:self.resourceLoader queue:dispatch_get_main_queue()];
+        
+        
+        [self.playAsset.resourceLoader setDelegate:self.resourceLoaderManager queue:dispatch_get_main_queue()];
+    }
    
     NSArray * keys = @[@"tracks",@"playable",@"duration"];
     [asset loadValuesAsynchronouslyForKeys:keys completionHandler:^{
@@ -444,7 +469,7 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
         
         [self stateDidChange];
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:WTPlaybackPlayerItemDidPlayToEndTimeNotification object:self userInfo:@{@"WTPlaybackDidFinishReasonUserInfoKey":@"WTPlaybackPlayedEnd"}];
+        [[NSNotificationCenter defaultCenter] postNotificationName:WTPlaybackPlayerItemDidPlayToEndTimeNotification object:self userInfo:@{WTPlaybackDidFinishReasonUserInfoKey:WTPlaybackPlayedEnd}];
         
     });
 }
@@ -476,7 +501,7 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
         [[NSNotificationCenter defaultCenter]
          postNotificationName:WTPlaybackPlayerItemDidPlayToEndTimeNotification
          object:self userInfo:@{
-                    @"WTPlaybackDidFinishReasonUserInfoKey": @"WTPlaybackPlayedError",
+                    WTPlaybackDidFinishReasonUserInfoKey: WTPlaybackPlayedError,
                     @"error": blockError
                     }];
     });

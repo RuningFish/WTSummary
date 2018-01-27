@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
-
-@class WTPlaybackRequestTask,WTPlaybackDownLoader;
+#import "WTPlaybackDownLoader.h"
+@class WTPlaybackRequestTask;
 
 @interface WTPlaybackResouceLoader : NSObject<AVAssetResourceLoaderDelegate>
 /** request */

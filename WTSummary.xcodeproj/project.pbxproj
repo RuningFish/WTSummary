@@ -130,6 +130,7 @@
 		1450B59B200F2B8E00E8C406 /* WTFormSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B59A200F2B8E00E8C406 /* WTFormSettingController.m */; };
 		1450B59E200F2DF300E8C406 /* WTFormBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B59D200F2DF300E8C406 /* WTFormBaseCell.m */; };
 		1450B5A1200F315300E8C406 /* WTFormDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B5A0200F315300E8C406 /* WTFormDefaultCell.m */; };
+		1453BA10201C720E00C332D3 /* WTResourceDownLoaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453BA0F201C720E00C332D3 /* WTResourceDownLoaderOperation.m */; };
 		1464CF761F04914B0079112E /* UIColor+HexStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF731F04914B0079112E /* UIColor+HexStr.m */; };
 		1464CF771F04914B0079112E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF751F04914B0079112E /* UIView+Category.m */; };
 		1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */; };
@@ -154,6 +155,10 @@
 		149973ED20118C3F00A1C4D8 /* WTFormSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 149973EC20118C3F00A1C4D8 /* WTFormSectionItem.m */; };
 		149973F62011D6CA00A1C4D8 /* WTAutoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 149973F52011D6CA00A1C4D8 /* WTAutoPlayViewController.m */; };
 		149973FF2011F43D00A1C4D8 /* WTFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 149973FE2011F43D00A1C4D8 /* WTFPSLabel.m */; };
+		1499740620185E2F00A1C4D8 /* WTResourceLoaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1499740520185E2F00A1C4D8 /* WTResourceLoaderManager.m */; };
+		1499740920185E4C00A1C4D8 /* WTResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1499740820185E4C00A1C4D8 /* WTResourceLoader.m */; };
+		149974122018755500A1C4D8 /* WTResourceDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 149974112018755500A1C4D8 /* WTResourceDownLoader.m */; };
+		14997415201888B100A1C4D8 /* WTResourceCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14997414201888B100A1C4D8 /* WTResourceCacheManager.m */; };
 		14C83AF31FCD4A2A00D88757 /* WTCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C83AF21FCD4A2A00D88757 /* WTCardView.m */; };
 		14C83AF61FCD4A6300D88757 /* WTCardViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C83AF51FCD4A6300D88757 /* WTCardViewCell.m */; };
 		14EF07F41F29937F00D07DB5 /* CYPhotoPreviewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EF07F11F29937F00D07DB5 /* CYPhotoPreviewer.m */; };
@@ -460,6 +465,8 @@
 		1450B59D200F2DF300E8C406 /* WTFormBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFormBaseCell.m; sourceTree = "<group>"; };
 		1450B59F200F315300E8C406 /* WTFormDefaultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTFormDefaultCell.h; sourceTree = "<group>"; };
 		1450B5A0200F315300E8C406 /* WTFormDefaultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFormDefaultCell.m; sourceTree = "<group>"; };
+		1453BA0E201C720E00C332D3 /* WTResourceDownLoaderOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTResourceDownLoaderOperation.h; sourceTree = "<group>"; };
+		1453BA0F201C720E00C332D3 /* WTResourceDownLoaderOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTResourceDownLoaderOperation.m; sourceTree = "<group>"; };
 		1464CF721F04914B0079112E /* UIColor+HexStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexStr.h"; sourceTree = "<group>"; };
 		1464CF731F04914B0079112E /* UIColor+HexStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexStr.m"; sourceTree = "<group>"; };
 		1464CF741F04914B0079112E /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
@@ -493,6 +500,14 @@
 		149973F52011D6CA00A1C4D8 /* WTAutoPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAutoPlayViewController.m; sourceTree = "<group>"; };
 		149973FD2011F43D00A1C4D8 /* WTFPSLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTFPSLabel.h; sourceTree = "<group>"; };
 		149973FE2011F43D00A1C4D8 /* WTFPSLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFPSLabel.m; sourceTree = "<group>"; };
+		1499740420185E2F00A1C4D8 /* WTResourceLoaderManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTResourceLoaderManager.h; sourceTree = "<group>"; };
+		1499740520185E2F00A1C4D8 /* WTResourceLoaderManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTResourceLoaderManager.m; sourceTree = "<group>"; };
+		1499740720185E4C00A1C4D8 /* WTResourceLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTResourceLoader.h; sourceTree = "<group>"; };
+		1499740820185E4C00A1C4D8 /* WTResourceLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTResourceLoader.m; sourceTree = "<group>"; };
+		149974102018755500A1C4D8 /* WTResourceDownLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTResourceDownLoader.h; sourceTree = "<group>"; };
+		149974112018755500A1C4D8 /* WTResourceDownLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTResourceDownLoader.m; sourceTree = "<group>"; };
+		14997413201888B100A1C4D8 /* WTResourceCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTResourceCacheManager.h; sourceTree = "<group>"; };
+		14997414201888B100A1C4D8 /* WTResourceCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTResourceCacheManager.m; sourceTree = "<group>"; };
 		14C83AE31FCD49C600D88757 /* WTAlertTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTAlertTextView.h; sourceTree = "<group>"; };
 		14C83AE41FCD49C600D88757 /* WTAlertTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTAlertTextView.m; sourceTree = "<group>"; };
 		14C83AE51FCD49C600D88757 /* WTEditImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTEditImageView.h; sourceTree = "<group>"; };
@@ -1092,6 +1107,23 @@
 			path = WTFPSLabel;
 			sourceTree = "<group>";
 		};
+		1499740320185DE500A1C4D8 /* WTResourceLoader */ = {
+			isa = PBXGroup;
+			children = (
+				1499740420185E2F00A1C4D8 /* WTResourceLoaderManager.h */,
+				1499740520185E2F00A1C4D8 /* WTResourceLoaderManager.m */,
+				1499740720185E4C00A1C4D8 /* WTResourceLoader.h */,
+				1499740820185E4C00A1C4D8 /* WTResourceLoader.m */,
+				149974102018755500A1C4D8 /* WTResourceDownLoader.h */,
+				149974112018755500A1C4D8 /* WTResourceDownLoader.m */,
+				1453BA0E201C720E00C332D3 /* WTResourceDownLoaderOperation.h */,
+				1453BA0F201C720E00C332D3 /* WTResourceDownLoaderOperation.m */,
+				14997413201888B100A1C4D8 /* WTResourceCacheManager.h */,
+				14997414201888B100A1C4D8 /* WTResourceCacheManager.m */,
+			);
+			path = WTResourceLoader;
+			sourceTree = "<group>";
+		};
 		14C83AE21FCD49C600D88757 /* ImageAndTitle */ = {
 			isa = PBXGroup;
 			children = (
@@ -1252,6 +1284,7 @@
 		840F94711EFFFAFF0028AC24 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				1499740320185DE500A1C4D8 /* WTResourceLoader */,
 				149973FC2011F42A00A1C4D8 /* WTFPSLabel */,
 				149973EE2011D30100A1C4D8 /* AutoPlay */,
 				1450B590200F23B800E8C406 /* 表单类型 */,
@@ -1500,6 +1533,7 @@
 				1450B56A2000A4AF00E8C406 /* XWInteractiveTransition.m in Sources */,
 				1430DA151FCBEED100A3A417 /* ThirdViewController.m in Sources */,
 				1429D1F41F0DD83C008DAD0D /* YYTextArchiver.m in Sources */,
+				1499740620185E2F00A1C4D8 /* WTResourceLoaderManager.m in Sources */,
 				1430D9F31FCBBFB700A3A417 /* UIButton+WebCache.m in Sources */,
 				1450B57E2003130000E8C406 /* WTDisplayView.m in Sources */,
 				1429D1EB1F0DD83C008DAD0D /* YYTextContainerView.m in Sources */,
@@ -1558,6 +1592,7 @@
 				1429D2361F0DEA08008DAD0D /* YYAnimatedImageView.m in Sources */,
 				1430D9EA1FCBBFB700A3A417 /* NSImage+WebCache.m in Sources */,
 				1430D9B71FCBBF8E00A3A417 /* AFNetworkReachabilityManager.m in Sources */,
+				14997415201888B100A1C4D8 /* WTResourceCacheManager.m in Sources */,
 				1430D9F61FCBBFB700A3A417 /* UIImage+WebP.m in Sources */,
 				1429D2391F0DEA08008DAD0D /* YYImageCoder.m in Sources */,
 				1464CF761F04914B0079112E /* UIColor+HexStr.m in Sources */,
@@ -1581,6 +1616,7 @@
 				1430D9E81FCBBFB700A3A417 /* MKAnnotationView+WebCache.m in Sources */,
 				846651181F12596400AAA5FA /* TZAssetCell.m in Sources */,
 				1429D1F61F0DD83C008DAD0D /* YYTextParser.m in Sources */,
+				1499740920185E4C00A1C4D8 /* WTResourceLoader.m in Sources */,
 				1430D99F1FCBB9B000A3A417 /* View+MASAdditions.m in Sources */,
 				1430D9451FCBB43E00A3A417 /* WTPlaybackResouceLoader.m in Sources */,
 				1430D9771FCBB95300A3A417 /* WTPlaybackViewController.m in Sources */,
@@ -1600,6 +1636,7 @@
 				1430D9B61FCBBF8E00A3A417 /* AFHTTPSessionManager.m in Sources */,
 				1430D99C1FCBB9B000A3A417 /* MASViewConstraint.m in Sources */,
 				1450B5792000D0E500E8C406 /* Reachability.m in Sources */,
+				149974122018755500A1C4D8 /* WTResourceDownLoader.m in Sources */,
 				8466511F1F12596400AAA5FA /* TZPhotoPreviewController.m in Sources */,
 				8466511E1F12596400AAA5FA /* TZPhotoPreviewCell.m in Sources */,
 				1430D97A1FCBB97300A3A417 /* VideoInfo.m in Sources */,
@@ -1637,6 +1674,7 @@
 				1430D9EB1FCBBFB700A3A417 /* SDImageCache.m in Sources */,
 				1430D9FF1FCBED4100A3A417 /* WTPageControl.m in Sources */,
 				14EF07F51F29937F00D07DB5 /* UIView+CYExtension.m in Sources */,
+				1453BA10201C720E00C332D3 /* WTResourceDownLoaderOperation.m in Sources */,
 				1429D2011F0DD83C008DAD0D /* YYLabel.m in Sources */,
 				149973DE20104DD500A1C4D8 /* WTFormSelectCell.m in Sources */,
 				1430D9BA1FCBBF8E00A3A417 /* AFURLResponseSerialization.m in Sources */,

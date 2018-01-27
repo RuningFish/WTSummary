@@ -13,7 +13,7 @@
 #import "WTRequestManager.h"
 #import "VideoInfo.h"
 #import "WTBrightnessView.h"
-
+#import "WTResourceCacheManager.h"
 typedef enum {
     ScrollDirectionUp,
     ScrollDirectionDown
@@ -64,33 +64,38 @@ typedef enum {
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    NSString * videoPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"WTPlaybackVideo"];
-//    [[NSFileManager defaultManager] removeItemAtPath:videoPath error:nil];
-//    
-//    
-//    
-//    NSString * videoList = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"videoList"];
-//    
-//    NSFileManager * fileManager = [NSFileManager defaultManager];
-//    if (![fileManager fileExistsAtPath:videoList]) {
-//        NSLog(@"本地缓存数据 ");
-//        NSArray * videoData = [NSArray arrayWithContentsOfFile:videoList];
-//        for (int i = 0; i < videoData.count; i ++) {
-//            VideoInfo * videoInfo = [VideoInfo videoInfoWithDictionary:videoData[i]];
-//            [self.dataArray addObject:videoInfo];
-//        }
-//    }
-//    else{
-//        // 请求数据
-//        [self requestVideoData];
-//        NSLog(@"请求数据 ");
-//    }
+    NSString * videoPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"WTPlaybackVideo"];
+    [[NSFileManager defaultManager] removeItemAtPath:videoPath error:nil];
     
-    [self requestVideoData];
+//    [[WTResourceCacheManager manager] cleanAllCache];
+  
+    
+    NSString * videoList = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"videoList"];
+    
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    BOOL exist = [fileManager fileExistsAtPath:videoList];
+    if (exist) {
+        NSLog(@"本地缓存数据 ");
+        NSArray * videoData = [NSArray arrayWithContentsOfFile:videoList];
+        for (int i = 0; i < videoData.count; i ++) {
+            VideoInfo * videoInfo = [VideoInfo videoInfoWithDictionary:videoData[i]];
+            [self.dataArray addObject:videoInfo];
+        }
+    }
+    else{
+        // 请求数据
+        [self requestVideoData];
+//        NSLog(@"请求数据 ");
+    }
+    
+    [WTResourceCacheManager calculateCachedResourceSizeWithCompletionHandle:^(NSInteger fileCount,unsigned long long cacheSize) {
+        NSLog(@"缓存的大小 === %.02lfMB 数量 === %ld",cacheSize/1024.0/1024.0,fileCount);
+    }];
+    [[WTResourceCacheManager manager] cleanAllCache];
+//    [self requestVideoData];
     
     CGSize size = [UIScreen mainScreen].bounds.size;
-    
-    UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height - 20) style:UITableViewStylePlain];
+    UITableView * tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height) style:UITableViewStylePlain];
     [self.view addSubview:tableView];
     self.tableView = tableView;
     self.tableView.delegate = self;
@@ -224,6 +229,7 @@ typedef enum {
         playbackManager.containterView.videoInfo = cell.videoInfo;
         [cell.contentView addSubview:playbackManager.containterView];
         playbackManager.containterView.frame = cell.bounds;
+        playbackManager.containterView.playbackView.playCache = YES;
         [playbackManager prepareToPlay];
         
     }

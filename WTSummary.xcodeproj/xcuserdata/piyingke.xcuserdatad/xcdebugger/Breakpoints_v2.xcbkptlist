@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/ViewController.m"
-            timestampString = "538280290.272468"
+            timestampString = "538717924.597728"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -420,7 +420,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538280290.274761"
+            timestampString = "538717924.601207"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "175"
@@ -436,7 +436,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538280290.275315"
+            timestampString = "538717924.60191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "179"
@@ -452,7 +452,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538280290.275547"
+            timestampString = "538717924.6021481"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -468,7 +468,7 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/Component/%E8%A1%A8%E5%8D%95%E7%B1%BB%E5%9E%8B/WTFormSettingController.m"
-                  timestampString = "538047149.304368"
+                  timestampString = "538740339.5248491"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "108"
@@ -483,7 +483,7 @@
                   moduleName = "WTSummary"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/Component/%E8%A1%A8%E5%8D%95%E7%B1%BB%E5%9E%8B/WTFormSettingController.m"
-                  timestampString = "538047149.30639"
+                  timestampString = "538740339.5267251"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "108"
@@ -500,7 +500,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538280290.2757241"
+            timestampString = "538717924.602286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "264"
@@ -516,7 +516,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538280290.275877"
+            timestampString = "538717924.60238"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
@@ -532,7 +532,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538280290.276026"
+            timestampString = "538717924.602451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "220"
@@ -548,7 +548,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538280290.2761689"
+            timestampString = "538717924.6025161"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "232"
@@ -564,7 +564,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/&#x8868;&#x5355;&#x7c7b;&#x578b;/WTFormSettingController.m"
-            timestampString = "538280290.276342"
+            timestampString = "538717924.602675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "249"
@@ -579,13 +579,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WTSummary/Component/WTPlayer/WTPlaybackView.m"
-            timestampString = "538280290.27649"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackDownLoader.m"
+            timestampString = "538717924.603532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "358"
-            endingLineNumber = "358"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "-cachePathForUrl:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackDownLoader.m"
+            timestampString = "538717924.603691"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-setDownLoadUrl:offset:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -596,12 +612,172 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WTSummary/Component/WTPlayer/WTPlaybackView.m"
-            timestampString = "538280290.276922"
+            timestampString = "538717924.604159"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-initWithURLString:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackResouceLoader.m"
+            timestampString = "538717924.604269"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "-dealWithLoadingRequest:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackResouceLoader.m"
+            timestampString = "538717924.604551"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-dealWithLoadingRequest:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackResouceLoader.m"
+            timestampString = "538717924.604642"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-dealWithLoadingRequest:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackResouceLoader.m"
+            timestampString = "538717924.604721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-dealWithLoadingRequest:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTPlayer/WTPlaybackResouceLoader.m"
+            timestampString = "538717924.604802"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-resourceLoader:shouldWaitForLoadingOfRequestedResource:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTResourceLoader/WTResourceCacheManager.m"
+            timestampString = "538717924.605443"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-cleanCacheWithURL:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WTResourceCacheManager cleanCacheWithURL:]"
+                  moduleName = "WTSummary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/Component/WTResourceLoader/WTResourceCacheManager.m"
+                  timestampString = "538740339.874651"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "852">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__44-[WTResourceCacheManager cleanCacheWithURL:]_block_invoke"
+                  moduleName = "WTSummary"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/piyingke/Desktop/%E6%95%B4%E7%90%86/WTSummary/WTSummary/Component/WTResourceLoader/WTResourceCacheManager.m"
+                  timestampString = "538740339.8774329"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "108">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTResourceLoader/WTResourceDownLoaderOperation.m"
+            timestampString = "538740786.9256721"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-main"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WTSummary/Component/WTResourceLoader/WTResourceDownLoaderOperation.m"
+            timestampString = "538740786.925783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "-URLSession:task:didCompleteWithError:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -102,8 +102,6 @@
     
     [super layoutSubviews];
     
-    NSLog(@"WTControlBottomView -> layoutSubviews %@",NSStringFromCGRect(self.frame));
-    
     [self.currentTime mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(10);
         make.top.bottom.offset(0);
@@ -128,14 +126,10 @@
         make.top.bottom.offset(0);
     }];
     
-    
 }
 
 - (void)fullScreenButtonClick{
-    
     self.fullScreenBtn.selected = !self.fullScreenBtn.selected;
-    NSLog(@"fullScreenButtonClick %d ",self.fullScreenBtn.selected);
-    
     if (self.fullScreenBlock) {
         self.fullScreenBlock(self.fullScreenBtn);
     }

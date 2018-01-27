@@ -196,18 +196,21 @@
 - (void)playbackPlayToEnd:(NSNotification *)notification{
     
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(refreshMediaControl) object:nil];
-    NSLog(@"playbackPlayToEnd %lf ",self.playbackView.currentPlaybackTime);
-    
-    if (self.playbackView.currentPlaybackTime >= self.playbackView.duration) {
-        // 显示重播和分享
-        [self.loadingView showReplayAndShare];
-        
-        // 隐藏进度条
-        [self.mediaControlView mediaControlHidden];
-        
+    NSLog(@"playbackPlayToEnd %.02lf ",self.playbackView.currentPlaybackTime);
+    NSDictionary * info = notification.userInfo;
+    if ([info[WTPlaybackDidFinishReasonUserInfoKey] isEqualToString:WTPlaybackPlayedEnd]) {
+        if (self.playbackView.currentPlaybackTime >= self.playbackView.duration) {
+            // 显示重播和分享
+            [self.loadingView showReplayAndShare];
+            // 隐藏进度条
+            [self.mediaControlView mediaControlHidden];
+        }
     }
-
-//    [self prepareToPlay];
+    else if ([info[WTPlaybackDidFinishReasonUserInfoKey] isEqualToString:WTPlaybackPlayedError]){
+        NSLog(@"播放出错");
+        [self.loadingView stopLoading];
+    }
+    
 }
 
 - (void)playbackPlayStateChange:(NSNotification *)notification{

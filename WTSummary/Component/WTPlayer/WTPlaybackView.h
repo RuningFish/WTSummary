@@ -76,4 +76,9 @@ extern NSString * const WTPlaybackReadyToPlayNotification;
 extern NSString * const WTPlaybackLoadStateDidChangeNotification;
 extern NSString * const WTPlaybackPlayerItemDidPlayToEndTimeNotification;
 extern NSString * const WTPlaybackPlayStateDidChangeNotification;
+extern NSString * const WTPlaybackDidFinishReasonUserInfoKey;
+/** 正常播放完成 */
+extern NSString * const WTPlaybackPlayedEnd;
+/** 播放出错 */
+extern NSString * const WTPlaybackPlayedError;
 

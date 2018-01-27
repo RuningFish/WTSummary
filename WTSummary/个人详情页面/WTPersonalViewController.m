@@ -65,6 +65,11 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(subTableViewDidScroll:) name:ChildScrollViewDidScrollNotification object:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     [self changBaseViewControllerContentOffset];

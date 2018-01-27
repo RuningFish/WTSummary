@@ -37,6 +37,11 @@
 @interface WTPlaybackFileManager : NSFileManager
 + (instancetype)fileManager;
 
+/** 视频的缓存路径 */
 - (NSString *)cachePathForUrl:(NSURL *)url;
-
+/** 本地是否有对应的缓存视频
+ *  url:视频的url
+ *  hasCached:YES,本地有缓存,fileUrl:对应的返回地址,反之
+ */
+- (void)cacheFileForURL:(NSURL *)url completionHandle:(void (^)(BOOL hasCached,NSString * fileUrl))completionHandler;
 @end

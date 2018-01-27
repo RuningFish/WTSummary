@@ -9,8 +9,9 @@
 
 #import "WTPlaybackDownLoader.h"
 #import <CommonCrypto/CommonDigest.h>
-
+/** 视频的缓存文件夹 */
 #define VideoCachePath [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"WTPlaybackVideo"]
+
 @interface WTPlaybackDownLoader ()<NSURLSessionDataDelegate,NSURLSessionTaskDelegate>
 @property (nonatomic, strong) NSOutputStream * outputStream;
 @end
@@ -35,6 +36,7 @@
     [self.outputStream open];
     [dataTask resume];
     
+    NSLog(@"setDownLoadUrl:offset");
 }
 
 
@@ -91,28 +93,39 @@ didReceiveResponse:(NSURLResponse *)response
 - (NSString *)cachePathForUrl:(NSURL *)url{
     
     if (![self fileExistsAtPath:VideoCachePath]) {
-        
         [self createDirectoryAtPath:VideoCachePath withIntermediateDirectories:YES attributes:nil error:nil];
     }
-
-    NSString * path = [VideoCachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",[self MD5:url.absoluteString],url.absoluteString.pathExtension]];
+    NSString * cacheString = [NSString stringWithFormat:@"%@%@",url.host,url.relativePath];
+    NSString * path = [VideoCachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",[self MD5:cacheString],url.absoluteString.pathExtension]];
     NSLog(@"视频缓存的路径 === %@",path);
     return path;
 }
 
 - (NSString *)MD5:(NSString *)input{
-    
     const char *cStr = [input UTF8String];
     unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    
-    CC_MD5(cStr, strlen(cStr), digest);
-    
+    CC_MD5(cStr, (CC_LONG)strlen(cStr), digest);
     NSMutableString *result = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
         [result appendFormat:@"%02x", digest[i]];
     }
-    
     return result;
-    
+}
+
+- (void)cacheFileForURL:(NSURL *)url completionHandle:(void (^)(BOOL hasCached,NSString * fileUrl))completionHandler{
+    if (url) {
+      NSString * cachePath = [NSString stringWithFormat:@"%@.%@",[self MD5:[NSString stringWithFormat:@"%@%@",url.host,url.relativePath]],url.absoluteString.pathExtension];
+      NSArray * contents = [self contentsOfDirectoryAtPath:VideoCachePath error:nil];
+        [contents enumerateObjectsUsingBlock:^(NSString * fileName, NSUInteger index, BOOL * _Nonnull stop) {
+            if ([cachePath isEqualToString:fileName]) {
+                *stop = YES;
+                NSString * filePath = [VideoCachePath stringByAppendingPathComponent:fileName];
+                completionHandler(YES,filePath);
+            }
+            if (index == contents.count - 1 && ![fileName isEqualToString:cachePath]) {
+                completionHandler(NO,nil);
+            }
+        }];
+    }
 }
 @end
