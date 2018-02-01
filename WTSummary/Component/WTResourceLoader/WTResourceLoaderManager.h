@@ -11,4 +11,5 @@
 @interface WTResourceLoaderManager : NSObject <AVAssetResourceLoaderDelegate>
 + (instancetype)manager;
 - (NSURL *)resourceLoaderURL:(NSURL *)url;
+- (AVURLAsset *)assetWithURL:(NSURL *)url;
 @end

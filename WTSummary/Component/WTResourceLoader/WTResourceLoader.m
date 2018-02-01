@@ -27,13 +27,11 @@
 }
 
 - (void)addRequrest:(AVAssetResourceLoadingRequest *)request{
-    NSLog(@"%s count -> %ld",__func__,self.requestWorkers.count);
     [self startWorkerWithRequest:request];
     
 }
 
 - (void)removeRequest:(AVAssetResourceLoadingRequest *)request{
-    NSLog(@"%s",__func__);
     [self.requestWorkers removeObject:request];
 }
 
@@ -43,20 +41,26 @@
 }
 
 - (void)dealloc{
-     NSLog(@"%s",__func__);
+//     NSLog(@"%s",__func__);
 }
 - (void)resourceDownLoader:(WTResourceDownLoader *)downLoader didReceiveData:(NSData *)data{
     [self processPendingRequests];
 }
 
 - (void)resourceDownLoader:(WTResourceDownLoader *)downLoader didReceiveResponse:(NSURLResponse *)response completionHandler:(void (^)(NSURLSessionResponseDisposition))completionHandler{
-//    NSLog(@"%s",__func__);
-//    [self fillInContentInformation:self.request.contentInformationRequest];
+    // 将文件的大小写入本地
+     NSMutableDictionary * info = [[WTResourceCacheManager manager] resourceInfo];
+     NSString * fileName = [[WTResourceCacheManager manager] fileNameWithURL:self.url];
+     [info setValue:@(downLoader.info.contentLength) forKey:fileName];
+     [[WTResourceCacheManager manager] saveResourceInfo:info];
 }
 
 - (void)resourceDownLoader:(WTResourceDownLoader *)downLoader didCompleteWithError:(NSError *)error{
     if ([self.delegate respondsToSelector:@selector(resourceLoader:didCompleteWithError:)]) {
         [self.delegate resourceLoader:self didCompleteWithError:error];
+    }
+    if(!error){
+        NSLog(@"缓存完成");
     }
 }
 

@@ -12,9 +12,9 @@
 #import "WTAudioSession.h"
 #import "WTNotificationManager.h"
 #import "WTPlaybackIdleTimer.h"
-#import "WTPlaybackResouceLoader.h"
 #import "WTResourceLoaderManager.h"
 #import "WTResourceCacheManager.h"
+#import "TVideoLoadManager.h"
 inline static bool isFloatZero(float value)
 {
     return fabsf(value) <= 0.00001f;
@@ -60,12 +60,9 @@ NSString * const WTPlaybackPlayedError = @"WTPlaybackPlayedError";
 @property (nonatomic, readwrite)  WTPlaybackLoadState loadState;
 
 @property (nonatomic, strong)     WTNotificationManager * notificationManager;
-@property (nonatomic, strong)     WTPlaybackResouceLoader * resourceLoader;
 @property (nonatomic, strong)     WTResourceLoaderManager * resourceLoaderManager;
 /** 是否是本地视频 */
 @property (nonatomic, assign)     BOOL isLocalVideo;
-@property (nonatomic, strong)     WTPlaybackFileManager * fileManager;
-@property (nonatomic, copy)       NSString * cachePath;
 @end
 
 /** playerItem */
@@ -86,14 +83,12 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
     if (self = [super init]) {
         
         self.playUrl = url;
-        
         self.autoPlay = NO;
         self.playToEnd = NO;
         self.isError = NO;
         self.isSeeking = NO;
         self.playbackRate = 1.0;
         self.playbackVolume = 1.0;
-        
         self.notificationManager = [[WTNotificationManager alloc] init];
         [self setScreenOn:YES];
         
@@ -171,22 +166,17 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
 }
 #pragma mark - play
 - (void)play{
-    
     if (self.playToEnd) {
         self.playToEnd = NO;
         [self setCurrentPlaybackTime:0];
-
     }
     else{
         [self.player play];
     }
-   
 }
 #pragma mark - pause
 - (void)pause{
-    
     [self.player pause];
-    
 }
 #pragma mark - stop
 - (void)stop{
@@ -196,7 +186,6 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
     [self setScreenOn:NO];
     // 3.播放完成
     self.playToEnd = YES;
-
 }
 
 #pragma mark - isPlaying
@@ -211,41 +200,38 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
 
 #pragma mark - 准备播放
 - (void)prepareToPlay{
-//     return;
     NSURL * url = self.playUrl;
-    self.resourceLoaderManager = [WTResourceLoaderManager manager];
-    if (self.playCache) {
-        if (!self.isLocalVideo) {
-            // 需要边下边播
-//            NSURLComponents * components = [[NSURLComponents alloc] initWithURL:url resolvingAgainstBaseURL:NO];
-//            components.scheme = @"WTPlayback";
-//            url = [components URL];
-            
-            url = [self.resourceLoaderManager resourceLoaderURL:url];
+    AVURLAsset * asset = nil;
+    // 如果是m3u8类型的视频,暂不支持边下边播
+    if ([url.absoluteString hasSuffix:@".m3u8"]) {
+        asset = [AVURLAsset URLAssetWithURL:url options:nil];
+    }
+    else{
+        // 需要边下边播
+        if (self.playCache) {
+            self.resourceLoaderManager = [WTResourceLoaderManager manager];
+            // 本地没有缓存资源
+            if (!self.isLocalVideo) {
+                url = [self.resourceLoaderManager resourceLoaderURL:url];
+                asset = [self.resourceLoaderManager assetWithURL:url];
+            }
+            else{
+                asset = [AVURLAsset assetWithURL:url];
+            }
+        }
+        else{
+            asset = [AVURLAsset URLAssetWithURL:url options:nil];
         }
     }
-
-    AVURLAsset * asset = [AVURLAsset URLAssetWithURL:url options:nil];
+    
     self.playAsset = asset;
-    if (!self.isLocalVideo) {
-//        self.resourceLoader = [[WTPlaybackResouceLoader alloc] init];
-//        [self.playAsset.resourceLoader setDelegate:self.resourceLoader queue:dispatch_get_main_queue()];
-        
-        
-        [self.playAsset.resourceLoader setDelegate:self.resourceLoaderManager queue:dispatch_get_main_queue()];
-    }
-   
     NSArray * keys = @[@"tracks",@"playable",@"duration"];
     [asset loadValuesAsynchronouslyForKeys:keys completionHandler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
-
             [self didPrepareToPlayAsset:asset withKeys:keys];
-
             // post notification
-
             // setting volume
             [self setPlaybackVolume:self.playbackVolume];
-
             [self setPlaybackRate:self.playbackRate];
         });
     }];
@@ -253,14 +239,10 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
 }
 
 - (void)didPrepareToPlayAsset:(AVURLAsset *)asset withKeys:(NSArray *)keys{
-    
     if (self.isShutdown) return;
-    
     for (NSString * key in keys) {
-        
         NSError * error = nil;
         AVKeyValueStatus keyValueStatus = [asset statusOfValueForKey:key error:&error];
-        
         if (keyValueStatus == AVKeyValueStatusFailed) {
             NSLog(@"keyValueStatus AVKeyValueStatusFailed");
             [self onError:error];
@@ -312,11 +294,9 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
     }
     
     if (self.player.currentItem != self.playerItem) {
-        
         [self.playerItem removeObserver:self forKeyPath:status];
         [self.playerItem removeObserver:self forKeyPath:loadedTimeRanges];
         [self.player replaceCurrentItemWithPlayerItem:self.playerItem];
-        
         [self.playerItem addObserver:self forKeyPath:status options:NSKeyValueObservingOptionNew context:nil];
         [self.playerItem addObserver:self forKeyPath:loadedTimeRanges options:NSKeyValueObservingOptionNew context:nil];
     }
@@ -404,40 +384,17 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
         }
     }
     else if ([keyPath isEqualToString:currentItem]){
-            /* AVPlayer "currentItem" property observer.
-             Called when the AVPlayer replaceCurrentItemWithPlayerItem:
-             replacement will/did occur. */
-//            AVPlayerItem *newPlayerItem = [change objectForKey:NSKeyValueChangeNewKey];
-//            
-//            /* Is the new player item null? */
-//            if (newPlayerItem == (id)[NSNull null])
-//            {
-//                NSError *error = [self createErrorWithCode:kEC_CurrentPlayerItemIsNil
-//                                               description:@"current player item is nil"
-//                                                    reason:nil];
-//                [self assetFailedToPrepareForPlayback:error];
-//            }
-//            else /* Replacement of player currentItem has occurred */
-//            {
-//                [_avView setPlayer:_player];
-//                
-//                [self didPlaybackStateChange];
-//                [self didLoadStateChange];
-//            }
-        
         NSLog(@"[keyPath isEqualToString:current]");
     }
 }
 
 
 - (void)addPlayerItemObserver{
-    
     [self.playerItemManager safeAddObserver:self forKeyPath:status options:NSKeyValueObservingOptionNew context:nil];
     [self.playerItemManager safeAddObserver:self forKeyPath:loadedTimeRanges options:NSKeyValueObservingOptionNew context:nil];
     [self.playerItemManager safeAddObserver:self forKeyPath:playbackLikelyToKeepUp options:NSKeyValueObservingOptionNew context:nil];
     [self.playerItemManager safeAddObserver:self forKeyPath:playbackBufferEmpty options:NSKeyValueObservingOptionNew context:nil];
     [self.playerItemManager safeAddObserver:self forKeyPath:playbackBufferFull options:NSKeyValueObservingOptionNew context:nil];
-    
 }
 
 #pragma mark - 加载状态改变
@@ -485,9 +442,7 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
 
 #pragma mark - playedError
 - (void)onError:(NSError *)error{
-    
     _isError = YES;
-    
     __block NSError * blockError = error;
     NSLog(@"playback -> error %@",error);
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -641,7 +596,10 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
     AVPlayerItem * playerItem = [self.player currentItem];
     if (!playerItem) return WTPlaybackLoadStateUnknown;
     
-    if ([playerItem isPlaybackBufferEmpty] || ![playerItem isPlaybackLikelyToKeepUp]) {
+    if ([playerItem isPlaybackBufferEmpty]) {
+        return WTPlaybackLoadStateBuffing;
+    }
+    else if (![playerItem isPlaybackLikelyToKeepUp]){
         return WTPlaybackLoadStateBuffing;
     }
     else if ([playerItem isPlaybackLikelyToKeepUp] || [playerItem isPlaybackBufferFull]){
@@ -764,10 +722,7 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
     
 }
 - (void)dealloc{
-    
     NSLog(@"WTPlayback delloc");
     [self shutdown];
 }
-
-
 @end

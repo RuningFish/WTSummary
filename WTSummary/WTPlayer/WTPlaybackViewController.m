@@ -14,6 +14,7 @@
 #import "VideoInfo.h"
 #import "WTBrightnessView.h"
 #import "WTResourceCacheManager.h"
+#import "TVideoFileManager.h"
 typedef enum {
     ScrollDirectionUp,
     ScrollDirectionDown

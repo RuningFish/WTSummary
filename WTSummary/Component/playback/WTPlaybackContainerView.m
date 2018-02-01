@@ -221,15 +221,15 @@
     
     WTPlaybackView * playback = notification.object;
     if (playback.loadState == WTPlaybackLoadStateUnknown) {
-//        NSLog(@"WTPlaybackLoadStateUnknown");
+        NSLog(@"WTPlaybackLoadStateUnknown");
         [self.loadingView startLoading];
     }
     else if (playback.loadState == WTPlaybackLoadStateBuffing){
-//        NSLog(@"WTPlaybackLoadStateStalled");
+        NSLog(@"WTPlaybackLoadStateBuffing");
         [self.loadingView startLoading];
     }
     else if (playback.loadState == WTPlaybackLoadStatePlayable){
-//        NSLog(@"WTPlaybackLoadStatePlayable | WTPlaybackLoadStatePlaythroughOK");
+        NSLog(@"WTPlaybackLoadStatePlayable");
         [self.loadingView stopLoading];
     }
     else{

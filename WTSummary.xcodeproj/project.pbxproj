@@ -51,10 +51,7 @@
 		1430D93F1FCBB43E00A3A417 /* WTKVOEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D92C1FCBB43E00A3A417 /* WTKVOEntry.m */; };
 		1430D9401FCBB43E00A3A417 /* WTKVOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D92E1FCBB43E00A3A417 /* WTKVOManager.m */; };
 		1430D9411FCBB43E00A3A417 /* WTNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9301FCBB43E00A3A417 /* WTNotificationManager.m */; };
-		1430D9421FCBB43E00A3A417 /* WTPlaybackDownLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9321FCBB43E00A3A417 /* WTPlaybackDownLoader.m */; };
 		1430D9431FCBB43E00A3A417 /* WTPlaybackIdleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9341FCBB43E00A3A417 /* WTPlaybackIdleTimer.m */; };
-		1430D9441FCBB43E00A3A417 /* WTPlaybackRequestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9361FCBB43E00A3A417 /* WTPlaybackRequestTask.m */; };
-		1430D9451FCBB43E00A3A417 /* WTPlaybackResouceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9381FCBB43E00A3A417 /* WTPlaybackResouceLoader.m */; };
 		1430D9461FCBB43E00A3A417 /* WTPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D93A1FCBB43E00A3A417 /* WTPlaybackView.m */; };
 		1430D95D1FCBB48B00A3A417 /* WTBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9491FCBB48B00A3A417 /* WTBrightnessView.m */; };
 		1430D95E1FCBB48B00A3A417 /* WTControlBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D94B1FCBB48B00A3A417 /* WTControlBottomView.m */; };
@@ -131,6 +128,11 @@
 		1450B59E200F2DF300E8C406 /* WTFormBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B59D200F2DF300E8C406 /* WTFormBaseCell.m */; };
 		1450B5A1200F315300E8C406 /* WTFormDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1450B5A0200F315300E8C406 /* WTFormDefaultCell.m */; };
 		1453BA10201C720E00C332D3 /* WTResourceDownLoaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453BA0F201C720E00C332D3 /* WTResourceDownLoaderOperation.m */; };
+		1453BA3E20201D6300C332D3 /* TVideoDownOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453BA3520201C1100C332D3 /* TVideoDownOperation.m */; };
+		1453BA3F20201D6300C332D3 /* TVideoDownQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453BA3720201C1100C332D3 /* TVideoDownQueue.m */; };
+		1453BA4020201D6300C332D3 /* TVideoFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453BA3920201C1100C332D3 /* TVideoFileManager.m */; };
+		1453BA4120201D6300C332D3 /* TVideoLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453BA3B20201C1100C332D3 /* TVideoLoader.m */; };
+		1453BA4220201D6300C332D3 /* TVideoLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1453BA3D20201C1100C332D3 /* TVideoLoadManager.m */; };
 		1464CF761F04914B0079112E /* UIColor+HexStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF731F04914B0079112E /* UIColor+HexStr.m */; };
 		1464CF771F04914B0079112E /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF751F04914B0079112E /* UIView+Category.m */; };
 		1464CF7A1F0495260079112E /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 1464CF791F0495260079112E /* UIBarButtonItem+Extension.m */; };
@@ -293,14 +295,8 @@
 		1430D92E1FCBB43E00A3A417 /* WTKVOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTKVOManager.m; sourceTree = "<group>"; };
 		1430D92F1FCBB43E00A3A417 /* WTNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNotificationManager.h; sourceTree = "<group>"; };
 		1430D9301FCBB43E00A3A417 /* WTNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNotificationManager.m; sourceTree = "<group>"; };
-		1430D9311FCBB43E00A3A417 /* WTPlaybackDownLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPlaybackDownLoader.h; sourceTree = "<group>"; };
-		1430D9321FCBB43E00A3A417 /* WTPlaybackDownLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPlaybackDownLoader.m; sourceTree = "<group>"; };
 		1430D9331FCBB43E00A3A417 /* WTPlaybackIdleTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPlaybackIdleTimer.h; sourceTree = "<group>"; };
 		1430D9341FCBB43E00A3A417 /* WTPlaybackIdleTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPlaybackIdleTimer.m; sourceTree = "<group>"; };
-		1430D9351FCBB43E00A3A417 /* WTPlaybackRequestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPlaybackRequestTask.h; sourceTree = "<group>"; };
-		1430D9361FCBB43E00A3A417 /* WTPlaybackRequestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPlaybackRequestTask.m; sourceTree = "<group>"; };
-		1430D9371FCBB43E00A3A417 /* WTPlaybackResouceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPlaybackResouceLoader.h; sourceTree = "<group>"; };
-		1430D9381FCBB43E00A3A417 /* WTPlaybackResouceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPlaybackResouceLoader.m; sourceTree = "<group>"; };
 		1430D9391FCBB43E00A3A417 /* WTPlaybackView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPlaybackView.h; sourceTree = "<group>"; };
 		1430D93A1FCBB43E00A3A417 /* WTPlaybackView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPlaybackView.m; sourceTree = "<group>"; };
 		1430D9481FCBB48B00A3A417 /* WTBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTBrightnessView.h; sourceTree = "<group>"; };
@@ -467,6 +463,21 @@
 		1450B5A0200F315300E8C406 /* WTFormDefaultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTFormDefaultCell.m; sourceTree = "<group>"; };
 		1453BA0E201C720E00C332D3 /* WTResourceDownLoaderOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTResourceDownLoaderOperation.h; sourceTree = "<group>"; };
 		1453BA0F201C720E00C332D3 /* WTResourceDownLoaderOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTResourceDownLoaderOperation.m; sourceTree = "<group>"; };
+		1453BA2E20201C1100C332D3 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		1453BA3020201C1100C332D3 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		1453BA3120201C1100C332D3 /* ReplaceMe.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
+		1453BA3220201C1100C332D3 /* TPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPlayerView.h; sourceTree = "<group>"; };
+		1453BA3320201C1100C332D3 /* TPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPlayerView.m; sourceTree = "<group>"; };
+		1453BA3420201C1100C332D3 /* TVideoDownOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVideoDownOperation.h; sourceTree = "<group>"; };
+		1453BA3520201C1100C332D3 /* TVideoDownOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVideoDownOperation.m; sourceTree = "<group>"; };
+		1453BA3620201C1100C332D3 /* TVideoDownQueue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVideoDownQueue.h; sourceTree = "<group>"; };
+		1453BA3720201C1100C332D3 /* TVideoDownQueue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVideoDownQueue.m; sourceTree = "<group>"; };
+		1453BA3820201C1100C332D3 /* TVideoFileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVideoFileManager.h; sourceTree = "<group>"; };
+		1453BA3920201C1100C332D3 /* TVideoFileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVideoFileManager.m; sourceTree = "<group>"; };
+		1453BA3A20201C1100C332D3 /* TVideoLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVideoLoader.h; sourceTree = "<group>"; };
+		1453BA3B20201C1100C332D3 /* TVideoLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVideoLoader.m; sourceTree = "<group>"; };
+		1453BA3C20201C1100C332D3 /* TVideoLoadManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TVideoLoadManager.h; sourceTree = "<group>"; };
+		1453BA3D20201C1100C332D3 /* TVideoLoadManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVideoLoadManager.m; sourceTree = "<group>"; };
 		1464CF721F04914B0079112E /* UIColor+HexStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexStr.h"; sourceTree = "<group>"; };
 		1464CF731F04914B0079112E /* UIColor+HexStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexStr.m"; sourceTree = "<group>"; };
 		1464CF741F04914B0079112E /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
@@ -775,14 +786,8 @@
 				1430D92E1FCBB43E00A3A417 /* WTKVOManager.m */,
 				1430D92F1FCBB43E00A3A417 /* WTNotificationManager.h */,
 				1430D9301FCBB43E00A3A417 /* WTNotificationManager.m */,
-				1430D9311FCBB43E00A3A417 /* WTPlaybackDownLoader.h */,
-				1430D9321FCBB43E00A3A417 /* WTPlaybackDownLoader.m */,
 				1430D9331FCBB43E00A3A417 /* WTPlaybackIdleTimer.h */,
 				1430D9341FCBB43E00A3A417 /* WTPlaybackIdleTimer.m */,
-				1430D9351FCBB43E00A3A417 /* WTPlaybackRequestTask.h */,
-				1430D9361FCBB43E00A3A417 /* WTPlaybackRequestTask.m */,
-				1430D9371FCBB43E00A3A417 /* WTPlaybackResouceLoader.h */,
-				1430D9381FCBB43E00A3A417 /* WTPlaybackResouceLoader.m */,
 				1430D9391FCBB43E00A3A417 /* WTPlaybackView.h */,
 				1430D93A1FCBB43E00A3A417 /* WTPlaybackView.m */,
 			);
@@ -1080,6 +1085,45 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1453BA2C20201C1100C332D3 /* AVPlayerCacheLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				1453BA2D20201C1100C332D3 /* Assets */,
+				1453BA2F20201C1100C332D3 /* Classes */,
+			);
+			name = AVPlayerCacheLibrary;
+			path = "../../../../../Downloads/AVPlayerCache-master/AVPlayerCacheLibrary";
+			sourceTree = "<group>";
+		};
+		1453BA2D20201C1100C332D3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1453BA2E20201C1100C332D3 /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		1453BA2F20201C1100C332D3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1453BA3020201C1100C332D3 /* .gitkeep */,
+				1453BA3120201C1100C332D3 /* ReplaceMe.m */,
+				1453BA3220201C1100C332D3 /* TPlayerView.h */,
+				1453BA3320201C1100C332D3 /* TPlayerView.m */,
+				1453BA3420201C1100C332D3 /* TVideoDownOperation.h */,
+				1453BA3520201C1100C332D3 /* TVideoDownOperation.m */,
+				1453BA3620201C1100C332D3 /* TVideoDownQueue.h */,
+				1453BA3720201C1100C332D3 /* TVideoDownQueue.m */,
+				1453BA3820201C1100C332D3 /* TVideoFileManager.h */,
+				1453BA3920201C1100C332D3 /* TVideoFileManager.m */,
+				1453BA3A20201C1100C332D3 /* TVideoLoader.h */,
+				1453BA3B20201C1100C332D3 /* TVideoLoader.m */,
+				1453BA3C20201C1100C332D3 /* TVideoLoadManager.h */,
+				1453BA3D20201C1100C332D3 /* TVideoLoadManager.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		1464CF961F0777A80079112E /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1284,6 +1328,7 @@
 		840F94711EFFFAFF0028AC24 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				1453BA2C20201C1100C332D3 /* AVPlayerCacheLibrary */,
 				1499740320185DE500A1C4D8 /* WTResourceLoader */,
 				149973FC2011F42A00A1C4D8 /* WTFPSLabel */,
 				149973EE2011D30100A1C4D8 /* AutoPlay */,
@@ -1516,6 +1561,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1453BA3E20201D6300C332D3 /* TVideoDownOperation.m in Sources */,
+				1453BA3F20201D6300C332D3 /* TVideoDownQueue.m in Sources */,
+				1453BA4020201D6300C332D3 /* TVideoFileManager.m in Sources */,
+				1453BA4120201D6300C332D3 /* TVideoLoader.m in Sources */,
+				1453BA4220201D6300C332D3 /* TVideoLoadManager.m in Sources */,
 				1450B5762000CC5A00E8C406 /* WTNavigationTransition.m in Sources */,
 				1450B5742000CC0600E8C406 /* TestThreeViewController.m in Sources */,
 				1450B5732000CBEC00E8C406 /* TestTwoViewController.m in Sources */,
@@ -1572,7 +1622,6 @@
 				1430D9F11FCBBFB700A3A417 /* SDWebImageManager.m in Sources */,
 				1429D1F01F0DD83C008DAD0D /* YYTextLayout.m in Sources */,
 				149973E42010799000A1C4D8 /* WTFormTextViewEditCell.m in Sources */,
-				1430D9421FCBB43E00A3A417 /* WTPlaybackDownLoader.m in Sources */,
 				1430DA111FCBEED100A3A417 /* BaseViewController.m in Sources */,
 				1430DA131FCBEED100A3A417 /* FourViewController.m in Sources */,
 				1430D9F71FCBBFB700A3A417 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1604,7 +1653,6 @@
 				1464CF771F04914B0079112E /* UIView+Category.m in Sources */,
 				841501531F03DC1D002C3759 /* WTAlertController.m in Sources */,
 				1430D95E1FCBB48B00A3A417 /* WTControlBottomView.m in Sources */,
-				1430D9441FCBB43E00A3A417 /* WTPlaybackRequestTask.m in Sources */,
 				846651201F12596400AAA5FA /* TZVideoPlayerController.m in Sources */,
 				1429D1F21F0DD83C008DAD0D /* YYTextMagnifier.m in Sources */,
 				14EF07F41F29937F00D07DB5 /* CYPhotoPreviewer.m in Sources */,
@@ -1618,7 +1666,6 @@
 				1429D1F61F0DD83C008DAD0D /* YYTextParser.m in Sources */,
 				1499740920185E4C00A1C4D8 /* WTResourceLoader.m in Sources */,
 				1430D99F1FCBB9B000A3A417 /* View+MASAdditions.m in Sources */,
-				1430D9451FCBB43E00A3A417 /* WTPlaybackResouceLoader.m in Sources */,
 				1430D9771FCBB95300A3A417 /* WTPlaybackViewController.m in Sources */,
 				1430D9F41FCBBFB700A3A417 /* UIImage+GIF.m in Sources */,
 				1430D93B1FCBB43E00A3A417 /* UINavigationController+WTPlaybackRotation.m in Sources */,

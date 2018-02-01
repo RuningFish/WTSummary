@@ -18,5 +18,9 @@
 
 - (void)cacheFileForURL:(NSURL *)url completionHandle:(void (^)(BOOL hasCached,NSString * fileUrl))completionHandler;
 + (void)calculateCachedResourceSizeWithCompletionHandle:(void(^)(NSInteger fileCount,unsigned long long cacheSize))completionHandle;
+- (NSString *)fileNameWithURL:(NSURL *)url;
 
+- (void)saveResourceInfo:(NSMutableDictionary *)info;
+// 读取缓存资源的信息文件{url(md5):文件的大小}
+- (NSMutableDictionary *)resourceInfo;
 @end

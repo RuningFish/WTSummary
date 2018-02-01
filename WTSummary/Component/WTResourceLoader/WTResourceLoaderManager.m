@@ -34,7 +34,8 @@ static NSString * KResourcePrefix = @"__WTPlayback__";
 
 #pragma mark - AVAssetResourceLoaderDelegate
 - (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest{
-    NSLog(@"shouldWait %@",loadingRequest);
+//    NSLog(@"shouldWait %@  ",loadingRequest);
+//     NSLog(@"%s === %@",__func__,[NSDate date]);
     NSURL * requestURL = [loadingRequest.request URL];
     if ([requestURL.absoluteString hasPrefix:KResourcePrefix]) {
         WTResourceLoader * loader = [self resourceLoaderForURL:requestURL];
@@ -82,6 +83,21 @@ static NSString * KResourcePrefix = @"__WTPlayback__";
     }
    return [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",KResourcePrefix,url.absoluteString]];
 }
+
+- (AVURLAsset *)assetWithURL:(NSURL *)url{
+    if (!url) {
+        NSLog(@"url is nil");
+        return nil;
+    }
+    NSURL * assetURL = url;
+    if (![assetURL.absoluteString hasPrefix:KResourcePrefix]) {
+        assetURL = [self resourceLoaderURL:url];
+    }
+    AVURLAsset * asset = [AVURLAsset URLAssetWithURL:assetURL options:nil];
+    [asset.resourceLoader setDelegate:self queue:dispatch_get_main_queue()];
+    return asset;
+}
+
 - (void)dealloc{
     NSLog(@"%s",__func__);
 }

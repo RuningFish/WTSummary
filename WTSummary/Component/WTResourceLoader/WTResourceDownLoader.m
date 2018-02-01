@@ -11,7 +11,6 @@
 #import "WTResourceDownLoaderOperation.h"
 @implementation WTResourceInfo
 @end
-
 @interface WTResourceDownLoader ()<WTResourceDownLoaderOperationDelegate>
 @property (nonatomic, strong, readwrite) NSURL * url;
 @property (nonatomic, strong) NSOutputStream * outputStream;
@@ -37,7 +36,7 @@
     return self;
 }
 - (void)dealloc{
-    NSLog(@"%s",__func__);
+//    NSLog(@"%s",__func__);
 }
 
 - (void)start{
@@ -58,7 +57,6 @@
             self.info.contentLength = [[headers valueForKey:@"Content-Length"] integerValue];
         }
     }
-    NSLog(@"downLoad -> finish  %@ %@",urlResponse.allHeaderFields,[headers valueForKey:@"Content-Length"]);
     if ([self.delegate respondsToSelector:@selector(resourceDownLoader:didReceiveResponse:completionHandler:)]) {
         [self.delegate resourceDownLoader:self didReceiveResponse:response completionHandler:completionHandler];
     }
@@ -67,8 +65,6 @@
 - (void)operation:(WTResourceDownLoaderOperation *)operation didReceiveData:(NSData *)data{
     [self.outputStream write:data.bytes maxLength:data.length];
     self.info.downLoadLength += data.length;
-//    CGFloat progress = (double)self.info.downLoadLength / self.info.contentLength;
-//    NSLog(@"下载的进度 === %lf",progress);
     if ([self.delegate respondsToSelector:@selector(resourceDownLoader:didReceiveData:)]) {
         [self.delegate resourceDownLoader:self didReceiveData:data];
     }
