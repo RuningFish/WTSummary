@@ -48,8 +48,7 @@
 		1430D93C1FCBB43E00A3A417 /* UITabBarController+WTPlaybackRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9261FCBB43E00A3A417 /* UITabBarController+WTPlaybackRotation.m */; };
 		1430D93D1FCBB43E00A3A417 /* UIViewController+WTPlaybackRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9281FCBB43E00A3A417 /* UIViewController+WTPlaybackRotation.m */; };
 		1430D93E1FCBB43E00A3A417 /* WTAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D92A1FCBB43E00A3A417 /* WTAudioSession.m */; };
-		1430D93F1FCBB43E00A3A417 /* WTKVOEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D92C1FCBB43E00A3A417 /* WTKVOEntry.m */; };
-		1430D9401FCBB43E00A3A417 /* WTKVOManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D92E1FCBB43E00A3A417 /* WTKVOManager.m */; };
+		1430D9401FCBB43E00A3A417 /* WTPlaybackKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D92E1FCBB43E00A3A417 /* WTPlaybackKVO.m */; };
 		1430D9411FCBB43E00A3A417 /* WTNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9301FCBB43E00A3A417 /* WTNotificationManager.m */; };
 		1430D9431FCBB43E00A3A417 /* WTPlaybackIdleTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D9341FCBB43E00A3A417 /* WTPlaybackIdleTimer.m */; };
 		1430D9461FCBB43E00A3A417 /* WTPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1430D93A1FCBB43E00A3A417 /* WTPlaybackView.m */; };
@@ -289,10 +288,8 @@
 		1430D9281FCBB43E00A3A417 /* UIViewController+WTPlaybackRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WTPlaybackRotation.m"; sourceTree = "<group>"; };
 		1430D9291FCBB43E00A3A417 /* WTAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTAudioSession.h; sourceTree = "<group>"; };
 		1430D92A1FCBB43E00A3A417 /* WTAudioSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTAudioSession.m; sourceTree = "<group>"; };
-		1430D92B1FCBB43E00A3A417 /* WTKVOEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTKVOEntry.h; sourceTree = "<group>"; };
-		1430D92C1FCBB43E00A3A417 /* WTKVOEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTKVOEntry.m; sourceTree = "<group>"; };
-		1430D92D1FCBB43E00A3A417 /* WTKVOManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTKVOManager.h; sourceTree = "<group>"; };
-		1430D92E1FCBB43E00A3A417 /* WTKVOManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTKVOManager.m; sourceTree = "<group>"; };
+		1430D92D1FCBB43E00A3A417 /* WTPlaybackKVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPlaybackKVO.h; sourceTree = "<group>"; };
+		1430D92E1FCBB43E00A3A417 /* WTPlaybackKVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTPlaybackKVO.m; sourceTree = "<group>"; };
 		1430D92F1FCBB43E00A3A417 /* WTNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTNotificationManager.h; sourceTree = "<group>"; };
 		1430D9301FCBB43E00A3A417 /* WTNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTNotificationManager.m; sourceTree = "<group>"; };
 		1430D9331FCBB43E00A3A417 /* WTPlaybackIdleTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTPlaybackIdleTimer.h; sourceTree = "<group>"; };
@@ -780,10 +777,8 @@
 				1430D9281FCBB43E00A3A417 /* UIViewController+WTPlaybackRotation.m */,
 				1430D9291FCBB43E00A3A417 /* WTAudioSession.h */,
 				1430D92A1FCBB43E00A3A417 /* WTAudioSession.m */,
-				1430D92B1FCBB43E00A3A417 /* WTKVOEntry.h */,
-				1430D92C1FCBB43E00A3A417 /* WTKVOEntry.m */,
-				1430D92D1FCBB43E00A3A417 /* WTKVOManager.h */,
-				1430D92E1FCBB43E00A3A417 /* WTKVOManager.m */,
+				1430D92D1FCBB43E00A3A417 /* WTPlaybackKVO.h */,
+				1430D92E1FCBB43E00A3A417 /* WTPlaybackKVO.m */,
 				1430D92F1FCBB43E00A3A417 /* WTNotificationManager.h */,
 				1430D9301FCBB43E00A3A417 /* WTNotificationManager.m */,
 				1430D9331FCBB43E00A3A417 /* WTPlaybackIdleTimer.h */,
@@ -1596,10 +1591,9 @@
 				1430DA061FCBEE0600A3A417 /* WTPersonalViewController.m in Sources */,
 				1429D2371F0DEA08008DAD0D /* YYFrameImage.m in Sources */,
 				149973E1201051BD00A1C4D8 /* WTFormSelectItem.m in Sources */,
-				1430D93F1FCBB43E00A3A417 /* WTKVOEntry.m in Sources */,
 				1430D9F21FCBBFB700A3A417 /* SDWebImagePrefetcher.m in Sources */,
 				143373A31F0F778000511695 /* WTAuthorityManager.m in Sources */,
-				1430D9401FCBB43E00A3A417 /* WTKVOManager.m in Sources */,
+				1430D9401FCBB43E00A3A417 /* WTPlaybackKVO.m in Sources */,
 				143373A61F10B21000511695 /* WTDragCellTableView.m in Sources */,
 				1450B5A1200F315300E8C406 /* WTFormDefaultCell.m in Sources */,
 				1430D93E1FCBB43E00A3A417 /* WTAudioSession.m in Sources */,

@@ -7,21 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface WTKVOManager : NSObject
-
+@interface WTPlaybackKVO : NSObject
 - (id)initWithTarget:(id)target;
-
 - (void)safeAddObserver:(NSObject *)observer
                forKeyPath:(NSString *)keyPath
                   options:(NSKeyValueObservingOptions)options
                   context:(void *)context;
-
 - (void)safeRemoveObserver:(NSObject *)observer
                   forKeyPath:(NSString *)keyPath;
-
 - (void)safeRemoveAllObservers;
-
 @end
 
 

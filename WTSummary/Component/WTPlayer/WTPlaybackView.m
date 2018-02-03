@@ -8,7 +8,7 @@
 
 #import "WTPlaybackView.h"
 #import <AVFoundation/AVFoundation.h>
-#import "WTKVOManager.h"
+#import "WTPlaybackKVO.h"
 #import "WTAudioSession.h"
 #import "WTNotificationManager.h"
 #import "WTPlaybackIdleTimer.h"
@@ -41,15 +41,15 @@ NSString * const WTPlaybackPlayedError = @"WTPlaybackPlayedError";
 @property (nonatomic, strong) AVPlayerItem * playerItem;
 @property (nonatomic, strong) AVPlayer * player;
 @property (nonatomic, strong) AVPlayerLayer * playerLayer;
-@property (nonatomic, strong) WTKVOManager * playerManager;
-@property (nonatomic, strong) WTKVOManager * playerItemManager;
+@property (nonatomic, strong) WTPlaybackKVO * playerManager;
+@property (nonatomic, strong) WTPlaybackKVO * playerItemManager;
 @property (nonatomic, assign,getter=isShutdown) BOOL shutdown;
 @property (nonatomic, assign) BOOL pauseInBackground;
 @property (nonatomic, assign) BOOL playToEnd;
 @property (nonatomic, assign) BOOL isError;
 @property (nonatomic, assign) BOOL isSeeking;
 @property (nonatomic, assign) BOOL playingBeforeInterruption;
-@property (nonatomic) dispatch_once_t readyToPlayeToken;
+@property (nonatomic) dispatch_once_t readyToPlayToken;
 @property (nonatomic, assign) NSTimeInterval seekingTime;
 
 @property (nonatomic, readwrite)  NSTimeInterval duration;
@@ -267,7 +267,7 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
     [[NSNotificationCenter defaultCenter] removeObserver:self name:nil object:self.playerItem];
     
     self.playerItem = [AVPlayerItem playerItemWithAsset:asset];
-    self.playerItemManager = [[WTKVOManager alloc] initWithTarget:self.playerItem];
+    self.playerItemManager = [[WTPlaybackKVO alloc] initWithTarget:self.playerItem];
     
     // ApplicationObservers
     [self registerApplicationObservers];
@@ -279,7 +279,7 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
     
     if (!self.player) {
         self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
-        self.playerManager = [[WTKVOManager alloc] initWithTarget:self.player];
+        self.playerManager = [[WTPlaybackKVO alloc] initWithTarget:self.player];
         if (!self.playerLayer) {
             self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
         }
@@ -317,7 +317,7 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
             case AVPlayerItemStatusReadyToPlay:
             {
                 NSLog(@"AVPlayerItemStatusReadyToPlay");
-                dispatch_once(&_readyToPlayeToken, ^{
+                dispatch_once(&_readyToPlayToken, ^{
                     self.isPreparedToPlay = YES;
                     NSTimeInterval duration = CMTimeGetSeconds(playerItem.duration);
                     // 视频时长
