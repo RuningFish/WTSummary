@@ -112,7 +112,7 @@ static NSString * const airPlayVideoActive = @"airPlayVideoActive";
         [[WTResourceCacheManager manager] cacheFileForURL:url completionHandle:^(BOOL hasCached, NSString *fileUrl) {
             NSLog(@"是否有缓存 - %zd  路径 - %@",hasCached,fileUrl);
             if (hasCached) {
-                url = [NSURL fileURLWithPath:fileUrl];;
+                url = [NSURL fileURLWithPath:fileUrl];
                 self.isLocalVideo = YES;
             }
             else{

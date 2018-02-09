@@ -17,7 +17,6 @@
 + (instancetype)itemWithType:(UIBarButtonItemType)type Title:(NSString *)title highTitle:(NSString *)highTitle Image:(NSString *)image highImage:(NSString *)highImage target:(id)target action:(SEL)action{
     
     UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
-//    button.backgroundColor = [UIColor redColor];
     button.frame = CGRectMake(0, 0, 60, 44);
     if (type == UIBarButtonItemTypeLeft) {
         [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];

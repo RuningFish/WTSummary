@@ -68,7 +68,9 @@ typedef enum {
     NSString * videoPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"WTPlaybackVideo"];
     [[NSFileManager defaultManager] removeItemAtPath:videoPath error:nil];
     
-//    [[WTResourceCacheManager manager] cleanAllCache];
+    UIBarButtonItem * rightItem0 = [UIBarButtonItem itemWithType:UIBarButtonItemTypeRight Title:@"清除缓存" highTitle:@"" Image:@"" highImage:@"" target:self action:@selector(rightItem0Click)];
+    UIBarButtonItem * rightItem1 = [UIBarButtonItem itemWithType:UIBarButtonItemTypeRight Title:@"换一批" highTitle:@"" Image:@"" highImage:@"" target:self action:@selector(rightItem1Click)];
+    self.navigationItem.rightBarButtonItems = @[rightItem0,rightItem1];
   
     
     NSString * videoList = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"videoList"];
@@ -92,7 +94,7 @@ typedef enum {
     [WTResourceCacheManager calculateCachedResourceSizeWithCompletionHandle:^(NSInteger fileCount,unsigned long long cacheSize) {
         NSLog(@"缓存的大小 === %.02lfMB 数量 === %ld",cacheSize/1024.0/1024.0,fileCount);
     }];
-    [[WTResourceCacheManager manager] cleanAllCache];
+   
 //    [self requestVideoData];
     
     CGSize size = [UIScreen mainScreen].bounds.size;
@@ -113,6 +115,19 @@ typedef enum {
     
 }
 
+- (void)rightItem0Click{
+    NSLog(@"清除视频缓存 ");
+    [[WTResourceCacheManager manager] cleanAllCache];
+}
+
+- (void)rightItem1Click{
+    NSLog(@"换一批");
+    [self requestVideoData];
+    [[WTResourceCacheManager manager] cleanAllCache];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionNone animated:YES];
+}
+
+
 - (void)dealloc{
     
     NSLog(@"WTPlaybackViewController -> dealloc");
@@ -126,18 +141,10 @@ typedef enum {
         CGPoint oldPoint;
         id oldValue = [change valueForKey:NSKeyValueChangeOldKey];
         [oldValue getValue:&oldPoint];
-        
         CGPoint newpoint;
         id newValue = [change valueForKey:NSKeyValueChangeNewKey];
         [newValue getValue:&newpoint];
-        if (oldPoint.y <= newpoint.y) {
-            //            NSLog(@"向上滑动");
-            self.direction = ScrollDirectionUp;
-        }
-        else{
-            //            NSLog(@"向下滑动");
-            self.direction = ScrollDirectionDown;
-        }
+        self.direction = (oldPoint.y <= newpoint.y)?ScrollDirectionUp:ScrollDirectionDown;
     }
     
 }
@@ -146,27 +153,26 @@ typedef enum {
     NSString * url = @"https://c.m.163.com/recommend/getChanListNews?channel=T1457068979049&passport=&devId=GPREzJTGzbKQXhobRpRjUuzdHr1YMn7HNLBVG3jHmGtu7Oahv7R1ZXiMmOjQ2%2Bw0&version=28.2&spever=false&net=wifi&lat=&lon=&ts=1507821264&sign=aKGvaMNR6dqcLbpHCf6p2bfuF/3U7yl2xbPlu/0juNR48ErR02zJ6/KXOnxX046I&encryption=1&canal=appstore&offset=0&size=40&fn=3";
     
     [[WTRequestManager manager] sendRequestWithType:WTRequestTypeGET requestURL:url parameters:nil progress:nil taskDescription:nil successHandler:^(NSURLSessionDataTask *task, id responseObject) {
-        
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            
             if ([[responseObject allKeys] containsObject:@"视频"]) {
-                
                 NSLog(@"请求的数据 === %@ ",responseObject);
                 NSArray * videoData = [responseObject valueForKey:@"视频"];
+                NSMutableArray * temp = [NSMutableArray array];
                 if (videoData.count) {
-                    
                     for (int i = 0; i < videoData.count; i ++) {
                         VideoInfo * videoInfo = [VideoInfo videoInfoWithDictionary:videoData[i]];
-                        [self.dataArray addObject:videoInfo];
+                        [temp addObject:videoInfo];
                     }
                 }
-                
+                self.dataArray = temp;
                 NSString * videoList = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"videoList"];
                 [videoData writeToFile:videoList atomically:YES];
             }
             
-            [self.tableView reloadData];
-            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                [self.tableView reloadData];
+            });
             if (self.autoPlay) {
                 [self findBestCellToPlay];
             }
@@ -191,38 +197,28 @@ typedef enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     VideoListTableViewCell * cell = [VideoListTableViewCell cellWithTableview:tableView];
-    //    cell.videoInfo = self.dataArray[indexPath.row];
-    //    cell.row = indexPath.row;
+    cell.videoInfo = self.dataArray[indexPath.row];
+    cell.row = indexPath.row;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(VideoListTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    cell.videoInfo = self.dataArray[indexPath.row];
-    cell.row = indexPath.row;
-}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(VideoListTableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    cell.videoInfo = self.dataArray[indexPath.row];
+//    cell.row = indexPath.row;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    //    PlayerView * playerView = [PlayerView playerView];
-    //    NSString *document = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
-    //    NSString *movePath =  [document stringByAppendingPathComponent:@"temp.mp4"];
-    //    playerView.videoURL = movePath;
-    //    return;
-    
+
     VideoListTableViewCell * cell = [tableView cellForRowAtIndexPath:indexPath];
-    
     NSString * videoUrl =  [self videoUrlWithVideoInfo:cell.videoInfo];;
-    
     WTPlaybackManager * playbackManager = [WTPlaybackManager sharedManager];
     
     if (self.indexPath.row != indexPath.row) {
         
         VideoListTableViewCell * lastCell = [tableView cellForRowAtIndexPath:self.indexPath];
         lastCell.playButton.hidden = NO;
-        
         self.indexPath = indexPath;
         [playbackManager shutdown];
         cell.playButton.hidden = YES;
@@ -237,10 +233,8 @@ typedef enum {
     else{
         
         if (![playbackManager.containterView isDescendantOfView:cell.contentView]) {
-            
             VideoListTableViewCell * lastCell = [tableView cellForRowAtIndexPath:self.indexPath];
             lastCell.playButton.hidden = NO;
-            
             self.indexPath = indexPath;
             [playbackManager shutdown];
             cell.playButton.hidden = YES;
@@ -251,7 +245,6 @@ typedef enum {
             [playbackManager prepareToPlay];
             
         }
-        
     }
 }
 
