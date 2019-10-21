@@ -19,10 +19,13 @@
 #import "WTFormSettingController.h" // 表单
 #import "WTAutoPlayViewController.h" // 自动播放测试
 
+typedef void (^block)();
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic , strong) UITableView * tableView;
 /** <#desc#> */
 @property (nonatomic, strong) NSArray  * dataArray;
+@property (nonatomic, copy) block block;
 @end
 
 static NSString * const WTAlertController_ActionSheet = @"WTAlertController - ActionSheet";
@@ -48,32 +51,27 @@ static NSString * const AutoPlay = @"AutoPlay";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.tableView];
+    
+    static int a = 10;
+    self.block = ^(){
+        a = 20;
+        NSLog(@"%@ %ld",[self.block class],a);
+    };
+    
+    self.block();
 }
 
 - (void)iconCodeClick{
     
-    // 0.判断相机的权限
-    WTAuthorityManager * manager = [WTAuthorityManager authorityManager];
-    BOOL authority = [manager hasCameraAuthority];
-    if (authority) {
-        // 1.打开二维码界面
-        WTQRCodeController * codeVC = [[WTQRCodeController alloc] init];
-        [self.navigationController pushViewController:codeVC animated:YES];
-    }else{
-        
-//        [manager getCameraAuthorityWithHandle:^{
-//            // 1.打开二维码界面
-//            WTQRCodeController * codeVC = [[WTQRCodeController alloc] init];
-//            [self.navigationController pushViewController:codeVC animated:YES];
-//        }];
-        
-        WTAlertController * alert = [WTAlertController alertControllerWithTitle:@"请在设置中允许访问相册" message:nil preferredStyle:WTAlertControllerStyleAlert];
-        WTAlertAction * cancel = [WTAlertAction actionWithTitle:@"取消" style:WTAlertActionStyleDefault handler:^(WTAlertAction *action) {
-
-        }];
-        [alert addAction:cancel];
-        [alert show];
-    }
+    // 1.打开二维码界面
+    WTQRCodeController *codeVC = [[WTQRCodeController alloc] initCodeVCWithScanResultCompletionHandler:^(NSString *result) {
+        NSLog(@"扫描的结果 === %@",result);
+    }];
+    codeVC.qRCodeView.cornerColor = [UIColor redColor];
+    codeVC.qRCodeView.scanLineImage = [UIImage imageNamed:@"home_share_code_line"];
+    codeVC.qRCodeView.cornerLocation = CornerLocationDefault;
+    codeVC.qRCodeView.animationTimeInterval = 0.07;
+    [self.navigationController pushViewController:codeVC animated:YES];
     
 }
 
@@ -88,7 +86,9 @@ static NSString * const AutoPlay = @"AutoPlay";
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.size.height ) style:UITableViewStylePlain];
+        CGRect rect = [UIScreen mainScreen].bounds;
+        //CGRectMake(0, 0, self.view.frame.size.width, self.view.size.height )
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MIN(rect.size.width, rect.size.height), MAX(rect.size.width, rect.size.height)) style:UITableViewStylePlain];
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.rowHeight = 50;
         _tableView.delegate = self;
@@ -200,5 +200,9 @@ static NSString * const AutoPlay = @"AutoPlay";
     
     [alert show];
 
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
 }
 @end

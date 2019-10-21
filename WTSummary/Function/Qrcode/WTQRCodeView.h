@@ -8,25 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger,CornerLocation) {
+    CornerLocationDefault, // 与边线对齐
+    CornerLocationInside,  // 在边线内部
+    CornerLocationOutside  // 在边线外部
+};
 @interface WTQRCodeView : UIView
-/**
- *  对象方法创建SGQRCodeScanningView
- *
- *  @param frame     frame
- *  @param layer     父视图 layer
- */
-- (instancetype)initWithFrame:(CGRect)frame layer:(CALayer *)layer;
-/**
- *  类方法创建SGQRCodeScanningView
- *
- *  @param frame     frame
- *  @param layer     父视图 layer
- */
-+ (instancetype)scanningViewWithFrame:(CGRect )frame layer:(CALayer *)layer;
+@property (nonatomic, assign) CornerLocation cornerLocation; // 边角位置
+@property (nonatomic, strong) UIColor *borderColor;        // 边线颜色 default white
+@property (nonatomic, strong) UIColor *cornerColor;        // 边角颜色
+@property (nonatomic, assign) CGFloat cornerWidth;         // 边角宽度 default 2.0
+@property (nonatomic, assign) CGFloat backgroundAlpha;      // 扫描区域周围alpha值 ,default 0.4
+@property (nonatomic, assign) CGFloat animationTimeInterval; // 扫描动画间隔时间,default 0.05
+@property (nonatomic, strong) UIImage *scanLineImage;       // 扫描线图片
+@property (nonatomic, copy)  NSString *describe;          // 扫描框下方提示语
 
-/** 添加定时器 */
 - (void)addTimer;
-/** 移除定时器(切记：一定要在Controller视图消失的时候，停止定时器) */
 - (void)removeTimer;
-
 @end

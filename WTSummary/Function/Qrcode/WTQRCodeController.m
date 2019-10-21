@@ -8,161 +8,161 @@
 
 #import "WTQRCodeController.h"
 #import <AVFoundation/AVFoundation.h>
-#import "WTQRCodeView.h"
-@interface WTQRCodeController ()<AVCaptureMetadataOutputObjectsDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
-@property (nonatomic, strong) AVCaptureDevice * device;
-/** input */
-@property (nonatomic, strong) AVCaptureDeviceInput  * input;
-/** output */
-@property (nonatomic, strong) AVCaptureMetadataOutput  * output;
-/** session */
-@property (nonatomic, strong) AVCaptureSession  * session;
-/** 图层 */
-@property (nonatomic, strong) AVCaptureVideoPreviewLayer * preview;
-/** 二维码界面视图 */
-@property (nonatomic, strong) WTQRCodeView * codeView;
 
+@class WTQRCodeController;
+typedef void (^resultCompletionHandlerBlock)(NSString *result);
+typedef void (^albumDidClcikCancelBlock)(void);
+@interface WTQRCodeController ()
+@property (nonatomic, copy) resultCompletionHandlerBlock completionHandler;
 @end
+
 @implementation WTQRCodeController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    self.input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
+    self.title = @"扫一扫";
+    self.view.backgroundColor = [UIColor blackColor];
     
-    self.output = [[AVCaptureMetadataOutput alloc] init];
-    [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    
-    self.session = [[AVCaptureSession alloc] init]; 
-    [self.session setSessionPreset:AVCaptureSessionPresetHigh];
-    
-    if ([_session canAddInput:self.input])  [_session addInput:self.input];
-    if ([_session canAddOutput:self.output])  [_session addOutput:self.output];
- 
-    // 条码类型 AVMetadataObjectTypeQRCode
-    [_output setMetadataObjectTypes:[NSArray arrayWithObjects:AVMetadataObjectTypeQRCode, nil]];
-    _output.metadataObjectTypes = @[AVMetadataObjectTypeQRCode, AVMetadataObjectTypeEAN13Code,  AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code];
-    
-    // Preview
-    _preview = [AVCaptureVideoPreviewLayer layerWithSession:_session];
-    _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    _preview.frame = self.view.bounds;
-    [self.view.layer insertSublayer:_preview atIndex:0];
-    
-    // Start
-    [_session startRunning];
-    
-    [self.view addSubview:self.codeView];
-    [self.codeView addTimer];
-    
-    UIPanGestureRecognizer * pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture)];
-    [self.view addGestureRecognizer:pan];
-    
-    UIBarButtonItem * leftItem = [UIBarButtonItem itemWithType:UIBarButtonItemTypeLeft Image:@"backwhite" highImage:nil target:self action:@selector(leftBarButtonItemClick)];
-    
-    UIBarButtonItem * rightItem = [UIBarButtonItem itemWithType:UIBarButtonItemTypeRight Title:@"相册" highTitle:nil Image:nil highImage:nil target:self action:@selector(rightBarButtonItemClick)];
-    
-    self.navigationItem.leftBarButtonItem = leftItem;
-    self.navigationItem.rightBarButtonItem = rightItem;
-}
-
-- (void)leftBarButtonItemClick{
-    
-    [self.navigationController popViewControllerAnimated:YES];
-   
-}
-#pragma mark - 打开相册
-- (void)rightBarButtonItemClick{
-
-    WTAuthorityManager * manager = [WTAuthorityManager authorityManager];
-    BOOL authority = [manager hasPhotoAuthority];
- 
-    if (authority) {
-        UIImagePickerController * imgPick = [[UIImagePickerController alloc] init];
-        imgPick.allowsEditing = NO;
-        imgPick.delegate = self;
-        imgPick.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-
-        [self presentViewController:imgPick animated:YES completion:nil];
-    }else{
-        
-    }
-}
-- (void)panGesture{}
-
-#pragma mark - - - UIImagePickerControllerDelegate
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    [self dismissViewControllerAnimated:YES completion:^{
-        [self scanQRCodeFromPhotosInTheAlbum:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
-    }];
-}
-
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    
-    [self.codeView addTimer];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - - - 从相册中识别二维码, 并进行界面跳转
-- (void)scanQRCodeFromPhotosInTheAlbum:(UIImage *)image {
-    
-    CIDetector *detector = [CIDetector detectorOfType:CIDetectorTypeQRCode context:nil options:@{ CIDetectorAccuracy : CIDetectorAccuracyHigh }];
-    // 取得识别结果
-    NSArray * features = [detector featuresInImage:[CIImage imageWithCGImage:image.CGImage]];
-    if (features.count) {
-        for (int index = 0; index < [features count]; index ++) {
-            CIQRCodeFeature *feature = [features objectAtIndex:index];
-            NSString * urlString = feature.messageString;
-            NSLog(@"相册 ＝＝＝ %@ ",urlString);
-            [self getItemLinkWithUrlString:urlString];
+    self.codeManager = [WTQRCodeManager manager];
+    __weak __typeof(self) weakSelf = self;
+    [weakSelf.codeManager requestAccessForCamera:^(BOOL granted) {
+        if (granted) {
+            [weakSelf.codeManager establishQRCodeScanWithController:weakSelf];
+            [weakSelf.codeManager startRunning];
+            [weakSelf.view addSubview:weakSelf.qRCodeView];
+            [weakSelf.qRCodeView addTimer];
+        }else{
+            NSString *msg = @"你的相机权限没有打开，请打开“设置-隐私-相机”后进行设置";
+            [weakSelf alertWithMessage:msg cancelHandler:^{
+                [weakSelf backAction];
+            }];
         }
-    }else{
+    }];
+    
+    // 扫描结果的处理
+    weakSelf.codeManager.scanResultBlock = ^(WTQRCodeManager *manager, NSString *result){
+        [weakSelf.navigationController popViewControllerAnimated:NO];
+        if (weakSelf.completionHandler) {
+            weakSelf.completionHandler(result);
+        }
+    };
+    
+    // 相册按钮
+    UIButton *photoBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:photoBtn];
+    [photoBtn setTitle:@"相册" forState:UIControlStateNormal];
+    photoBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    photoBtn.frame = CGRectMake(10, 0, 60, 44);
+    [photoBtn setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+    [photoBtn addTarget:self action:@selector(openAlbumAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:photoBtn];
+    
+    [self.navigationController.interactivePopGestureRecognizer addTarget:self action:@selector(handlerPopGestureRecognizer:)];
+}
+
+- (instancetype)initCodeVCWithScanResultCompletionHandler:(void (^)(NSString *result))completionHandler{
+    if (completionHandler) {
+        self.completionHandler = completionHandler;
+    }
+    if (self == [super init]) {
         
     }
-    
+    return self;
 }
 
-- (void)viewDidDisappear:(BOOL)animated{
-    
-    [super viewDidDisappear:animated];
-    [self.codeView removeTimer];
-    
-}
-- (WTQRCodeView *)codeView {
-    if (!_codeView) {
-        _codeView = [[WTQRCodeView alloc] initWithFrame:self.view.bounds layer:self.view.layer];
-        _codeView.userInteractionEnabled = YES;
+- (void)backAction{
+    if (self.qRCodeView) {
+        [self.qRCodeView removeTimer];
+        [self.qRCodeView removeFromSuperview];
     }
-    return _codeView;
+    [self.navigationController popViewControllerAnimated:YES];
 }
-- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
+
+- (void)openAlbumAction{
+    __weak __typeof(self) weakSelf = self;
+    [weakSelf.codeManager requestAccessForAlbum:^(BOOL granted) {
+        if (granted) {
+            [weakSelf.codeManager establishQRCodeScanFromAlbumWithController:weakSelf completionHandler:^{
+                [weakSelf stopRuning];
+            }];
+        }else{
+            NSString *msg = @"你的照片权限没有打开，请打开“设置-隐私-照片”后进行设置";
+            [weakSelf alertWithMessage:msg cancelHandler:^{
+                [weakSelf startRuning];
+            }];
+        }
+    }];
     
-    [self.codeView removeTimer];
-    // 设置界面显示扫描结果
-    if (metadataObjects.count > 0) {
-        AVMetadataMachineReadableCodeObject * codeObject = metadataObjects[0];
-        NSString * urlString = codeObject.stringValue;
-        
+    //    weakSelf.codeManager.albumCancelBlock = ^(WTQRCodeManager *manager){
+    //        [weakSelf startRuning];
+    //    };
+    
+    [weakSelf.codeManager setAlbumCancelBlock:^(WTQRCodeManager * _Nonnull manager) {
+        [weakSelf startRuning];
+    }];
+    
+    // 相册读取结果的处理
+    weakSelf.codeManager.albumResultBlock = ^(WTQRCodeManager *manager, NSString *result){
+        [weakSelf.navigationController popViewControllerAnimated:NO];
+        if (weakSelf.completionHandler) {
+            weakSelf.completionHandler(result);
+        }
+    };
+    
+}
+
+- (void)handlerPopGestureRecognizer:(UIPanGestureRecognizer *)gesture{
+    if (gesture.state == UIGestureRecognizerStateBegan || gesture.state == UIGestureRecognizerStateChanged) {
+        [self stopRuning];
+    }else {
+        [self startRuning];
     }
 }
 
-- (void)getItemLinkWithUrlString:(NSString * )urlString{
-    
-    [self.session stopRunning];
-    [self.codeView removeTimer];
-    
+- (WTQRCodeView *)qRCodeView {
+    if (!_qRCodeView) {
+        _qRCodeView = [[WTQRCodeView alloc] initWithFrame:self.view.bounds];
+        _qRCodeView.userInteractionEnabled = YES;
+        _qRCodeView.cornerLocation = CornerLocationOutside;
+    }
+    return _qRCodeView;
 }
 
-#pragma mark - 未识别到有效二维码的提示
-- (void)showAlertMessageWithBlock:(void (^)())block{
+- (void)startRuning{
+    [self.codeManager startRunning];
+    [self.qRCodeView addTimer];
 }
+
+- (void)stopRuning{
+    [self.codeManager stopRunning];
+    [self.qRCodeView removeTimer];
+}
+
 - (void)dealloc{
+    [self stopRuning];
+    [self.qRCodeView removeFromSuperview];
+    NSLog(@"ScanQRCodeVC --- delloc");
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)alertWithMessage:(NSString *)message cancelHandler:(void (^)(void))cancel{
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0) {
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"" message:message preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            if(cancel){
+                cancel();
+            }
+        }];
+        [alertView addAction:cancelAction];
+        [self presentViewController:alertView animated:YES completion:nil];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"确定"
+                                              otherButtonTitles:@"",nil];
+        [alert show];
+    }
 }
 @end

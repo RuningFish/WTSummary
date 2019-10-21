@@ -6,174 +6,186 @@
 //  Copyright © 2017年 飞奔的小鲨鱼. All rights reserved.
 //
 
-/** 扫描内容的Y值 */
-#define scanContent_Y (self.frame.size.height) * 0.26
-/** 扫描内容的Y值 */
-#define scanContent_X self.frame.size.width * 0.15
-
-#import <AVFoundation/AVFoundation.h>
+/**扫描内容的X值 */
+#define scanContent_X self.frame.size.width*0.15
+/**扫描内容的width */
+#define scanContent_Width self.frame.size.width*0.70
+/**扫描内容的Y值 */
+#define scanContent_Y (self.frame.size.height - scanContent_Width)*0.5
 #import "WTQRCodeView.h"
+#import <AVFoundation/AVFoundation.h>
+
 @interface WTQRCodeView ()
-@property (nonatomic, strong) AVCaptureDevice * device;
-@property (nonatomic, strong) CALayer * tempLayer;
-@property (nonatomic, strong) UIImageView * scanningline;
-@property (nonatomic, strong) NSTimer * timer;
+@property (nonatomic, strong) UIImageView *scanningline;
+@property (nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation WTQRCodeView
-/** 扫描动画线(冲击波) 的高度 */
-static CGFloat const scanninglineHeight = 2;
-/** 扫描内容外部View的alpha值 */
-static CGFloat const scanBorderOutsideViewAlpha = 0.4;
 
-- (CALayer *)tempLayer {
-    if (!_tempLayer) {
-        _tempLayer = [[CALayer alloc] init];
-    }
-    return _tempLayer;
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    [self initialization];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame layer:(CALayer *)layer {
+- (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.tempLayer = layer;
-        // 布局扫描界面
-        [self setupSubviews];
-        
+        [self initialization];
     }
     return self;
 }
 
-+ (instancetype)scanningViewWithFrame:(CGRect )frame layer:(CALayer *)layer {
-    return [[self alloc] initWithFrame:frame layer:layer];
+- (void)initialization{
+    self.backgroundColor = [UIColor clearColor];
+    self.cornerLocation = CornerLocationDefault;
+    self.borderColor = [UIColor whiteColor];
+    self.cornerColor = [UIColor colorWithRed:150/255.0 green:169/255.0 blue:246/255.0 alpha:1.0];
+    self.cornerWidth = 2.0;
+    self.backgroundAlpha = 0.5;
+    self.animationTimeInterval = 0.05;
+    self.describe = @"将二维码放入框内, 即可自动扫描";
 }
 
-- (void)setupSubviews {
+- (void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
     
-    // 扫描内容的创建
-    CALayer *scanContent_layer = [[CALayer alloc] init];
-    CGFloat scanContent_layerX = scanContent_X;
-    CGFloat scanContent_layerY = scanContent_Y;
-    CGFloat scanContent_layerW = self.frame.size.width - 2 * scanContent_X;
-    CGFloat scanContent_layerH = scanContent_layerW;
-    scanContent_layer.frame = CGRectMake(scanContent_layerX, scanContent_layerY, scanContent_layerW, scanContent_layerH);
-    scanContent_layer.borderColor = [UIColor whiteColor].CGColor;
-    scanContent_layer.borderWidth = 0.7;
-    scanContent_layer.backgroundColor = [UIColor clearColor].CGColor;
-    [self.tempLayer addSublayer:scanContent_layer];
+    CGFloat scanContentW = scanContent_Width;
+    CGFloat scanContentH = scanContentW;
+    CGFloat scanContentX = scanContent_X;
+    CGFloat scanContentY = scanContent_Y;
+    CGFloat scanBorderLineW = 0.5;
     
-#pragma mark - - - 扫描外部View的创建
-    // 顶部layer的创建
-    CALayer *top_layer = [[CALayer alloc] init];
-    CGFloat top_layerX = 0;
-    CGFloat top_layerY = 0;
-    CGFloat top_layerW = self.frame.size.width;
-    CGFloat top_layerH = scanContent_layerY;
-    top_layer.frame = CGRectMake(top_layerX, top_layerY, top_layerW, top_layerH);
-    top_layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:scanBorderOutsideViewAlpha].CGColor;
-    [self.layer addSublayer:top_layer];
+    // 背景颜色
+    [[[UIColor blackColor] colorWithAlphaComponent:self.backgroundAlpha] setFill];
+    UIRectFill(rect);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetBlendMode(context, kCGBlendModeDestinationOut);
+    // 绘制扫描区域
+    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRect:CGRectMake(scanContentX + 0.5 *scanBorderLineW, scanContentY + 0.5 *scanBorderLineW, scanContentW - scanBorderLineW, scanContentH - scanBorderLineW)];
+    [bezierPath fill];
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
     
-    // 左侧layer的创建
-    CALayer *left_layer = [[CALayer alloc] init];
-    CGFloat left_layerX = 0;
-    CGFloat left_layerY = scanContent_layerY;
-    CGFloat left_layerW = scanContent_X;
-    CGFloat left_layerH = scanContent_layerH;
-    left_layer.frame = CGRectMake(left_layerX, left_layerY, left_layerW, left_layerH);
-    left_layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:scanBorderOutsideViewAlpha].CGColor;
-    [self.layer addSublayer:left_layer];
+    // 扫描边框
+    UIBezierPath *borderPath = [UIBezierPath bezierPathWithRect:CGRectMake(scanContentX, scanContentY, scanContentW, scanContentH)];
+    borderPath.lineCapStyle = kCGLineCapButt;
+    borderPath.lineWidth = scanBorderLineW;
+    [self.borderColor set];
+    [borderPath stroke];
     
-    // 右侧layer的创建
-    CALayer *right_layer = [[CALayer alloc] init];
-    CGFloat right_layerX = CGRectGetMaxX(scanContent_layer.frame);
-    CGFloat right_layerY = scanContent_layerY;
-    CGFloat right_layerW = scanContent_X;
-    CGFloat right_layerH = scanContent_layerH;
-    right_layer.frame = CGRectMake(right_layerX, right_layerY, right_layerW, right_layerH);
-    right_layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:scanBorderOutsideViewAlpha].CGColor;
-    [self.layer addSublayer:right_layer];
+    // 边框长度
+    CGFloat cornerLength = 20;
+    // 左上边角
+    UIBezierPath *leftTopPath = [UIBezierPath bezierPath];
+    leftTopPath.lineWidth = self.cornerWidth;
+    [self.cornerColor set];
     
-    // 下面layer的创建
-    CALayer *bottom_layer = [[CALayer alloc] init];
-    CGFloat bottom_layerX = 0;
-    CGFloat bottom_layerY = CGRectGetMaxY(scanContent_layer.frame);
-    CGFloat bottom_layerW = self.frame.size.width;
-    CGFloat bottom_layerH = self.frame.size.height - bottom_layerY;
-    bottom_layer.frame = CGRectMake(bottom_layerX, bottom_layerY, bottom_layerW, bottom_layerH);
-    bottom_layer.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:scanBorderOutsideViewAlpha].CGColor;
-    [self.layer addSublayer:bottom_layer];
+    CGFloat insideExcess = fabs(0.5 *(self.cornerWidth - scanBorderLineW));
+    CGFloat outsideExcess = 0.5 *(scanBorderLineW + self.cornerWidth);
+    if (self.cornerLocation == CornerLocationInside) {
+        [leftTopPath moveToPoint:CGPointMake(scanContentX + insideExcess, scanContentY + cornerLength + insideExcess)];
+        [leftTopPath addLineToPoint:CGPointMake(scanContentX + insideExcess, scanContentY + insideExcess)];
+        [leftTopPath addLineToPoint:CGPointMake(scanContentX + cornerLength + insideExcess, scanContentY + insideExcess)];
+    } else if (self.cornerLocation == CornerLocationOutside) {
+        [leftTopPath moveToPoint:CGPointMake(scanContentX - outsideExcess, scanContentY + cornerLength - outsideExcess)];
+        [leftTopPath addLineToPoint:CGPointMake(scanContentX - outsideExcess, scanContentY - outsideExcess)];
+        [leftTopPath addLineToPoint:CGPointMake(scanContentX + cornerLength - outsideExcess, scanContentY - outsideExcess)];
+    } else {
+        [leftTopPath moveToPoint:CGPointMake(scanContentX, scanContentY + cornerLength)];
+        [leftTopPath addLineToPoint:CGPointMake(scanContentX, scanContentY)];
+        [leftTopPath addLineToPoint:CGPointMake(scanContentX + cornerLength, scanContentY)];
+    }
     
-    // 提示Label
-    UILabel *promptLabel = [[UILabel alloc] init];
-    promptLabel.backgroundColor = [UIColor clearColor];
-    CGFloat promptLabelX = 0;
-    CGFloat promptLabelY = CGRectGetMaxY(scanContent_layer.frame) + 30;
-    CGFloat promptLabelW = self.frame.size.width;
-    CGFloat promptLabelH = 25;
-    promptLabel.frame = CGRectMake(promptLabelX, promptLabelY, promptLabelW, promptLabelH);
-    promptLabel.textAlignment = NSTextAlignmentCenter;
-    promptLabel.font = [UIFont boldSystemFontOfSize:13.0];
-    promptLabel.textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.6];
-    promptLabel.text = @"将二维码放入框内, 即可自动扫描";
-    promptLabel.numberOfLines = 0;
-    [self addSubview:promptLabel];
+    [leftTopPath stroke];
+    
+    // 左下边角
+    UIBezierPath *leftBottomPath = [UIBezierPath bezierPath];
+    leftBottomPath.lineWidth = self.cornerWidth;
+    [self.cornerColor set];
+    
+    if (self.cornerLocation == CornerLocationInside) {
+        [leftBottomPath moveToPoint:CGPointMake(scanContentX + cornerLength + insideExcess, scanContentY + scanContentH - insideExcess)];
+        [leftBottomPath addLineToPoint:CGPointMake(scanContentX + insideExcess, scanContentY + scanContentH - insideExcess)];
+        [leftBottomPath addLineToPoint:CGPointMake(scanContentX + insideExcess, scanContentY + scanContentH - cornerLength - insideExcess)];
+    } else if (self.cornerLocation == CornerLocationOutside) {
+        [leftBottomPath moveToPoint:CGPointMake(scanContentX + cornerLength - outsideExcess, scanContentY + scanContentH + outsideExcess)];
+        [leftBottomPath addLineToPoint:CGPointMake(scanContentX - outsideExcess, scanContentY + scanContentH + outsideExcess)];
+        [leftBottomPath addLineToPoint:CGPointMake(scanContentX - outsideExcess, scanContentY + scanContentH - cornerLength + outsideExcess)];
+    } else {
+        [leftBottomPath moveToPoint:CGPointMake(scanContentX + cornerLength, scanContentY + scanContentH)];
+        [leftBottomPath addLineToPoint:CGPointMake(scanContentX, scanContentY + scanContentH)];
+        [leftBottomPath addLineToPoint:CGPointMake(scanContentX, scanContentY + scanContentH - cornerLength)];
+    }
+    
+    [leftBottomPath stroke];
+    
+    // 右上边角
+    UIBezierPath *rightTopPath = [UIBezierPath bezierPath];
+    rightTopPath.lineWidth = self.cornerWidth;
+    [self.cornerColor set];
+    
+    if (self.cornerLocation == CornerLocationInside) {
+        [rightTopPath moveToPoint:CGPointMake(scanContentX + scanContentW - cornerLength - insideExcess, scanContentY + insideExcess)];
+        [rightTopPath addLineToPoint:CGPointMake(scanContentX + scanContentW - insideExcess, scanContentY + insideExcess)];
+        [rightTopPath addLineToPoint:CGPointMake(scanContentX + scanContentW - insideExcess, scanContentY + cornerLength + insideExcess)];
+    } else if (self.cornerLocation == CornerLocationOutside) {
+        [rightTopPath moveToPoint:CGPointMake(scanContentX + scanContentW - cornerLength + outsideExcess, scanContentY - outsideExcess)];
+        [rightTopPath addLineToPoint:CGPointMake(scanContentX + scanContentW + outsideExcess, scanContentY - outsideExcess)];
+        [rightTopPath addLineToPoint:CGPointMake(scanContentX + scanContentW + outsideExcess, scanContentY + cornerLength - outsideExcess)];
+    } else {
+        [rightTopPath moveToPoint:CGPointMake(scanContentX + scanContentW - cornerLength, scanContentY)];
+        [rightTopPath addLineToPoint:CGPointMake(scanContentX + scanContentW, scanContentY)];
+        [rightTopPath addLineToPoint:CGPointMake(scanContentX + scanContentW, scanContentY + cornerLength)];
+    }
+    
+    [rightTopPath stroke];
+    
+    // 右下边角
+    UIBezierPath *rightBottomPath = [UIBezierPath bezierPath];
+    rightBottomPath.lineWidth = self.cornerWidth;
+    [self.cornerColor set];
+    
+    if (self.cornerLocation == CornerLocationInside) {
+        [rightBottomPath moveToPoint:CGPointMake(scanContentX + scanContentW - insideExcess, scanContentY + scanContentH - cornerLength - insideExcess)];
+        [rightBottomPath addLineToPoint:CGPointMake(scanContentX + scanContentW - insideExcess, scanContentY + scanContentH - insideExcess)];
+        [rightBottomPath addLineToPoint:CGPointMake(scanContentX + scanContentW - cornerLength - insideExcess, scanContentY + scanContentH - insideExcess)];
+    } else if (self.cornerLocation == CornerLocationOutside) {
+        [rightBottomPath moveToPoint:CGPointMake(scanContentX + scanContentW + outsideExcess, scanContentY + scanContentH - cornerLength + outsideExcess)];
+        [rightBottomPath addLineToPoint:CGPointMake(scanContentX + scanContentW + outsideExcess, scanContentY + scanContentH + outsideExcess)];
+        [rightBottomPath addLineToPoint:CGPointMake(scanContentX + scanContentW - cornerLength + outsideExcess, scanContentY + scanContentH + outsideExcess)];
+    } else {
+        [rightBottomPath moveToPoint:CGPointMake(scanContentX + scanContentW, scanContentY + scanContentH - cornerLength)];
+        [rightBottomPath addLineToPoint:CGPointMake(scanContentX + scanContentW, scanContentY + scanContentH)];
+        [rightBottomPath addLineToPoint:CGPointMake(scanContentX + scanContentW - cornerLength, scanContentY + scanContentH)];
+    }
+    
+    [rightBottomPath stroke];
+    
+    // 描述
+    UILabel *describeLabel = [[UILabel alloc] init];
+    describeLabel.backgroundColor = [UIColor clearColor];
+    describeLabel.frame = CGRectMake(0, scanContentY + scanContentW + 20, self.frame.size.width, 25);
+    describeLabel.textAlignment = NSTextAlignmentCenter;
+    describeLabel.font = [UIFont boldSystemFontOfSize:13.0];
+    describeLabel.textColor = [UIColor whiteColor];
+    describeLabel.text = self.describe;
+    describeLabel.numberOfLines = 0;
+    [self addSubview:describeLabel];
     
     // 添加闪光灯按钮
-    UIButton *light_button = [[UIButton alloc] init];
-    CGFloat light_buttonX = 0;
-    CGFloat light_buttonY = CGRectGetMaxY(promptLabel.frame) + scanContent_X * 0.5;
-    CGFloat light_buttonW = self.frame.size.width;
-    CGFloat light_buttonH = 25;
-    light_button.frame = CGRectMake(light_buttonX, light_buttonY, light_buttonW, light_buttonH);
-    [light_button setTitle:@"打开照明灯" forState:UIControlStateNormal];
-    [light_button setTitle:@"关闭照明灯" forState:UIControlStateSelected];
-    [light_button setTitleColor:promptLabel.textColor forState:(UIControlStateNormal)];
-    light_button.titleLabel.font = [UIFont systemFontOfSize:17];
-
-    [light_button addTarget:self action:@selector(light_buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:light_button];
-    
-#pragma mark - - - 扫描边角imageView的创建
-    // 左上侧的image
-    UIImage *left_image = [UIImage imageNamed:@"home_share_code_corner1"];
-    UIImageView *left_imageView = [[UIImageView alloc] init];
-    CGFloat left_imageViewX = scanContent_layerX;
-    CGFloat left_imageViewY = scanContent_layerY;
-    CGFloat left_imageViewW = 15;
-    CGFloat left_imageViewH = left_imageViewW;
-    left_imageView.frame = CGRectMake(left_imageViewX, left_imageViewY, left_imageViewW,left_imageViewH);
-    left_imageView.image = left_image;
-    [self.tempLayer addSublayer:left_imageView.layer];
-    
-    // 右上侧的image
-    UIImage *right_image = [UIImage imageNamed:@"home_share_code_corner2"];
-    UIImageView *right_imageView = [[UIImageView alloc] init];
-    CGFloat right_imageViewX = CGRectGetMaxX(scanContent_layer.frame) - left_imageViewW;
-    CGFloat right_imageViewY = left_imageView.frame.origin.y;
-    right_imageView.frame = CGRectMake(right_imageViewX, right_imageViewY, left_imageViewW, left_imageViewW);
-    right_imageView.image = right_image;
-    [self.tempLayer addSublayer:right_imageView.layer];
-    
-    // 左下侧的image
-    UIImage *left_image_down = [UIImage imageNamed:@"home_share_code_corner3"];
-    UIImageView *left_imageView_down = [[UIImageView alloc] init];
-    CGFloat left_imageView_downX = left_imageView.frame.origin.x;
-    CGFloat left_imageView_downY = CGRectGetMaxY(scanContent_layer.frame) - left_imageViewW;
-    left_imageView_down.frame = CGRectMake(left_imageView_downX, left_imageView_downY, left_imageViewW, left_imageViewW);
-    left_imageView_down.image = left_image_down;
-    [self.tempLayer addSublayer:left_imageView_down.layer];
-    
-    // 右下侧的image
-    UIImage *right_image_down = [UIImage imageNamed:@"home_share_code_corner4"];
-    UIImageView *right_imageView_down = [[UIImageView alloc] init];
-    CGFloat right_imageView_downX = right_imageView.frame.origin.x;
-    CGFloat right_imageView_downY = left_imageView_down.frame.origin.y;
-    right_imageView_down.frame = CGRectMake(right_imageView_downX, right_imageView_downY, left_imageViewW, left_imageViewW);
-    right_imageView_down.image = right_image_down;
-    [self.tempLayer addSublayer:right_imageView_down.layer];
+    UIButton *lightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    CGFloat lightButtonX = 0;
+    CGFloat lightButtonY = CGRectGetMaxY(describeLabel.frame) + 10;
+    CGFloat lightButtonW = self.frame.size.width;
+    CGFloat lightButtonH = 25;
+    lightButton.frame = CGRectMake(lightButtonX, lightButtonY, lightButtonW, lightButtonH);
+    [lightButton setTitle:@"打开照明灯" forState:UIControlStateNormal];
+    [lightButton setTitle:@"关闭照明灯" forState:UIControlStateSelected];
+    [lightButton setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+    lightButton.titleLabel.font = [UIFont systemFontOfSize:17];
+    [lightButton addTarget:self action:@selector(lightButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:lightButton];
 }
 
-#pragma mark - - - 照明灯的点击事件
-- (void)light_buttonAction:(UIButton *)button {
+- (void)lightButtonAction:(UIButton *)button {
     if (button.selected == NO) { // 点击打开照明灯
         [self turnOnLight:YES];
         button.selected = YES;
@@ -183,39 +195,42 @@ static CGFloat const scanBorderOutsideViewAlpha = 0.4;
     }
 }
 - (void)turnOnLight:(BOOL)on {
-    self.device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    if ([_device hasTorch]) {
-        [_device lockForConfiguration:nil];
+    AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if ([captureDevice hasTorch]) {
+        [captureDevice lockForConfiguration:nil];
         if (on) {
-            [_device setTorchMode:AVCaptureTorchModeOn];
+            [captureDevice setTorchMode:AVCaptureTorchModeOn];
         } else {
-            [_device setTorchMode: AVCaptureTorchModeOff];
+            [captureDevice setTorchMode:AVCaptureTorchModeOff];
         }
-        [_device unlockForConfiguration];
+        [captureDevice unlockForConfiguration];
     }
 }
+
+
 
 - (UIImageView *)scanningline {
     if (!_scanningline) {
         _scanningline = [[UIImageView alloc] init];
-        _scanningline.image = [UIImage imageNamed:@"home_share_code_line@2x"];
-        _scanningline.frame = CGRectMake(scanContent_X, scanContent_Y, self.frame.size.width - scanContent_X * 2 , scanninglineHeight);
+        _scanningline.image = self.scanLineImage;
+        _scanningline.frame = CGRectMake(scanContent_X,scanContent_Y,scanContent_Width,2);
     }
     return _scanningline;
 }
 
-- (void)addScanningline {
-    // 扫描动画添加
-    [self.tempLayer addSublayer:self.scanningline.layer];
-}
-#pragma mark - - - 添加定时器
 - (void)addTimer {
-    [self addScanningline];
+    if (self.scanningline) {
+        [self.scanningline removeFromSuperview];
+    }
+    if (self.timer) {
+        [self.timer invalidate];
+    }
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(timeAction) userInfo:nil repeats:YES];
+    [self addSubview:self.scanningline];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:self.animationTimeInterval target:self selector:@selector(timeAction) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
-#pragma mark - - - 移除定时器
+
 - (void)removeTimer {
     [self.timer invalidate];
     self.timer = nil;
@@ -223,30 +238,27 @@ static CGFloat const scanBorderOutsideViewAlpha = 0.4;
     self.scanningline = nil;
 }
 
-#pragma mark - - - 执行定时器方法
 - (void)timeAction {
     __block CGRect frame = _scanningline.frame;
-    
     static BOOL flag = YES;
-    
     if (flag) {
         frame.origin.y = scanContent_Y;
         flag = NO;
-        [UIView animateWithDuration:0.05 animations:^{
+        [UIView animateWithDuration:self.animationTimeInterval animations:^{
             frame.origin.y += 5;
-            _scanningline.frame = frame;
+            self.scanningline.frame = frame;
         } completion:nil];
     } else {
-        if (_scanningline.frame.origin.y >= scanContent_Y) {
-            CGFloat scanContent_MaxY = scanContent_Y + self.frame.size.width - 2 * scanContent_X;
-            if (_scanningline.frame.origin.y >= scanContent_MaxY - 10) {
+        if (self.scanningline.frame.origin.y >= scanContent_Y) {
+            CGFloat scanContent_MaxY = scanContent_Y + self.frame.size.width - 2 *scanContent_X;
+            if (self.scanningline.frame.origin.y >= scanContent_MaxY - 10) {
                 frame.origin.y = scanContent_Y;
-                _scanningline.frame = frame;
+                self.scanningline.frame = frame;
                 flag = YES;
             } else {
-                [UIView animateWithDuration:0.05 animations:^{
+                [UIView animateWithDuration:self.animationTimeInterval animations:^{
                     frame.origin.y += 5;
-                    _scanningline.frame = frame;
+                    self.scanningline.frame = frame;
                 } completion:nil];
             }
         } else {
@@ -255,4 +267,31 @@ static CGFloat const scanBorderOutsideViewAlpha = 0.4;
     }
 }
 
+- (void)setCornerLocation:(CornerLocation)cornerLocation{
+    _cornerLocation = cornerLocation;
+}
+
+- (void)setBorderColor:(UIColor *)borderColor{
+    _borderColor = borderColor;
+}
+
+- (void)setCornerColor:(UIColor *)cornerColor{
+    _cornerColor = cornerColor;
+}
+
+- (void)setCornerWidth:(CGFloat)cornerWidth{
+    _cornerWidth = cornerWidth;
+}
+
+- (void)setBackgroundAlpha:(CGFloat)backgroundAlpha{
+    _backgroundAlpha = backgroundAlpha;
+}
+
+- (void)setAnimationTimeInterval:(CGFloat)animationTimeInterval{
+    _animationTimeInterval = animationTimeInterval;
+}
+
+- (void)setDescribe:(NSString *)describe{
+    _describe = describe;
+}
 @end
