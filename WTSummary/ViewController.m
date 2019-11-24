@@ -18,7 +18,7 @@
 #import "WTDisplayViewController.h"
 #import "WTFormSettingController.h" // 表单
 #import "WTAutoPlayViewController.h" // 自动播放测试
-
+#import "WTPDFViewController.h"
 typedef void (^block)();
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -39,6 +39,7 @@ static NSString * const WTTransition = @"WTTransition";
 static NSString * const WTDisplayView = @"WTDisplayView";
 static NSString * const WTFormCell = @"WTFormCell";
 static NSString * const AutoPlay = @"AutoPlay";
+static NSString * const PDF = @"PDF";
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -99,7 +100,7 @@ static NSString * const AutoPlay = @"AutoPlay";
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView,WTFormCell,AutoPlay];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView,WTFormCell,AutoPlay,PDF];
     }
     return _dataArray;
 }
@@ -170,6 +171,10 @@ static NSString * const AutoPlay = @"AutoPlay";
     else if ([title isEqualToString:AutoPlay]){
         WTAutoPlayViewController * autoPlayVC = [[WTAutoPlayViewController alloc] init];
         [self.navigationController pushViewController:autoPlayVC animated:YES];
+    }
+    else if ([title isEqualToString:PDF]){
+        WTPDFViewController *pdfVC = [[WTPDFViewController alloc] init];
+        [self.navigationController pushViewController:pdfVC animated:YES];
     }
 }
 
