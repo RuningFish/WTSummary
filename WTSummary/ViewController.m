@@ -19,6 +19,7 @@
 #import "WTFormSettingController.h" // 表单
 #import "WTAutoPlayViewController.h" // 自动播放测试
 #import "WTPDFViewController.h"
+#import "WTTableViewGroupController.h"
 typedef void (^block)();
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -40,6 +41,7 @@ static NSString * const WTDisplayView = @"WTDisplayView";
 static NSString * const WTFormCell = @"WTFormCell";
 static NSString * const AutoPlay = @"AutoPlay";
 static NSString * const PDF = @"PDF";
+static NSString * const TableViewGroupCorner = @"TableViewGroupCorner";
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -100,7 +102,7 @@ static NSString * const PDF = @"PDF";
 
 - (NSArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView,WTFormCell,AutoPlay,PDF];
+        _dataArray = @[WTAlertController_ActionSheet,WTAlertController_Alert,JSAndOC,ImageAndTitle,WTPlayback,WTPersonal,WTCardView,WTTransition,WTDisplayView,WTFormCell,AutoPlay,PDF,TableViewGroupCorner];
     }
     return _dataArray;
 }
@@ -175,6 +177,10 @@ static NSString * const PDF = @"PDF";
     else if ([title isEqualToString:PDF]){
         WTPDFViewController *pdfVC = [[WTPDFViewController alloc] init];
         [self.navigationController pushViewController:pdfVC animated:YES];
+    }
+    else if ([title isEqualToString:TableViewGroupCorner]){
+        WTTableViewGroupController *groupVC = [[WTTableViewGroupController alloc] init];
+        [self.navigationController pushViewController:groupVC animated:YES];
     }
 }
 
